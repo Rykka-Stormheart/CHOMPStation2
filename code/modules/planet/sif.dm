@@ -2,9 +2,6 @@ var/datum/planet/sif/planet_sif = null
 
 /datum/planet/sif
 	name = "Sif"
-
-/datum/planet/sif
-	name = "Sif"
 	desc = "Sif is a terrestrial planet in the Vir system. It is somewhat earth-like, in that it has oceans, a \
 	breathable atmosphere, a magnetic field, weather, and similar gravity to Earth. It is currently the capital planet of Vir. \
 	Its center of government is the equatorial city and site of first settlement, New Reykjavik." // Ripped straight from the wiki.
@@ -98,7 +95,7 @@ var/datum/planet/sif/planet_sif = null
 		new_color = rgb(new_r, new_g, new_b)
 
 	spawn(1)
-		update_sun_deferred(2, new_brightness, new_color)
+		update_sun_deferred(new_brightness, new_color)
 
 // We're gonna pretend there are 32 hours in a Sif day instead of 32.64 for the purposes of not losing sanity.  We lose 38m 24s but the alternative is a path to madness.
 /datum/time/sif

@@ -23,7 +23,7 @@
 /obj/effect/spider/attackby(var/obj/item/weapon/W, var/mob/user)
 	user.setClickCooldown(user.get_attack_speed(W))
 
-	if(W.attack_verb.len)
+	if(LAZYLEN(W.attack_verb))
 		visible_message("<span class='warning'>\The [src] has been [pick(W.attack_verb)] with \the [W][(user ? " by [user]." : ".")]</span>")
 	else
 		visible_message("<span class='warning'>\The [src] has been attacked with \the [W][(user ? " by [user]." : ".")]</span>")
@@ -188,50 +188,34 @@
 			entry_vent = null
 	else if(entry_vent)
 		if(get_dist(src, entry_vent) <= 1)
-			//VOREStation Edit Start
+	//VOREStation Edit Start
 			var/obj/machinery/atmospherics/unary/vent_pump/exit_vent = get_safe_ventcrawl_target(entry_vent)
 			if(!exit_vent)
 				return
-			if(1) //To maintain indentation level
-			//VOREStation Edit End
-			/*	//VOREStation Removal Start - prevent spiders in dorms
-			if(entry_vent.network && entry_vent.network.normal_members.len)
-				var/list/vents = list()
-				for(var/obj/machinery/atmospherics/unary/vent_pump/temp_vent in entry_vent.network.normal_members)
-					vents.Add(temp_vent)
-				if(!vents.len)
-					entry_vent = null
-					return
-				var/obj/machinery/atmospherics/unary/vent_pump/exit_vent = pick(vents)
-				*/ //VOREStation Removal End
-				/*if(prob(50))
-					src.visible_message("<B>[src] scrambles into the ventillation ducts!</B>")*/
+			spawn(rand(20,60))
+				loc = exit_vent
+				var/travel_time = round(get_dist(loc, exit_vent.loc) / 2)
+				spawn(travel_time)
 
-				spawn(rand(20,60))
-					loc = exit_vent
-					var/travel_time = round(get_dist(loc, exit_vent.loc) / 2)
-					spawn(travel_time)
-
-						if(!exit_vent || exit_vent.welded)
-							loc = entry_vent
-							entry_vent = null
-							return
-
-						if(prob(50))
-							src.visible_message("<span class='notice'>You hear something squeezing through the ventilation ducts.</span>",2)
-						sleep(travel_time)
-
-						if(!exit_vent || exit_vent.welded)
-							loc = entry_vent
-							entry_vent = null
-							return
-						loc = exit_vent.loc
+					if(!exit_vent || exit_vent.welded)
+						loc = entry_vent
 						entry_vent = null
-						var/area/new_area = get_area(loc)
-						if(new_area)
-							new_area.Entered(src)
-			else
-				entry_vent = null
+						return
+
+					if(prob(50))
+						src.visible_message("<span class='notice'>You hear something squeezing through the ventilation ducts.</span>",2)
+					sleep(travel_time)
+
+					if(!exit_vent || exit_vent.welded)
+						loc = entry_vent
+						entry_vent = null
+						return
+					loc = exit_vent.loc
+					entry_vent = null
+					var/area/new_area = get_area(loc)
+					if(new_area)
+						new_area.Entered(src)
+	//VOREStation Edit End
 	//=================
 
 	if(isturf(loc))
@@ -252,7 +236,7 @@
 				last_itch = world.time
 				to_chat(O.owner, "<span class='notice'>Your [O.name] itches...</span>")
 	else if(prob(1))
-		src.visible_message("<span class='notice'>\The [src] skitters.</span>")
+		src.visible_message("<b>\The [src]</b> skitters.")
 
 	if(amount_grown >= 0)
 		amount_grown += rand(0,2)

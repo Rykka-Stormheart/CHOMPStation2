@@ -6,6 +6,15 @@
 	scannable = TRUE
 	scanner_desc = "!! No Data Available !!"
 
+	icon_state = "generic"
+
+	/// Shows up on nav computers automatically
+	var/known = TRUE
+	/// Name prior to being scanned if !known
+	var/unknown_name = "unknown sector"
+	/// Icon_state prior to being scanned if !known
+	var/unknown_state = "field"
+
 	var/list/map_z = list()
 	var/list/extra_z_levels //if you need to manually insist that these z-levels are part of this sector, for things like edge-of-map step trigger transitions rather than multi-z complexes
 
@@ -25,6 +34,7 @@
 	var/hide_from_reports = FALSE
 
 	var/has_distress_beacon
+	var/list/levels_for_distress
 
 /obj/effect/overmap/visitable/Initialize()
 	. = ..()
@@ -48,6 +58,25 @@
 
 	LAZYADD(SSshuttles.sectors_to_initialize, src) //Queued for further init. Will populate the waypoint lists; waypoints not spawned yet will be added in as they spawn.
 	SSshuttles.process_init_queues()
+
+	if(known)
+		plane = PLANE_LIGHTING_ABOVE
+		for(var/obj/machinery/computer/ship/helm/H in global.machines)
+			H.get_known_sectors()
+	else
+		real_appearance = image(icon, src, icon_state)
+		real_appearance.override = TRUE
+		name = unknown_name
+		icon_state = unknown_state
+		color = null
+		desc = "Scan this to find out more information."
+		
+
+// You generally shouldn't destroy these.
+/obj/effect/overmap/visitable/Destroy()
+	testing("Deleting [src] overmap sector at [x],[y]")
+	unregister_z_levels()
+	return ..()
 
 //This is called later in the init order by SSshuttles to populate sector objects. Importantly for subtypes, shuttles will be created by then.
 /obj/effect/overmap/visitable/proc/populate_sector_objects()
@@ -77,6 +106,28 @@
 		global.using_map.contact_levels |= map_z
 		global.using_map.map_levels |= map_z
 	*/
+
+/obj/effect/overmap/visitable/proc/unregister_z_levels()
+	map_sectors -= map_z
+
+	global.using_map.player_levels -= map_z
+	if(!in_space)
+		global.using_map.sealed_levels -= map_z
+	/* VOREStation Removal - We have a map system that does this already.
+	if(base)
+		global.using_map.station_levels -= map_z
+		global.using_map.contact_levels -= map_z
+		global.using_map.map_levels -= map_z
+	*/
+
+/obj/effect/overmap/visitable/get_scan_data()
+	if(!known)
+		known = TRUE
+		name = initial(name)
+		icon_state = initial(icon_state)
+		color = initial(color)
+		desc = initial(desc)
+	return ..()
 
 /obj/effect/overmap/visitable/proc/get_space_zlevels()
 	if(in_space)
@@ -114,8 +165,11 @@
 		for(var/thing in restricted_waypoints[shuttle_name])
 			.[thing] = name
 
-/obj/effect/overmap/visitable/proc/generate_skybox()
+/obj/effect/overmap/visitable/proc/generate_skybox(zlevel)
 	return
+
+/obj/effect/overmap/visitable/proc/cleanup()
+	return FALSE
 
 /obj/effect/overmap/visitable/MouseEntered(location, control, params)
 	openToolTip(user = usr, tip_src = src, params = params, title = name)
@@ -142,6 +196,40 @@
 // prior to being moved to the overmap. This blocks that. Use set_invisibility to adjust invisibility as needed instead.
 /obj/effect/overmap/visitable/sector/hide()
 
+/obj/effect/overmap/visitable/proc/distress(mob/user)
+	if(has_distress_beacon)
+		return FALSE
+	has_distress_beacon = TRUE
+
+	admin_chat_message(message = "Overmap panic button hit on z[z] ([name]) by '[user?.ckey || "Unknown"]'", color = "#FF2222") //VOREStation Add
+	var/message = "This is an automated distress signal from a MIL-DTL-93352-compliant beacon transmitting on [PUB_FREQ*0.1]kHz. \
+	This beacon was launched from '[initial(name)]'. I can provide this additional information to rescuers: [get_distress_info()]. \
+	Per the Interplanetary Convention on Space SAR, those receiving this message must attempt rescue, \
+	or relay the message to those who can. This message will repeat one time in 5 minutes. Thank you for your urgent assistance."
+	
+	if(!levels_for_distress)
+		levels_for_distress = list(1)
+	for(var/zlevel in levels_for_distress)
+		priority_announcement.Announce(message, new_title = "Automated Distress Signal", new_sound = 'sound/AI/sos.ogg', zlevel = zlevel)
+	
+	var/image/I = image(icon, icon_state = "distress")
+	I.plane = PLANE_LIGHTING_ABOVE
+	I.appearance_flags = KEEP_APART|RESET_TRANSFORM|RESET_COLOR
+	add_overlay(I)
+	
+	addtimer(CALLBACK(src, .proc/distress_update), 5 MINUTES)
+	return TRUE
+
+/obj/effect/overmap/visitable/proc/get_distress_info()
+	return "\[X:[x], Y:[y]\]"
+
+/obj/effect/overmap/visitable/proc/distress_update()
+	var/message = "This is the final message from the distress beacon launched from '[initial(name)]'. I can provide this additional information to rescuers: [get_distress_info()]. \
+	Please render assistance under your obligations per the Interplanetary Convention on Space SAR, or relay this message to a party who can. Thank you for your urgent assistance."
+
+	for(var/zlevel in levels_for_distress)
+		priority_announcement.Announce(message, new_title = "Automated Distress Signal", new_sound = 'sound/AI/sos.ogg', zlevel = zlevel)
+
 /proc/build_overmap()
 	if(!global.using_map.use_overmap)
 		return 1
@@ -164,3 +252,4 @@
 
 	testing("Overmap build complete.")
 	return 1
+

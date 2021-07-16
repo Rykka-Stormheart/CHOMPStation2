@@ -39,7 +39,7 @@
 	icon_state = "detective"
 	item_state = "gun"
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
-	matter = list(DEFAULT_WALL_MATERIAL = 2000)
+	matter = list(MAT_STEEL = 2000)
 	w_class = ITEMSIZE_NORMAL
 	throwforce = 5
 	throw_speed = 4
@@ -157,11 +157,11 @@
 		var/mob/living/M = loc
 		if(istype(M))
 			if(M.can_wield_item(src) && src.is_held_twohanded(M))
-				item_state_slots[slot_l_hand_str] = wielded_item_state
-				item_state_slots[slot_r_hand_str] = wielded_item_state
+				LAZYSET(item_state_slots, slot_l_hand_str, wielded_item_state)
+				LAZYSET(item_state_slots, slot_r_hand_str, wielded_item_state)
 			else
-				item_state_slots[slot_l_hand_str] = initial(item_state)
-				item_state_slots[slot_r_hand_str] = initial(item_state)
+				LAZYSET(item_state_slots, slot_l_hand_str, initial(item_state))
+				LAZYSET(item_state_slots, slot_r_hand_str, initial(item_state))
 	..()
 
 
@@ -247,7 +247,7 @@
 			to_chat(user, "<span class='notice'>You ready \the [src]!  Click and drag the target around to shoot.</span>")
 		else//Otherwise just make a new one
 			auto_target = new/obj/screen/auto_target(get_turf(A), src)
-			visible_message("<span class='danger'>\[user] readies the [src]!</span>")
+			visible_message("<span class='danger'>\The [user] readies the [src]!</span>")
 			playsound(src, 'sound/weapons/TargetOn.ogg', 50, 1)
 			to_chat(user, "<span class='notice'>You ready \the [src]!  Click and drag the target around to shoot.</span>")
 			return

@@ -168,7 +168,7 @@
 				playsound(src, P.usesound, 50, 1)
 				to_chat(user, "<span class='notice'>You connect the monitor.</span>")
 				if(!brain)
-					var/open_for_latejoin = alert(user, "Would you like this core to be open for latejoining AIs?", "Latejoin", "Yes", "Yes", "No") == "Yes"
+					var/open_for_latejoin = tgui_alert(user, "Would you like this core to be open for latejoining AIs?", "Latejoin", list("Yes", "No")) == "Yes"
 					var/obj/structure/AIcore/deactivated/D = new(loc)
 					if(open_for_latejoin)
 						empty_playable_ai_cores += D
@@ -234,21 +234,21 @@ GLOBAL_LIST_BOILERPLATE(all_deactivated_AI_cores, /obj/structure/AIcore/deactiva
 		return
 	else if(W.is_wrench())
 		if(anchored)
-			user.visible_message("<span class='notice'>\The [user] starts to unbolt \the [src] from the plating...</span>")
+			user.visible_message("<b>\The [user]</b> starts to unbolt \the [src] from the plating...")
 			playsound(src, W.usesound, 50, 1)
 			if(!do_after(user,40 * W.toolspeed))
-				user.visible_message("<span class='notice'>\The [user] decides not to unbolt \the [src].</span>")
+				user.visible_message("<b>\The [user]</b> decides not to unbolt \the [src].")
 				return
-			user.visible_message("<span class='notice'>\The [user] finishes unfastening \the [src]!</span>")
+			user.visible_message("<b>\The [user]</b> finishes unfastening \the [src]!")
 			anchored = 0
 			return
 		else
-			user.visible_message("<span class='notice'>\The [user] starts to bolt \the [src] to the plating...</span>")
+			user.visible_message("<b>\The [user]</b> starts to bolt \the [src] to the plating...")
 			playsound(src, W.usesound, 50, 1)
 			if(!do_after(user,40 * W.toolspeed))
-				user.visible_message("<span class='notice'>\The [user] decides not to bolt \the [src].</span>")
+				user.visible_message("<b>\The [user]</b> decides not to bolt \the [src].")
 				return
-			user.visible_message("<span class='notice'>\The [user] finishes fastening down \the [src]!</span>")
+			user.visible_message("<b>\The [user]</b> finishes fastening down \the [src]!")
 			anchored = 1
 			return
 	else
@@ -262,7 +262,7 @@ GLOBAL_LIST_BOILERPLATE(all_deactivated_AI_cores, /obj/structure/AIcore/deactiva
 	for(var/obj/structure/AIcore/deactivated/D in GLOB.all_deactivated_AI_cores)
 		cores["[D] ([D.loc.loc])"] = D
 
-	var/id = input("Which core?", "Toggle AI Core Latejoin", null) as null|anything in cores
+	var/id = tgui_input_list(usr, "Which core?", "Toggle AI Core Latejoin", cores)
 	if(!id) return
 
 	var/obj/structure/AIcore/deactivated/D = cores[id]

@@ -15,7 +15,7 @@
 	user.setClickCooldown(user.get_attack_speed(W))
 
 	if(W.force)
-		visible_message("<span class='warning'>\The [src] has been [pick(W.attack_verb)] with \the [W][(user ? " by [user]." : ".")]</span>")
+		visible_message("<span class='warning'>\The [src] has been [LAZYLEN(W.attack_verb) ? pick(W.attack_verb) : "attacked"] with \the [W][(user ? " by [user]." : ".")]</span>")
 		qdel(src)
 
 /obj/effect/weaversilk/bullet_act(var/obj/item/projectile/Proj)
@@ -39,6 +39,7 @@
 /obj/effect/weaversilk/floor
 	var/possible_icon_states = list("floorweb1", "floorweb2", "floorweb3", "floorweb4", "floorweb5", "floorweb6", "floorweb7", "floorweb8")
 	plane = DIRTY_PLANE
+	layer = DIRTY_LAYER
 
 /obj/effect/weaversilk/floor/Initialize()
 	..()

@@ -47,7 +47,7 @@
 			turn_off()
 		return
 	if(istype(I, /obj/item/device/multitool))
-		var/new_temp = input("Input a new target temperature, in degrees C.","Target Temperature", 20) as num
+		var/new_temp = input(usr, "Input a new target temperature, in degrees C.","Target Temperature", 20) as num
 		if(!Adjacent(user) || user.incapacitated())
 			return
 		new_temp = convert_c2k(new_temp)
@@ -76,7 +76,7 @@
 		return
 
 	if(draw_power(idle_power_usage) < idle_power_usage)
-		visible_message("<span class='notice'>\The [src] shuts down.</span>")
+		visible_message("<b>\The [src]</b> shuts down.")
 		turn_off()
 		return
 
@@ -109,14 +109,14 @@
 	env.merge(removed)
 
 /obj/machinery/power/thermoregulator/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(on)
-		overlays += "lasergen-on"
+		add_overlay("lasergen-on")
 		switch(mode)
 			if(MODE_HEATING)
-				overlays += "lasergen-heat"
+				add_overlay("lasergen-heat")
 			if(MODE_COOLING)
-				overlays += "lasergen-cool"
+				add_overlay("lasergen-cool")
 
 /obj/machinery/power/thermoregulator/proc/turn_off()
 	on = 0

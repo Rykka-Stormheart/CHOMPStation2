@@ -1,10 +1,10 @@
 //Special map objects
 /obj/effect/landmark/map_data/virgo3b
-    height = 7
+    height = 5
 
 /obj/turbolift_map_holder/tether
 	name = "Tether Climber"
-	depth = 7
+	depth = 5
 	lift_size_x = 3
 	lift_size_y = 3
 	icon = 'icons/obj/turbolift_preview_3x3.dmi'
@@ -15,9 +15,7 @@
 		/area/turbolift/t_surface/level2,
 		/area/turbolift/t_surface/level3,
 		/area/turbolift/tether/transit,
-		/area/turbolift/t_station/level1,
-		/area/turbolift/t_station/level2,
-		/area/turbolift/t_station/level3
+		/area/turbolift/t_station/level1
 		)
 
 /datum/turbolift
@@ -172,7 +170,7 @@
 
 // Walking on maglev tracks will shock you! Horray!
 /turf/simulated/floor/maglev/Entered(var/atom/movable/AM, var/atom/old_loc)
-	if(isliving(AM) && prob(50))
+	if(isliving(AM) && !(AM.is_incorporeal()) && prob(50))
 		track_zap(AM)
 /turf/simulated/floor/maglev/attack_hand(var/mob/user)
 	if(prob(75))
@@ -251,7 +249,7 @@
 
 	var/mob/living/carbon/human/user = AM
 
-	var/choice = alert("Do you want to depart via the tram? Your character will leave the round.","Departure","Yes","No")
+	var/choice = tgui_alert(user, "Do you want to depart via the tram? Your character will leave the round.","Departure",list("Yes","No"))
 	if(user && Adjacent(user) && choice == "Yes")
 		var/mob/observer/dead/newghost = user.ghostize()
 		newghost.timeofdeath = world.time

@@ -77,7 +77,9 @@
 	M.Weaken(2)
 	M.stop_flying()
 	if(get_turf(M) == get_turf(src))
-		M.forceMove(get_step(src, src.dir))
+		var/turf/T = get_step(src, src.dir)
+		if(T?.Enter(M, get_turf(src)))
+			M.forceMove(T)
 	else
 		M.forceMove(get_turf(src))
 
@@ -116,7 +118,7 @@
 
 /obj/machinery/space_heater/stumble_into(mob/living/M)
 	..()
-	if(on)
+	if(state)
 		M.apply_damage(10, BURN)
 		M.emote("scream")
 

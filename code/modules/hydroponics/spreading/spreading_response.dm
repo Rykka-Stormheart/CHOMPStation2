@@ -17,9 +17,9 @@
 	. = ..()
 	if(seed.get_trait(TRAIT_SPREAD)==2)
 		if(isturf(old_loc))
-			unsense_proximity(callback = .HasProximity, center = old_loc)
+			unsense_proximity(callback = /atom/proc/HasProximity, center = old_loc)
 		if(isturf(loc))
-			sense_proximity(callback = .HasProximity)
+			sense_proximity(callback = /atom/proc/HasProximity)
 
 /obj/effect/plant/attack_hand(var/mob/user)
 	manual_unbuckle(user)
@@ -68,12 +68,12 @@
 				var/mob/living/L = A
 				if(!(user in buckled_mobs))
 					L.visible_message(\
-					"<span class='notice'>\The [user] frees \the [L] from \the [src].</span>",\
-					"<span class='notice'>\The [user] frees you from \the [src].</span>",\
+					"<b>\The [user]</b> frees \the [L] from \the [src].",\
+					"<b>\The [user]</b> frees you from \the [src].",\
 					"<span class='warning'>You hear shredding and ripping.</span>")
 				else
 					L.visible_message(\
-					"<span class='notice'>\The [L] struggles free of \the [src].</span>",\
+					"<b>\The [L]</b> struggles free of \the [src].",\
 					"<span class='notice'>You untangle \the [src] from around yourself.</span>",\
 					"<span class='warning'>You hear shredding and ripping.</span>")
 				unbuckle()

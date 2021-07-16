@@ -15,7 +15,7 @@
 	var/supported = 0
 	var/active = 0
 	var/list/resource_field = list()
-	var/obj/item/device/radio/intercom/faultreporter = new /obj/item/device/radio/intercom{channels=list("Supply")}(null)
+	var/obj/item/device/radio/intercom/faultreporter
 
 	var/list/ore_types = list(
 		"hematite" = /obj/item/weapon/ore/iron,
@@ -29,7 +29,7 @@
 		"silicates" = /obj/item/weapon/ore/glass,
 		"carbon" = /obj/item/weapon/ore/coal,
 		"copper" = /obj/item/weapon/ore/copper,
-		"tin" = /obj/item/weapon/ore/tin,
+	//	"tin" = /obj/item/weapon/ore/tin,
 		"bauxite" = /obj/item/weapon/ore/bauxite,
 		"rutile" = /obj/item/weapon/ore/rutile
 		)
@@ -65,6 +65,12 @@
 		cell = new cell(src)
 	default_apply_parts()
 	cell = default_use_hicell()
+	faultreporter = new /obj/item/device/radio/intercom{channels=list("Supply")}(null)
+
+/obj/machinery/mining/drill/Destroy()
+	qdel_null(faultreporter)
+	qdel_null(cell)
+	return ..()
 
 /obj/machinery/mining/drill/get_cell()
 	return cell
@@ -209,10 +215,10 @@
 		if(use_cell_power())
 			active = !active
 			if(active)
-				visible_message("<span class='notice'>\The [src] lurches downwards, grinding noisily.</span>")
+				visible_message("<b>\The [src]</b> lurches downwards, grinding noisily.")
 				need_update_field = 1
 			else
-				visible_message("<span class='notice'>\The [src] shudders to a grinding halt.</span>")
+				visible_message("<b>\The [src]</b> shudders to a grinding halt.")
 		else
 			to_chat(user, "<span class='notice'>The drill is unpowered.</span>")
 	else
@@ -273,8 +279,8 @@
 /obj/machinery/mining/drill/proc/system_error(var/error)
 
 	if(error)
-		src.visible_message("<span class='notice'>\The [src] flashes a '[error]' warning.</span>")
-		faultreporter.autosay(error, src.name, "Supply")
+		src.visible_message("<b>\The [src]</b> flashes a '[error]' warning.")
+		faultreporter.autosay(error, src.name, "Supply", using_map.get_map_levels(z))
 	need_player_check = 1
 	active = 0
 	update_icon()

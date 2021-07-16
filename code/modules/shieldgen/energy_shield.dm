@@ -29,7 +29,7 @@
 
 	if(disabled_for || diffused_for)
 		icon_state = "shield_broken"
-		overlays.Cut() //NOT ssoverlays
+		overlays.Cut() // Snowflake handling, avoiding SSoverlays
 	else
 		icon_state = enabled_icon_state
 		flags |= OVERLAY_QUEUED //Trick SSoverlays
@@ -165,7 +165,7 @@
 		return
 
 	if(!damtype)
-		crash_with("CANARY: shield.take_damage() callled without damtype.")
+		stack_trace("CANARY: shield.take_damage() callled without damtype.")
 
 	if(!damage)
 		return

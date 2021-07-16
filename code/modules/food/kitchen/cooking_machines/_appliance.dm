@@ -194,7 +194,7 @@
 		return
 
 	if(output_options.len)
-		var/choice = input("What specific food do you wish to make with \the [src]?") as null|anything in output_options+"Default"
+		var/choice = tgui_input_list(usr, "What specific food do you wish to make with \the [src]?", "Food Output Choice", output_options+"Default")
 		if(!choice)
 			return
 		if(choice == "Default")
@@ -319,7 +319,7 @@
 		CI = new /datum/cooking_item/(CC)
 		I.forceMove(src)
 		cooking_objs.Add(CI)
-		user.visible_message("<span class='notice'>\The [user] puts \the [I] into \the [src].</span>")
+		user.visible_message("<b>\The [user]</b> puts \the [I] into \the [src].")
 		if (CC.check_contents() == 0)//If we're just putting an empty container in, then dont start any processing.
 			return TRUE
 	else
@@ -333,7 +333,7 @@
 		CI.combine_target = selected_option
 
 	// We can actually start cooking now.
-	user.visible_message("<span class='notice'>\The [user] puts \the [I] into \the [src].</span>")
+	user.visible_message("<b>\The [user]</b> puts \the [I] into \the [src].")
 
 	get_cooking_work(CI)
 	cooking = TRUE
@@ -433,7 +433,7 @@
 
 /obj/machinery/appliance/proc/finish_cooking(var/datum/cooking_item/CI)
 
-	src.visible_message("<span class='notice'>\The [src] pings!</span>")
+	src.visible_message("<b>\The [src]</b> pings!")
 	if(cooked_sound)
 		playsound(get_turf(src), cooked_sound, 50, 1)
 	//Check recipes first, a valid recipe overrides other options
@@ -506,7 +506,7 @@
 		if (!S)
 			continue
 
-		words |= text2list(S.name," ")
+		words |= splittext(S.name," ")
 		cooktypes |= S.cooked
 
 		if (S.reagents && S.reagents.total_volume > 0)
@@ -613,7 +613,7 @@
 			if (CI.container)
 				menuoptions[CI.container.label(menuoptions.len)] = CI
 
-		var/selection = input(user, "Which item would you like to remove?", "Remove ingredients") as null|anything in menuoptions
+		var/selection = tgui_input_list(user, "Which item would you like to remove?", "Remove ingredients", menuoptions)
 		if (selection)
 			var/datum/cooking_item/CI = menuoptions[selection]
 			eject(CI, user)

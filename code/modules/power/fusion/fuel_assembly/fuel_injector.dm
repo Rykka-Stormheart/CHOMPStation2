@@ -43,7 +43,7 @@ GLOBAL_LIST_EMPTY(fuel_injectors)
 /obj/machinery/fusion_fuel_injector/attackby(obj/item/W, mob/user)
 
 	if(istype(W, /obj/item/device/multitool))
-		var/new_ident = input("Enter a new ident tag.", "Fuel Injector", id_tag) as null|text
+		var/new_ident = input(usr, "Enter a new ident tag.", "Fuel Injector", id_tag) as null|text
 		if(new_ident && user.Adjacent(src))
 			id_tag = new_ident
 		return
@@ -61,9 +61,9 @@ GLOBAL_LIST_EMPTY(fuel_injectors)
 		//CHOMPEdit End
 		if(cur_assembly)
 			cur_assembly.forceMove(get_turf(src))
-			visible_message("<span class='notice'>\The [user] swaps \the [src]'s [cur_assembly] for \a [W].</span>")
+			visible_message("<b>\The [user]</b> swaps \the [src]'s [cur_assembly] for \a [W].")
 		else
-			visible_message("<span class='notice'>\The [user] inserts \a [W] into \the [src].</span>")
+			visible_message("<b>\The [user]</b> inserts \a [W] into \the [src].")
 
 		user.drop_from_inventory(W)
 		W.forceMove(src)
@@ -104,7 +104,7 @@ GLOBAL_LIST_EMPTY(fuel_injectors)
 	if(cur_assembly)
 		cur_assembly.forceMove(get_turf(src))
 		user.put_in_hands(cur_assembly)
-		visible_message("<span class='notice'>\The [user] removes \the [cur_assembly] from \the [src].</span>")
+		visible_message("<b>\The [user]</b> removes \the [cur_assembly] from \the [src].")
 		cur_assembly = null
 		return
 	else

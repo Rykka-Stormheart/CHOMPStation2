@@ -50,8 +50,8 @@ when portals are shortly lived, or when portals are made to be obvious with spec
 	opacity = TRUE
 	plane = TURF_PLANE
 	layer = ABOVE_TURF_LAYER
-	appearance_flags = PIXEL_SCALE|KEEP_TOGETHER // Removed TILE_BOUND so things not visible on the other side stay hidden from the viewer.
-
+	appearance_flags = NONE
+	
 	var/obj/effect/map_effect/portal/counterpart = null // The portal line or master that this is connected to, on the 'other side'.
 
 	// Information used to apply `pixel_[x|y]` offsets so that the visuals line up.
@@ -201,7 +201,7 @@ when portals are shortly lived, or when portals are made to be obvious with spec
 			break
 
 	if(!counterpart)
-		crash_with("Portal master [type] ([x],[y],[z]) could not find another portal master with a matching portal_id ([portal_id]).")
+		stack_trace("Portal master [type] ([x],[y],[z]) could not find another portal master with a matching portal_id ([portal_id]).")
 
 /obj/effect/map_effect/portal/master/proc/make_visuals()
 	var/list/observed_turfs = list()
@@ -277,7 +277,8 @@ when portals are shortly lived, or when portals are made to be obvious with spec
 
 	for(var/thing in mobs_to_relay)
 		var/mob/mob = thing
-		var/message = mob.combine_message(message_pieces, verb, M)
+		var/list/combined = mob.combine_message(message_pieces, verb, M)
+		var/message = combined["formatted"]
 		var/name_used = M.GetVoice()
 		var/rendered = null
 		rendered = "<span class='game say'><span class='name'>[name_used]</span> [message]</span>"

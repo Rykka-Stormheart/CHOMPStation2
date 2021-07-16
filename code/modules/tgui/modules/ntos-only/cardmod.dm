@@ -152,7 +152,7 @@
 							to_chat(usr, "<span class='notice'>Hardware error: Printer was unable to print the file. It may be out of paper.</span>")
 							return
 						else
-							computer.visible_message("<span class='notice'>\The [computer] prints out paper.</span>")
+							computer.visible_message("<b>\The [computer]</b> prints out paper.")
 				else
 					var/contents = {"<h4>Crew Manifest</h4>
 									<br>
@@ -162,7 +162,7 @@
 						to_chat(usr, "<span class='notice'>Hardware error: Printer was unable to print the file. It may be out of paper.</span>")
 						return
 					else
-						computer.visible_message("<span class='notice'>\The [computer] prints out paper.</span>")
+						computer.visible_message("<b>\The [computer]</b> prints out paper.")
 			. = TRUE
 		if("modify")
 			if(computer && computer.card_slot)
@@ -193,7 +193,7 @@
 			if(computer && program.can_run(usr, 1) && id_card)
 				var/t1 = params["assign_target"]
 				if(t1 == "Custom")
-					var/temp_t = sanitize(input("Enter a custom job assignment.","Assignment", id_card.assignment), 45)
+					var/temp_t = sanitize(input(usr, "Enter a custom job assignment.","Assignment", id_card.assignment), 45)
 					//let custom jobs function as an impromptu alt title, mainly for sechuds
 					if(temp_t)
 						id_card.assignment = temp_t

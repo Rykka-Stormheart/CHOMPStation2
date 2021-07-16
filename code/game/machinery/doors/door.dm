@@ -11,6 +11,7 @@
 	density = 1
 	can_atmos_pass = ATMOS_PASS_PROC
 	layer = DOOR_OPEN_LAYER
+	blocks_emissive = EMISSIVE_BLOCK_UNIQUE
 	var/open_layer = DOOR_OPEN_LAYER
 	var/closed_layer = DOOR_CLOSED_LAYER
 
@@ -46,7 +47,7 @@
 			playsound(src, S.attack_sound, 75, 1)
 			take_damage(damage)
 		else
-			visible_message("<span class='notice'>\The [user] bonks \the [src] harmlessly.</span>")
+			visible_message("<b>\The [user]</b> bonks \the [src] harmlessly.")
 	user.do_attack_animation(src)
 
 /obj/machinery/door/New()
@@ -272,7 +273,8 @@
 			return
 
 		if(repairing && I.is_crowbar())
-			var/obj/item/stack/material/repairing_sheet = get_material().place_sheet(loc)
+			var/datum/material/mat = get_material()
+			var/obj/item/stack/material/repairing_sheet = mat.place_sheet(loc)
 			repairing_sheet.amount += repairing-1
 			repairing = 0
 			to_chat(user, "<span class='notice'>You remove \the [repairing_sheet].</span>")

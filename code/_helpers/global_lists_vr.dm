@@ -13,6 +13,9 @@ var/global/list/active_ghost_pods = list()
 
 var/global/list/sensorpreflist = list("Off", "Binary", "Vitals", "Tracking", "No Preference")
 
+// Closets have magic appearances
+GLOBAL_LIST_EMPTY(closet_appearances)
+
 //stores numeric player size options indexed by name
 var/global/list/player_sizes_list = list(
 		"Macro" 	= RESIZE_HUGE,
@@ -223,9 +226,31 @@ var/global/list/edible_trash = list(/obj/item/broken_device,
 				/obj/item/weapon/storage/fancy/crayons,
 				/obj/item/weapon/storage/fancy/egg_box,
 				/obj/item/weapon/storage/wallet,
-        			/obj/item/weapon/storage/vore_egg,
-				/obj/item/weapon/material/kitchen, //chompstation addition
-				/obj/item/weapon/bikehorn/tinytether
+				/obj/item/weapon/storage/vore_egg,
+				/obj/item/weapon/bikehorn/tinytether,
+				/obj/item/weapon/material/kitchen, //chompstation addition start
+				/obj/item/weapon/storage/mre,
+				/obj/item/weapon/storage/mrebag,
+				/obj/item/weapon/storage/fancy/crackers,
+				/obj/item/weapon/storage/fancy/heartbox,
+				/obj/item/pizzavoucher,
+				/obj/item/pizzabox,
+				/obj/item/weapon/toy,
+				/obj/item/seeds,
+				/obj/item/clothing/accessory/choker,
+				/obj/item/clothing/accessory/medal,
+				/obj/item/clothing/accessory/tie,
+				/obj/item/clothing/accessory/scarf,
+				/obj/item/clothing/accessory/bracelet,
+				/obj/item/clothing/accessory/locket,
+				/obj/item/weapon/storage/bible,
+				/obj/item/weapon/bikehorn,
+				/obj/item/inflatable/door/torn,
+				/obj/item/weapon/towel,
+				/obj/item/weapon/folder,
+				/obj/item/weapon/clipboard,
+				/obj/item/weapon/coin,
+				/obj/item/clothing/ears //chompstation addition end
 				)
 
 var/global/list/contamination_flavors = list(
@@ -234,6 +259,7 @@ var/global/list/contamination_flavors = list(
 				"Dirty" = contamination_flavors_dirty,
 				"Musky" = contamination_flavors_musky,
 				"Smelly" = contamination_flavors_smelly,
+				"Slimy" = contamination_flavors_slimy,
 				"Wet" = contamination_flavors_wet)
 
 var/global/list/contamination_flavors_generic = list("acrid",
@@ -437,6 +463,21 @@ var/global/list/contamination_flavors_musky = list("drenched",
 				"sticky",
 				"tainted")
 
+var/global/list/contamination_flavors_slimy = list("slimy",
+				"sloppy",
+				"drippy",
+				"glistening",
+				"dripping",
+				"gunky",
+				"slimed",
+				"mucky",
+				"viscous",
+				"dank",
+				"glutinous",
+				"syrupy",
+				"slippery",
+				"gelatinous")
+
 var/global/list/contamination_colors = list("green",
 				"white",
 				"black",
@@ -475,6 +516,18 @@ var/global/list/remainless_species = list(SPECIES_PROMETHEAN,
 				SPECIES_GOLEM,					//Some special species that may or may not be ever used in event too,
 				SPECIES_SHADEKIN)			//Shadefluffers just poof away
 
+/var/global/list/alt_titles_with_icons = list(
+				"Virologist",
+				"Apprentice Engineer",
+				"Medical Intern",
+				"Research Intern",
+				"Security Cadet",
+				"Jr. Cargo Tech",
+				"Jr. Explorer",
+				"Server",
+				"Electrician",
+				"Barista")
+
 /var/global/list/existing_solargrubs = list()
 
 /hook/startup/proc/init_vore_datum_ref_lists()
@@ -492,19 +545,27 @@ var/global/list/remainless_species = list(SPECIES_PROMETHEAN,
 		var/datum/trait/instance = new path()
 		if(!instance.name)
 			continue //A prototype or something
-		var/category = instance.category
 		var/cost = instance.cost
 		traits_costs[path] = cost
 		all_traits[path] = instance
+
+	// Shakey shakey shake
+	sortTim(all_traits, /proc/cmp_trait_datums_name, associative = TRUE)
+
+	// Split 'em up
+	for(var/traitpath in all_traits)
+		var/datum/trait/T = all_traits[traitpath]
+		var/category = T.category
 		switch(category)
 			if(-INFINITY to -0.1)
-				negative_traits[path] = instance
+				negative_traits[traitpath] = T
 			if(0)
-				neutral_traits[path] = instance
-				if(!(instance.custom_only))
-					everyone_traits[path] = instance
+				neutral_traits[traitpath] = T
+				if(!(T.custom_only))
+					everyone_traits[traitpath] = T
 			if(0.1 to INFINITY)
-				positive_traits[path] = instance
+				positive_traits[traitpath] = T
+
 
 	// Weaver recipe stuff
 	paths = typesof(/datum/weaver_recipe/structure) - /datum/weaver_recipe/structure

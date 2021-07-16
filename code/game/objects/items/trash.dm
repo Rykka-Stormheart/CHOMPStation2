@@ -190,7 +190,7 @@
 /obj/item/trash/spitgum
 	name = "old gum"
 	desc = "A disgusting chewed up wad of gum."
-	icon = 'icons/obj/clothing/masks.dmi'
+	icon = 'icons/inventory/face/item.dmi'
 	icon_state = "spit-gum"
 	drop_sound = 'sound/items/drop/flesh.ogg'
 	pickup_sound = 'sound/items/pickup/flesh.ogg'
@@ -198,7 +198,7 @@
 /obj/item/trash/lollibutt
 	name = "lollipop stick"
 	desc = "A lollipop stick devoid of pop."
-	icon = 'icons/obj/clothing/masks.dmi'
+	icon = 'icons/inventory/face/item.dmi'
 	icon_state = "pop-stick"
 	drop_sound = 'sound/items/drop/component.ogg'
 	pickup_sound = 'sound/items/pickup/component.ogg'
@@ -206,7 +206,7 @@
 /obj/item/trash/spitwad
 	name = "spit wad"
 	desc = "A disgusting spitwad."
-	icon = 'icons/obj/clothing/masks.dmi'
+	icon = 'icons/inventory/face/item.dmi'
 	icon_state = "spit-chew"
 	drop_sound = 'sound/items/drop/flesh.ogg'
 	pickup_sound = 'sound/items/pickup/flesh.ogg'
@@ -214,3 +214,172 @@
 
 /obj/item/trash/attack(mob/M as mob, mob/living/user as mob)
 	return
+
+
+/obj/item/trash/beef
+	name = "empty beef can"
+	icon_state = "beef"
+	drop_sound = 'sound/items/drop/soda.ogg'
+	pickup_sound = 'sound/items/pickup/soda.ogg'
+
+/obj/item/trash/beans
+	name = "empty bean can"
+	icon_state = "beans"
+	drop_sound = 'sound/items/drop/soda.ogg'
+	pickup_sound = 'sound/items/pickup/soda.ogg'
+
+/obj/item/trash/spinach
+	name = "empty spinach can"
+	icon_state = "spinach"
+	drop_sound = 'sound/items/drop/soda.ogg'
+	pickup_sound = 'sound/items/pickup/soda.ogg'
+
+/obj/item/trash/fishegg
+	name = "empty fisheggs can"
+	icon_state = "fisheggs"
+	drop_sound = 'sound/items/drop/soda.ogg'
+	pickup_sound = 'sound/items/pickup/soda.ogg'
+
+/obj/item/trash/carpegg
+	name = "empty carpeggs can"
+	icon_state = "carpeggs"
+	drop_sound = 'sound/items/drop/soda.ogg'
+	pickup_sound = 'sound/items/pickup/soda.ogg'
+
+/obj/item/trash/salo
+	name = "salo pack"
+	icon_state = "pigfat"
+
+/obj/item/trash/croutons
+	name = "suhariki pack"
+	icon_state = "croutons"
+
+/obj/item/trash/squid
+	name = "calamari pack"
+	icon_state = "squid"
+
+/obj/item/trash/driedfish
+	name = "vobla pack"
+	icon_state = "driedfish"
+
+/obj/item/trash/lunacakewrap
+	name = "cake wrapper"
+	icon_state = "cakewrap"
+
+/obj/item/trash/mochicakewrap
+	name = "cake wrapper"
+	icon_state = "mochicakewrap"
+
+/obj/item/trash/mooncakewrap
+	name = "cake wrapper"
+	icon_state = "mooncakewrap"
+
+/obj/item/trash/tidegobs
+	name = "tide gob bag"
+	icon_state = "tidegobs"
+
+/obj/item/trash/saturno
+	name = "\improper saturn-Os bag"
+	icon_state = "saturn0s"
+
+/obj/item/trash/jupiter
+	name = "gello cup"
+	icon_state = "jupiter"
+
+/obj/item/trash/pluto
+	name = "rod bag"
+	icon_state = "pluto"
+
+/obj/item/trash/venus
+	name = "hot cakes bag"
+	icon_state = "venus"
+
+/obj/item/trash/mars
+	name = "frouka box"
+	icon_state = "mars"
+
+/obj/item/trash/oort
+	name = "oort rock bag"
+	icon_state = "oort"
+
+/obj/item/trash/weebonuts
+	name = "red alert nuts bag"
+	icon_state = "weebonuts"
+
+/obj/item/trash/stick
+	name = "stick"
+	desc = "a stick from some snack or other food item, not even useful as crafting material."
+	icon_state = "stick"
+
+/obj/item/trash/maps
+	name = "empty MAPS can"
+	icon_state = "maps"
+	drop_sound = 'sound/items/drop/soda.ogg'
+	pickup_sound = 'sound/items/pickup/soda.ogg'
+
+/obj/item/trash/spacer_cake_wrap
+	name = "snack cake wrapper"
+	icon_state = "spacer_cake_wrap"
+
+/obj/item/trash/sun_snax
+	name = "sun snax bag"
+	icon_state = "sun_snax"
+
+/obj/item/trash/wasabi_peas
+	name = "wasabi peas bag"
+	icon_state = "wasabi_peas"
+
+/obj/item/trash/namagashi
+	name = "namagashi bag"
+	icon_state = "namagashi"
+
+/obj/item/trash/pocky
+	name = "pocky bag"
+	icon_state = "pocky"
+
+/obj/item/trash/appleberry
+	name = "appleberry can"
+	icon_state = "appleberry"
+	drop_sound = 'sound/items/drop/soda.ogg'
+	pickup_sound = 'sound/items/pickup/soda.ogg'
+
+/obj/item/trash/hakarl
+	name = "\improper Indigo Co. Hákarl bag"
+	icon_state = "hakarl"
+
+/obj/item/trash/pretzel
+	name = "\improper Value Pretzel Snack"
+	icon_state = "pretzel"
+
+/obj/item/trash/sweetration
+	name = "desert ration bag"
+	icon_state = "baseration"
+
+/obj/item/trash/genration
+	name = "generic ration bag"
+	icon_state = "genration"
+
+/obj/item/trash/meatration
+	name = "meat ration bag"
+	icon_state = "meatration"
+
+/obj/item/trash/vegration
+	name = "veggie ration bag"
+	icon_state = "vegration"
+
+/obj/item/trash/tgmc_mre
+	name = "\improper CRS ration bag"
+	icon_state = "tgmc_mre_trash"
+
+/obj/item/trash/vendor_burger
+	name = "burger wrapper"
+	icon_state = "packburger_wrapper"
+	
+/obj/item/trash/vendor_hotdog
+	name = "hotdog wrapper"
+	icon_state = "packhotdog_wrapper"
+	
+/obj/item/trash/vendor_burrito
+	name = "burrito wrapper"
+	icon_state = "packburrito_wrapper"
+	

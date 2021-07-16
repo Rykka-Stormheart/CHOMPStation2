@@ -10,7 +10,7 @@
 	anchored = 0
 	density = 0
 	pressure_resistance = 5*ONE_ATMOSPHERE
-	matter = list(DEFAULT_WALL_MATERIAL = 1850)
+	matter = list(MAT_STEEL = 1850)
 	level = 2
 	var/sortType = ""
 	var/ptype = 0
@@ -23,7 +23,7 @@
 	ptype = newtype
 	dir = newdir
 	// Disposals handle "bent"/"corner" strangely, handle this specially.
-	if(ptype == DISPOSAL_PIPE_STRAIGHT && dir in cornerdirs)
+	if(ptype == DISPOSAL_PIPE_STRAIGHT && (dir in cornerdirs))
 		ptype = DISPOSAL_PIPE_CORNER
 		switch(dir)
 			if(NORTHWEST)

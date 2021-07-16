@@ -8,7 +8,7 @@
 	reagent_state = LIQUID
 	color = "#00BFFF"
 	overdose = REAGENTS_OVERDOSE * 2
-	metabolism = REM * 0.5
+	metabolism = REM * 0.2
 	scannable = 1
 
 /datum/reagent/inaprovaline/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
@@ -24,9 +24,9 @@
 	reagent_state = LIQUID
 	color = "#00BFFF"
 	overdose = REAGENTS_OVERDOSE * 2
-	metabolism = REM * 0.5
+	metabolism = REM * 0.2
 	scannable = 1
-	touch_met = REM * 0.75
+	touch_met = REM * 0.3
 	can_overdose_touch = TRUE
 
 /datum/reagent/inaprovaline/topical/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
@@ -60,7 +60,7 @@
 
 /datum/reagent/bicaridine/overdose(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
-	var/wound_heal = 1.5 * removed
+	var/wound_heal = 2.5 * removed
 	M.eye_blurry = min(M.eye_blurry + wound_heal, 250)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
@@ -240,7 +240,8 @@
 /datum/reagent/carthatoline/overdose(var/mob/living/carbon/M, var/alien, var/removed)
 	M.adjustHalLoss(2)
 	var/mob/living/carbon/human/H = M
-	H.internal_organs_by_name[O_STOMACH].take_damage(removed * 2) // Causes stomach contractions, makes sense for an overdose to make it much worse.
+	var/obj/item/organ/internal/stomach/st = H.internal_organs_by_name[O_STOMACH]
+	st?.take_damage(removed * 2) // Causes stomach contractions, makes sense for an overdose to make it much worse.
 
 /datum/reagent/dexalin
 	name = "Dexalin"
@@ -353,7 +354,7 @@
 		var/obj/item/stack/medical/M = C.upgrade_stack(to_produce)
 
 		if(M && M.amount)
-			holder.my_atom.visible_message("<span class='notice'>\The [packname] bubbles.</span>")
+			holder.my_atom.visible_message("<b>\The [packname]</b> bubbles.")
 			remove_self(to_produce * 5)
 
 /datum/reagent/cryoxadone
@@ -619,7 +620,8 @@
 	..()
 	if(prob(5)) // 1 in 20
 		var/mob/living/carbon/human/H = M
-		H.internal_organs_by_name[O_HEART].take_damage(1)
+		var/obj/item/organ/internal/heart/ht = H.internal_organs_by_name[O_HEART]
+		ht?.take_damage(1)
 		to_chat(M, "<span class='warning'>Huh... Is this what a heart attack feels like?</span>")
 
 /datum/reagent/alkysine
@@ -727,7 +729,7 @@
 				if(istype(R,/datum/reagent/osteodaxon))
 					totalvol += R.volume
 		totalvol += volume
-		if(totalvol >= 5)
+		if(totalvol >= 1)
 			for(var/obj/item/organ/external/O in H.bad_external_organs)
 				if(O.status & ORGAN_BROKEN)
 					O.mend_fracture()		//Only works if the bone won't rebreak, as usual
@@ -1287,7 +1289,7 @@
 		var/obj/item/stack/medical/M = C.upgrade_stack(to_produce)
 
 		if(M && M.amount)
-			holder.my_atom.visible_message("<span class='notice'>\The [packname] bubbles.</span>")
+			holder.my_atom.visible_message("<b>\The [packname]</b> bubbles.")
 			remove_self(to_produce)
 
 /datum/reagent/sterilizine

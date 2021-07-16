@@ -142,10 +142,10 @@
 	item_state = "boxing"
 	special_attack_type = /datum/unarmed_attack/holopugilism
 
-datum/unarmed_attack/holopugilism
+/datum/unarmed_attack/holopugilism
 	sparring_variant_type = /datum/unarmed_attack/holopugilism
 
-datum/unarmed_attack/holopugilism/unarmed_override(var/mob/living/carbon/human/user,var/mob/living/carbon/human/target,var/zone)
+/datum/unarmed_attack/holopugilism/unarmed_override(var/mob/living/carbon/human/user,var/mob/living/carbon/human/target,var/zone)
 	user.do_attack_animation(src)
 	var/damage = rand(0, 9)
 	if(!damage)
@@ -513,5 +513,5 @@ datum/unarmed_attack/holopugilism/unarmed_override(var/mob/living/carbon/human/u
 	derez()
 
 /mob/living/simple_mob/animal/space/carp/holodeck/proc/derez()
-	visible_message("<span class='notice'>\The [src] fades away!</span>")
+	visible_message("<b>\The [src]</b> fades away!")
 	qdel(src)

@@ -554,7 +554,7 @@
 	//He's dead, jim
 	if((state == 1) && owner && (owner.stat == DEAD))
 		update_state(2)
-		audible_message("<span class='warning'>The [name] begins flashing red.</span>")
+		visible_message("<span class='warning'>The [name] begins flashing red.</span>")
 		sleep(30)
 		visible_message("<span class='warning'>The [name] shatters into dust!</span>")
 		if(owner_c)
@@ -626,7 +626,7 @@
 	force = 5.0
 	throwforce = 7.0
 	w_class = ITEMSIZE_SMALL
-	matter = list(DEFAULT_WALL_MATERIAL = 50)
+	matter = list(MAT_STEEL = 50)
 	attack_verb = list("bludgeoned", "whacked", "disciplined", "thrashed")
 
 /obj/item/weapon/cane/fluff/tasald
@@ -645,7 +645,7 @@
     force = 1.0
     throwforce = 2.0
     w_class = ITEMSIZE_SMALL
-    matter = list(DEFAULT_WALL_MATERIAL = 50)
+    matter = list(MAT_STEEL = 50)
     attack_verb = list("sparkled", "whacked", "twinkled", "radiated", "dazzled", "zapped")
     hitsound = 'sound/weapons/sparkle.ogg'
     var/last_use = 0
@@ -769,11 +769,12 @@
 	icon_state = "dragor_dot"
 	w_class = ITEMSIZE_SMALL
 
-	attack_self(mob/user as mob)
-		if(user.ckey == "pontifexminimus")
-			user.verbs |= /mob/living/carbon/human/proc/shapeshifter_select_gender
-		else
-			return
+/obj/item/weapon/fluff/dragor_dot/attack_self(mob/user as mob)
+	if(user.ckey == "pontifexminimus")
+		user.verbs |= /mob/living/carbon/human/proc/shapeshifter_select_gender
+	else
+		return
+
 //LuminescentRing: Briana Moore
 /obj/item/weapon/storage/backpack/messenger/black/fluff/briana
 	name = "2561 graduation bag"

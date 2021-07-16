@@ -7,7 +7,7 @@
 
 	icon_override = 'icons/vore/custom_guns_vr.dmi'
 	item_state = "gbuster"
-	item_icons = list(slot_r_hand_str = 'icons/vore/custom_guns_vr.dmi', slot_l_hand_str = 'icons/vore/custom_guns_vr.dmi', "slot_belt" = 'icons/mob/belt_vr.dmi')
+	item_icons = list(slot_r_hand_str = 'icons/vore/custom_guns_vr.dmi', slot_l_hand_str = 'icons/vore/custom_guns_vr.dmi', "slot_belt" = 'icons/inventory/belt/mob_vr.dmi')
 
 	w_class = ITEMSIZE_NORMAL
 	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 4)
@@ -89,7 +89,7 @@
 	edge = initial(edge)
 	w_class = initial(w_class)
 	set_light(0,0)
-	attack_verb = list()
+	attack_verb = null
 
 
 /obj/item/weapon/cell/device/weapon/gunsword/attack_self(mob/living/user as mob)
@@ -123,4 +123,4 @@
 		return (BRUTELOSS|FIRELOSS)
 
 /obj/item/weapon/cell/device/weapon/gunsword/update_icon()
-	overlays.Cut()
+	cut_overlays()

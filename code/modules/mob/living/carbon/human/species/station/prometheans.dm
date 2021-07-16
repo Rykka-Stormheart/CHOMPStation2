@@ -55,8 +55,8 @@ var/datum/species/shapeshifter/promethean/prometheans
 	gluttonous =	1
 	virus_immune =	1
 	blood_volume =	560
-	brute_mod =		0.75
-	burn_mod =		2
+	brute_mod =		0.7  //chompedit Old values of .75 brute and 2 burn were imbalanced.
+	burn_mod =		1.6  //chompedit
 	oxy_mod =		0
 	flash_mod =		0.5 //No centralized, lensed eyes.
 	item_slowdown_mod = 1.33
@@ -170,7 +170,7 @@ var/datum/species/shapeshifter/promethean/prometheans
 			if(FEMALE)
 				t_him = "her"
 
-	H.visible_message("<span class='notice'>\The [H] glomps [target] to make [t_him] feel better!</span>", \
+	H.visible_message("<b>\The [H]</b> glomps [target] to make [t_him] feel better!", \
 					"<span class='notice'>You glomp [target] to make [t_him] feel better!</span>")
 	H.apply_stored_shock_to(target)
 

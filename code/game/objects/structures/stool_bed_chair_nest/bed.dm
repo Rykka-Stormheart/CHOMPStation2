@@ -26,7 +26,7 @@
 	..(newloc)
 	color = null
 	if(!new_material)
-		new_material = DEFAULT_WALL_MATERIAL
+		new_material = MAT_STEEL
 	material = get_material_by_name(new_material)
 	if(!istype(material))
 		qdel(src)
@@ -202,7 +202,7 @@
 	icon = 'icons/obj/rollerbed.dmi'
 	icon_state = "rollerbed"
 	anchored = 0
-	surgery_odds = 75
+	surgery_odds = 50 //VOREStation Edit
 	var/bedtype = /obj/structure/bed/roller
 	var/rollertype = /obj/item/roller
 

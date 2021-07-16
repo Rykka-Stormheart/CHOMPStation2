@@ -35,7 +35,7 @@
 		spawn(0)
 			deactivate()
 
-/datum/nifsoft/soulcatcher/deactivate()
+/datum/nifsoft/soulcatcher/deactivate(var/force = FALSE)
 	if((. = ..()))
 		return TRUE
 
@@ -44,16 +44,16 @@
 
 /datum/nifsoft/soulcatcher/install()
 	if((. = ..()))
-		nif.set_flag(NIF_O_SCOTHERS,NIF_FLAGS_OTHER)	//Required on install, because other_flags aren't sufficient for our complicated settings.
+		//nif.set_flag(NIF_O_SCOTHERS,NIF_FLAGS_OTHER)	//Only required on install if the flag is in the default setting_flags list defined few lines above.
 		if(nif?.human)
-			nif.human.verbs |= /mob/living/carbon/human/nsay
-			nif.human.verbs |= /mob/living/carbon/human/nme
+			nif.human.verbs |= /mob/proc/nsay
+			nif.human.verbs |= /mob/proc/nme
 
 /datum/nifsoft/soulcatcher/uninstall()
 	QDEL_LIST_NULL(brainmobs)
 	if((. = ..()) && nif?.human) //Sometimes NIFs are deleted outside of a human
-		nif.human.verbs -= /mob/living/carbon/human/nsay
-		nif.human.verbs -= /mob/living/carbon/human/nme
+		nif.human.verbs -= /mob/proc/nsay
+		nif.human.verbs -= /mob/proc/nme
 
 /datum/nifsoft/soulcatcher/proc/save_settings()
 	if(!nif)
@@ -123,7 +123,7 @@
 	"AR Projecting \[[setting_flags & NIF_SC_PROJECTING ? "Enabled" : "Disabled"]\]" = NIF_SC_PROJECTING,
 	"Design Inside",
 	"Erase Contents")
-	var/choice = input(nif.human,"Select a setting to modify:","Soulcatcher NIFSoft") as null|anything in settings_list
+	var/choice = tgui_input_list(nif.human,"Select a setting to modify:","Soulcatcher NIFSoft", settings_list)
 	if(choice in settings_list)
 		switch(choice)
 
@@ -142,9 +142,9 @@
 				return TRUE
 
 			if("Erase Contents")
-				var/mob/living/carbon/brain/caught_soul/brainpick = input(nif.human,"Select a mind to delete:","Erase Mind") as null|anything in brainmobs
+				var/mob/living/carbon/brain/caught_soul/brainpick = tgui_input_list(nif.human,"Select a mind to delete:","Erase Mind", brainmobs)
 
-				var/warning = alert(nif.human,"Are you SURE you want to erase \"[brainpick]\"?","Erase Mind","CANCEL","DELETE","CANCEL")
+				var/warning = tgui_alert(nif.human,"Are you SURE you want to erase \"[brainpick]\"?","Erase Mind",list("CANCEL","DELETE"))
 				if(warning == "DELETE")
 					brainmobs -= brainpick
 					qdel(brainpick)
@@ -336,7 +336,7 @@
 		return FALSE
 	..()
 
-/mob/living/carbon/brain/caught_soul/show_message()
+/mob/living/carbon/brain/caught_soul/show_message(msg, type, alt, alt_type)
 	if(ext_blind || !client)
 		return FALSE
 	..()
@@ -363,7 +363,7 @@
 	else
 		return ..(direction)
 
-/mob/living/carbon/brain/caught_soul/say(var/message)
+/mob/living/carbon/brain/caught_soul/say(var/message, var/datum/language/speaking = null, var/whispering = 0)
 	if(silent) return FALSE
 	soulcatcher.say_into(message,src,eyeobj)
 
@@ -482,9 +482,12 @@
 	set desc = "Speak into your NIF's Soulcatcher."
 	set category = "IC"
 
+	src.nsay_act(message)
+
+/mob/proc/nsay_act(message as text|null)
 	to_chat(src, SPAN_WARNING("You must be a humanoid with a NIF implanted to use that."))
 
-/mob/living/carbon/human/nsay(message as text|null)
+/mob/living/carbon/human/nsay_act(message as text|null)
 	if(stat != CONSCIOUS)
 		to_chat(src,SPAN_WARNING("You can't use NSay while unconscious."))
 		return
@@ -499,7 +502,7 @@
 		to_chat(src,SPAN_WARNING("You need a loaded mind to use NSay."))
 		return
 	if(!message)
-		message = input("Type a message to say.","Speak into Soulcatcher") as text|null
+		message = input(usr, "Type a message to say.","Speak into Soulcatcher") as text|null
 	if(message)
 		var/sane_message = sanitize(message)
 		SC.say_into(sane_message,src)
@@ -509,9 +512,12 @@
 	set desc = "Emote into your NIF's Soulcatcher."
 	set category = "IC"
 	
+	src.nme_act(message)
+
+/mob/proc/nme_act(message as text|null)
 	to_chat(src, SPAN_WARNING("You must be a humanoid with a NIF implanted to use that."))
 
-/mob/living/carbon/human/nme(message as text|null)
+/mob/living/carbon/human/nme_act(message as text|null)
 	if(stat != CONSCIOUS)
 		to_chat(src,SPAN_WARNING("You can't use NMe while unconscious."))
 		return
@@ -527,7 +533,7 @@
 		return
 
 	if(!message)
-		message = input("Type an action to perform.","Emote into Soulcatcher") as text|null
+		message = input(usr, "Type an action to perform.","Emote into Soulcatcher") as text|null
 	if(message)
 		var/sane_message = sanitize(message)
 		SC.emote_into(sane_message,src)
@@ -582,7 +588,7 @@
 	set category = "Soulcatcher"
 
 	if(!message)
-		message = input("Type a message to say.","Speak into Soulcatcher") as text|null
+		message = input(usr, "Type a message to say.","Speak into Soulcatcher") as text|null
 	if(message)
 		var/sane_message = sanitize(message)
 		soulcatcher.say_into(sane_message,src,null)
@@ -593,7 +599,7 @@
 	set category = "Soulcatcher"
 
 	if(!message)
-		message = input("Type an action to perform.","Emote into Soulcatcher") as text|null
+		message = input(usr, "Type an action to perform.","Emote into Soulcatcher") as text|null
 	if(message)
 		var/sane_message = sanitize(message)
 		soulcatcher.emote_into(sane_message,src,null)

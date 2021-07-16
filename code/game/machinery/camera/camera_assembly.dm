@@ -6,7 +6,7 @@
 	w_class = ITEMSIZE_SMALL
 	anchored = 0
 
-	matter = list(DEFAULT_WALL_MATERIAL = 700,"glass" = 300)
+	matter = list(MAT_STEEL = 700,MAT_GLASS = 300)
 
 	//	Motion, EMP-Proof, X-Ray
 	var/list/obj/item/possible_upgrades = list(/obj/item/device/assembly/prox_sensor, /obj/item/stack/material/osmium, /obj/item/weapon/stock_parts/scanning_module)
@@ -101,16 +101,16 @@
 
 				C.auto_turn()
 
-				C.replace_networks(uniquelist(tempnetwork))
+				C.replace_networks(uniqueList(tempnetwork))
 
 				C.c_tag = input
 
 				for(var/i = 5; i >= 0; i -= 1)
-					var/direct = input(user, "Direction?", "Assembling Camera", null) in list("LEAVE IT", "NORTH", "EAST", "SOUTH", "WEST" )
+					var/direct = tgui_input_list(user, "Direction?", "Assembling Camera", list("NORTH", "EAST", "SOUTH", "WEST", "LEAVE IT"))
 					if(direct != "LEAVE IT")
 						C.dir = text2dir(direct)
 					if(i != 0)
-						var/confirm = alert(user, "Is this what you want? Chances Remaining: [i]", "Confirmation", "Yes", "No")
+						var/confirm = tgui_alert(user, "Is this what you want? Chances Remaining: [i]", "Confirmation", list("Yes", "No"))
 						if(confirm == "Yes")
 							break
 				return
