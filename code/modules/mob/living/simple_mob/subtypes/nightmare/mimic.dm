@@ -48,6 +48,7 @@
 	form = null
 	return ..()
 	
+
 /atom/movable/examine(mob/user, infix, suffix)
 	. = ..()
 	var/datum/riding/morph/morph_riding = riding_datum
@@ -69,7 +70,6 @@
 		. = ..()*/
 		
 // Mimic Abilities Start Here //
-// Morphing into an object //
 
 // De-Morphing (Resuming our Mimic Form)
 /mob/living/simple_mob/nightmare/mimic/verb/unmorph()
