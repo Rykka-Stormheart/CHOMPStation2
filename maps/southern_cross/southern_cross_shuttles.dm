@@ -166,7 +166,7 @@
 // Arrivals Shuttle
 // CHOMPEdit Start: Arrivals Ferry to/from CC
 /datum/shuttle/autodock/ferry/arrivals/southern_cross/shuttle1
-	name = "Arrivals"
+	name = "Arrivals Shuttle 1"
 	location = FERRY_LOCATION_OFFSITE
 	shuttle_area = /area/shuttle/arrivals/shuttleone
 	landmark_offsite = "arrivals_offsite_dock1"
@@ -175,7 +175,7 @@
 	docking_controller_tag = "arrivals_shuttle1"
 
 /datum/shuttle/autodock/ferry/arrivals/southern_cross/shuttle2
-	name = "Arrivals"
+	name = "Arrivals Shuttle 2"
 	location = FERRY_LOCATION_OFFSITE
 	shuttle_area = /area/shuttle/arrivals/shuttletwo
 	landmark_offsite = "arrivals_offsite_dock2"
