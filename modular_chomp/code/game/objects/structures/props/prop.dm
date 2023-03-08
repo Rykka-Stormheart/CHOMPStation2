@@ -61,6 +61,50 @@
 	pixel_x = (dir & 3) ? 0 : (dir == 4 ? 24 : -24)
 	pixel_y = (dir & 3) ? (dir == 1 ? 20 : -20) : 0
 
+// Fire alarms, Air Alarms.
+// These exist solely to enable easier copy/paste.
+/obj/structure/prop/machinery/firealarm
+	name = "fire alarm"
+	desc = "<i>\"Pull this in case of emergency\"</i>. Thus, keep pulling it forever."
+	icon = 'icons/obj/monitors.dmi'
+	icon_state = "fire"
+	layer = ABOVE_WINDOW_LAYER
+	blocks_emissive = FALSE
+	vis_flags = VIS_HIDE // They have an emissive that looks bad in openspace due to their wall-mounted nature
+	anchored = TRUE
+	unacidable = TRUE
+	density = FALSE
+
+/obj/structure/prop/machinery/firealarm/New()
+	..()
+	if (!pixel_x && !pixel_y)
+		offset_alarm()
+	update_icon()
+
+/obj/structure/prop/machinery/firealarm/proc/offset_alarm()
+	pixel_x = (dir & 3) ? 0 : (dir == 4 ? 26 : -26)
+	pixel_y = (dir & 3) ? (dir == 1 ? -26 : 26) : 0
+
+/obj/structure/prop/machinery/firealarm/update_icon()
+	cut_overlays()
+	. = list()
+	. += mutable_appearance(icon, "fire0")
+	. += emissive_appearance(icon, "fire0")
+	. += mutable_appearance(icon, "overlay_green")
+	. += emissive_appearance(icon, "overlay_green")
+	add_overlay(.)
+	set_light(l_range = 2, l_power = 0.25, l_color = "#00ff00")
+
+/obj/structure/prop/machinery/firealarm/alarms_hidden
+
+/obj/structure/prop/machinery/firealarm/angled
+	icon = 'icons/obj/wall_machines_angled.dmi'
+
+/obj/structure/prop/machinery/firealarm/angled/hidden
+
+/obj/structure/prop/machinery/firealarm/angled/offset_alarm()
+	pixel_x = (dir & 3) ? 0 : (dir == 4 ? 20 : -20)
+	pixel_y = (dir & 3) ? (dir == 1 ? -18 : 21) : 0
 
 
 /obj/structure/prop/machinery/alarm
