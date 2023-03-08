@@ -44093,15 +44093,22 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/embedded_controller/radio/airlock/docking_port{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume,
+/obj/effect/map_helper/airlock/atmos/chamber_pump,
+/obj/machinery/embedded_controller/radio/airlock/docking_port_multi{
 	dir = 1;
 	frequency = 1380;
 	id_tag = "d2_w3_d_airlock";
+	master_tag = "arrivals_dock";
 	pixel_y = -27;
-	req_one_access = list(13)
+	req_one_access = list(13);
+	tag_airlock_mech_sensor = null;
+	tag_airpump = null;
+	tag_chamber_sensor = null;
+	tag_exterior_door = null;
+	tag_interior_door = null;
+	tag_shuttle_mech_sensor = null
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume,
-/obj/effect/map_helper/airlock/atmos/chamber_pump,
 /turf/simulated/floor/tiled,
 /area/hallway/secondary/entry/D3)
 "cUx" = (
@@ -61481,12 +61488,6 @@
 /turf/space,
 /area/space)
 "myg" = (
-/obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
-	id_tag = "d2_w3_b_airlock";
-	pixel_y = 27;
-	req_one_access = list(13)
-	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
 	id_tag = null
@@ -61495,6 +61496,19 @@
 	dir = 4
 	},
 /obj/effect/map_helper/airlock/atmos/chamber_pump,
+/obj/machinery/embedded_controller/radio/airlock/docking_port_multi{
+	frequency = 1380;
+	id_tag = "d2_w3_b_airlock";
+	master_tag = "arrivals_dock";
+	pixel_y = 27;
+	req_one_access = list(13);
+	tag_airlock_mech_sensor = null;
+	tag_airpump = null;
+	tag_chamber_sensor = null;
+	tag_exterior_door = null;
+	tag_interior_door = null;
+	tag_shuttle_mech_sensor = null
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/secondary/entry/D3)
 "myp" = (
