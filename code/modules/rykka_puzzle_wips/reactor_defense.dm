@@ -556,7 +556,7 @@ GLOBAL_LIST_EMPTY(reactor_mob_spawners) // Define our global list here. This is 
 				to_world("Wave ended!") // Debug announce, comment out later
 				state = ENGAGED // Now we're back to engaged
 				if(!persistent_health) // Are we preserving reactor health between waves? If not, then reset it here.
-					health == maxhealth
+					health = maxhealth
 				return // Don't execute the code underneath us.
 		else // If we're not continuing waves, then we need to reset.
 			state = IDLE
@@ -576,7 +576,7 @@ GLOBAL_LIST_EMPTY(reactor_mob_spawners) // Define our global list here. This is 
 	ten_notif_played = FALSE // Reset this.
 
 	if(!persistent_health) // Are we preserving reactor health between waves? If not, then reset it here.
-		health == maxhealth
+		health = maxhealth
 
 	reset_lights() // Restoring lights to defaults!
 
@@ -609,7 +609,7 @@ GLOBAL_LIST_EMPTY(reactor_mob_spawners) // Define our global list here. This is 
 	to_world("Warmup ended!")
 
 	if(!persistent_health) // Are we preserving reactor health between waves? If not, then reset it here.
-		health == maxhealth
+		health = maxhealth
 
 	reset_lights() // Restoring lights to defaults!
 
