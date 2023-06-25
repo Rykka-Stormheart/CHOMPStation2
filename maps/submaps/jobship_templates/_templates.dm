@@ -4,9 +4,9 @@
 // #define SERV 4 // Maybe someday chefs will be able to order a ship full of people to feed. /s
 
 #define TUTORIAL 0
-#define EASY 1
-#define MEDIUM 2
-#define HARD 3
+#define BEGINNER 1
+#define STANDARD 2
+#define DIFFICULT 3
 #define VETERAN 4
 
 // This causes PoI maps to get 'checked' and compiled, when undergoing a unit test.
@@ -27,6 +27,7 @@
 	var/department = MED
 	var/difficulty = TUTORIAL						// How hard your ship's template is.
 	var/expected_completion_time = 10 MINUTES 		// How long it should take for a skilled team to complete the ship.
+	var/stationary = TRUE							// Is your ship intended to be able to fly? NOTE: This does NOT mean you can fly it manually. This simply allows it to jump and dock rather than staying on its own Z-level.
 
 // Stolen from map_template/shelter
 /datum/map_template/ship_poi/proc/update_lighting(turf/deploy_location)
@@ -47,6 +48,7 @@ Looking to add new job ship POI's with as little code knowledge as possible? Her
 - The "department" variable indicates which department is supposed to handle the ship.
 - The "difficulty" variable indicates how hard your ship is for a department to do.
 - The "expected completion time" variable is how fast a skilled team should complete the ship. This should directly feed into difficulty, along with # of mobs, so on.
+- The "stationary" variable indicates if your ship is intended to be movable (IE, a shuttle), and if so, will need a console and such defined to allow it to jump from its own z to station.
 -ADD YOUR MAP(s) TO THE #include LIST BELOW. This lets github catch POI's breaking in the future.
 -Keep templates alphebetical.
 -Include the map dimensions in the map file name.
@@ -67,13 +69,13 @@ Less important
  * Code credit for a good chunk of this goes to Nadyr/Darlantanis for making me not have to reinvent the wheel.
 */
 // Place your templates inside here.
-/datum/map_template/ship_poi/meridian_dawn/class_a
-	name = "Meridian Dawn Class A Light Medical Transport"
+/datum/map_template/ship_poi/meridian_dawn/class_b
+	name = "Meridian Dawn Class B Medium Convoy Medical Transport"
 	desc = "A long-hulled Medical Transport used for shuttling injured patients from a backwater station to a better-equipped medical facility."
 	block_size = 136 // Longest size is 136.
 	fixed_orientation = TRUE
 	department = MED
-	difficulty = TUTORIAL
+	difficulty = STANDARD
 	expected_completion_time = 15 MINUTES // 15 minutes is "par" time.
 
 
