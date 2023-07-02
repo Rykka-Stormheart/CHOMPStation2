@@ -85,9 +85,9 @@ Less important
 #undef ENG
 #undef SEC
 #undef TUTORIAL
-#undef EASY
-#undef MEDIUM
-#undef HARD
+#undef BEGINNER
+#undef STANDARD
+#undef DIFFICULT
 #undef VETERAN
 // #undef SERV
 // End of file.

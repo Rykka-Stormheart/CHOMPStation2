@@ -1,32 +1,186 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"a" = (
-/turf/space,
-/area/submap/jobship/medsci/meridian_dawn/class_a)
-"b" = (
+"ah" = (
 /obj/effect/floor_decal/industrial/warning{
-	dir = 5
-	},
-/obj/machinery/light/small{
-	dir = 4
+	dir = 10
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 4
+	dir = 8
 	},
 /obj/effect/map_helper/airlock/atmos/chamber_pump,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled,
-/area/space)
-"c" = (
-/turf/space,
-/area/space)
-"d" = (
-/obj/machinery/atmospherics/pipe/simple/hidden{
+/area/template_noop)
+"ak" = (
+/obj/structure/table/steel,
+/obj/random/powercell,
+/obj/item/clothing/gloves/yellow,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"aG" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"aO" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/wall/tgmc/darkwall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"aP" = (
+/obj/machinery/door/airlock/angled_tgmc/medical,
+/turf/simulated/floor/tiled/milspec/sterile,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"aU" = (
+/obj/structure/closet/crate{
+	name = "Deuterium Storage"
+	},
+/obj/item/weapon/fuel_assembly/deuterium,
+/obj/item/weapon/fuel_assembly/deuterium,
+/obj/item/weapon/fuel_assembly/deuterium,
+/obj/item/weapon/fuel_assembly/deuterium,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"aW" = (
+/turf/simulated/wall/tgmc/window/darkwall/reinf,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"bn" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel_ridged,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"bv" = (
+/obj/machinery/atmospherics/binary/circulator{
+	anchored = 1
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"bw" = (
+/obj/machinery/door/airlock/angled_tgmc/maintenance,
+/obj/effect/floor_decal/borderfloorblack/full,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"bX" = (
+/turf/simulated/wall/lead,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"cd" = (
+/obj/structure/toilet,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"cj" = (
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 8
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"cp" = (
+/turf/simulated/floor/tiled/steel_ridged,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"cq" = (
+/obj/machinery/atmospherics/pipe/simple/hidden,
+/turf/simulated/wall/r_wall,
+/area/template_noop)
+"cx" = (
+/obj/machinery/door/airlock/external{
+	id_tag = "meridevac_shuttle3_doors";
+	frequency = 1463;
+	name = "Medevac Shuttle Door";
+	icon_state = "door_locked";
+	locked = 1
+	},
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"cB" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/device/geiger,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"cG" = (
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"cO" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/bed/roller,
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"da" = (
+/obj/machinery/shower{
+	dir = 4;
+	pixel_y = -7
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"dh" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/green{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"ef" = (
+/obj/item/weapon/stool/baystool/padded{
+	dir = 1
+	},
+/turf/simulated/floor/wood,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"eq" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
 	dir = 9
 	},
-/obj/effect/wingrille_spawn/reinforced,
-/turf/space,
-/turf/simulated/floor,
-/area/space)
-"h" = (
+/turf/simulated/wall/lead,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"et" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 30
+	},
+/turf/simulated/floor/tiled,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"ez" = (
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/reinforced/airless,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"eE" = (
+/obj/machinery/door/airlock/angled_bay/hazard,
+/obj/machinery/atmospherics/pipe/simple/visible/black,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"eF" = (
+/obj/structure/closet/secure_closet/engineering_electrical,
+/obj/item/device/gps/engineering,
+/turf/simulated/floor/tiled,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"eQ" = (
+/turf/simulated/wall/fancy_shuttle,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"eX" = (
+/obj/structure/closet/secure_closet/medical2,
+/turf/simulated/floor/tiled/freezer,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"fb" = (
+/obj/structure/closet/crate/freezer,
+/turf/simulated/floor/tiled/freezer,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"fc" = (
 /obj/structure/closet/emcloset,
 /obj/machinery/light{
 	dir = 4
@@ -34,68 +188,87 @@
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/green/border,
 /turf/simulated/floor/tiled,
-/area/space)
-"j" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 9
+/area/template_noop)
+"fu" = (
+/turf/simulated/floor/tiled/freezer,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"fx" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -26;
+	dir = 1
 	},
-/obj/machinery/light/small{
+/turf/simulated/floor/tiled/milspec/sterile,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"fF" = (
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/shield_capacitor,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"fK" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden{
+	dir = 4
+	},
+/obj/effect/wingrille_spawn/reinforced,
+/turf/simulated/floor,
+/area/template_noop)
+"fQ" = (
+/obj/machinery/door/airlock/angled_tgmc/wide/medical,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"gc" = (
+/turf/simulated/wall/r_wall,
+/area/template_noop)
+"gd" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 4
+	},
+/turf/template_noop,
+/area/template_noop)
+"gp" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"gu" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/door/blast/radproof/open{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning,
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"gw" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"gN" = (
+/obj/structure/window/basic,
+/obj/machinery/shower{
+	dir = 4;
+	pixel_y = -7
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"gQ" = (
+/obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 8;
-	frequency = 1380;
-	id_tag = null
-	},
-/obj/effect/map_helper/airlock/atmos/chamber_pump,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled,
-/area/space)
-"k" = (
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 5
-	},
-/obj/effect/wingrille_spawn/reinforced,
-/turf/simulated/floor,
-/area/space)
-"m" = (
-/obj/machinery/door/firedoor/glass,
-/obj/effect/wingrille_spawn/reinforced,
-/turf/simulated/floor,
-/area/space)
-"n" = (
-/obj/effect/wingrille_spawn/reinforced,
-/turf/simulated/floor,
-/area/space)
-"o" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 10
-	},
-/obj/machinery/airlock_sensor{
-	dir = 4;
-	frequency = 1380;
-	id_tag = null;
-	pixel_x = -27
-	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 8;
-	frequency = 1380;
-	id_tag = null
-	},
-/obj/effect/map_helper/airlock/atmos/chamber_pump,
-/obj/effect/map_helper/airlock/sensor/chamber_sensor,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled,
-/area/space)
-"p" = (
+/turf/simulated/floor/reinforced/airless,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"gU" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/glass_external{
 	icon_state = "door_locked";
@@ -109,73 +282,188 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/space)
-"v" = (
-/obj/machinery/shield_diffuser,
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/door/airlock/external{
-	icon_state = "door_locked";
-	locked = 1;
-	name = "Dock External Airlock";
-	req_one_access = list(13)
+/area/template_noop)
+"gZ" = (
+/obj/structure/bed/chair{
+	dir = 1
 	},
-/obj/machinery/access_button{
-	master_tag = null;
-	name = "exterior access button";
-	pixel_x = -27;
-	pixel_y = -7
-	},
-/obj/effect/map_helper/airlock/button/ext_button,
-/obj/effect/map_helper/airlock/door/ext_door,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/space)
-"x" = (
-/obj/machinery/shield_diffuser,
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/door/airlock/external{
-	icon_state = "door_locked";
-	locked = 1;
-	name = "Dock External Airlock";
-	req_one_access = list(13)
-	},
-/obj/effect/map_helper/airlock/door/ext_door,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/space)
-"y" = (
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"hk" = (
 /obj/effect/floor_decal/industrial/warning{
-	dir = 5
+	dir = 9
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 4;
-	frequency = 1380;
-	id_tag = null
+	dir = 8
 	},
 /obj/effect/map_helper/airlock/atmos/chamber_pump,
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	dir = 8;
+	dir = 4;
 	frequency = 1380;
-	id_tag = "d1_aux_b_airlock";
-	pixel_x = 27;
-	req_access = null;
-	req_one_access = list(13);
-	tag_airpump = null;
-	tag_chamber_sensor = null;
-	tag_exterior_door = null;
-	tag_interior_door = null
+	id_tag = "d1_aux_c_airlock";
+	pixel_x = -27;
+	req_one_access = list(13)
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled,
-/area/space)
-"z" = (
+/area/template_noop)
+"hB" = (
+/obj/machinery/body_scanconsole,
+/turf/simulated/floor/tiled/milspec/sterile,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"hS" = (
+/obj/machinery/door/airlock/angled_tgmc/medical,
+/turf/simulated/floor/tiled,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"ir" = (
+/obj/machinery/door/airlock/angled_tgmc/medical_glass{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/milspec/sterile,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"ju" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 30
+	},
+/turf/simulated/floor/wood,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"kc" = (
+/obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/effect/wingrille_spawn/reinforced_phoron,
+/obj/machinery/door/blast/radproof{
+	id = "EngineReactor";
+	rad_resistance = 150
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"kg" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 6
+	},
+/obj/machinery/air_sensor{
+	frequency = 1438;
+	id_tag = "rustengine_sensor";
+	output = 63
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"kn" = (
+/obj/machinery/door/airlock/angled_tgmc/security_glass/external_airlock{
+	icon_state = "door_locked";
+	locked = 1;
+	name = "Internal Airlock"
+	},
+/turf/simulated/floor/tiled/milspec/sterile,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"kF" = (
+/obj/machinery/door/blast/radproof{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"kP" = (
+/obj/item/frame/extinguisher_cabinet,
+/obj/item/weapon/extinguisher,
+/turf/simulated/wall/tgmc/darkwall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"lm" = (
+/obj/structure/closet/secure_closet/pilot,
+/turf/simulated/floor/tiled,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"lx" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
+/obj/item/frame/extinguisher_cabinet,
+/obj/item/weapon/extinguisher,
+/turf/simulated/wall/tgmc/darkwall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"lD" = (
+/obj/structure/cable/cyan{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/computer/general_air_control/supermatter_core{
+	input_tag = "rust_cooling_in";
+	name = "Engine Cooling Control";
+	output_tag = "rust_cooling_out";
+	sensors = list("rustengine_sensor"="Engine  Temperature")
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"lG" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"lW" = (
+/turf/simulated/floor/tiled/milspec/sterile,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"lZ" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/door/blast/radproof/open{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"mc" = (
+/obj/machinery/shield_diffuser,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/door/airlock/external{
+	icon_state = "door_locked";
+	locked = 1;
+	name = "Dock External Airlock";
+	req_one_access = list(13)
+	},
+/obj/effect/map_helper/airlock/door/ext_door,
+/turf/simulated/floor/tiled/dark,
+/area/template_noop)
+"mi" = (
+/obj/structure/window/basic{
+	dir = 8
+	},
+/obj/structure/window/basic,
+/turf/simulated/floor/tiled/freezer,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"mk" = (
+/obj/structure/table/marble,
+/turf/simulated/floor/wood,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"mC" = (
+/obj/machinery/shield_diffuser,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/door/airlock/external{
+	icon_state = "door_locked";
+	locked = 1;
+	name = "Dock External Airlock";
+	req_one_access = list(13)
+	},
+/obj/effect/map_helper/airlock/door/ext_door,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/template_noop)
+"mU" = (
+/obj/machinery/door/airlock/angled_tgmc/wide/generic,
+/turf/simulated/floor/tiled,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"mV" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/glass_external{
 	icon_state = "door_locked";
@@ -198,13 +486,324 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/space)
-"A" = (
+/area/template_noop)
+"nj" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 6
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 4;
+	frequency = 1380;
+	id_tag = null
+	},
+/obj/effect/map_helper/airlock/atmos/chamber_pump,
+/turf/simulated/floor/tiled,
+/area/template_noop)
+"nH" = (
+/obj/machinery/power/smes,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"nT" = (
+/obj/item/modular_computer/console/preset/medical,
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"od" = (
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/wall/tgmc/darkwall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"oe" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden{
+	dir = 8
+	},
+/obj/effect/wingrille_spawn/reinforced,
+/turf/simulated/floor,
+/area/template_noop)
+"or" = (
+/obj/machinery/shower{
+	dir = 4;
+	pixel_y = -7
+	},
+/obj/structure/window/basic{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"oC" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/door/blast/radproof/open{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning,
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"oE" = (
+/obj/machinery/shield_diffuser,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/door/airlock/external{
+	icon_state = "door_locked";
+	locked = 1;
+	name = "Dock External Airlock";
+	req_one_access = list(13)
+	},
+/obj/machinery/access_button{
+	master_tag = null;
+	name = "exterior access button";
+	pixel_x = -27;
+	pixel_y = -7
+	},
+/obj/effect/map_helper/airlock/button/ext_button,
+/obj/effect/map_helper/airlock/door/ext_door,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/template_noop)
+"oP" = (
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/door/airlock/glass_external{
+	icon_state = "door_locked";
+	locked = 1;
+	name = "Dock Internal Airlock"
+	},
+/obj/effect/map_helper/airlock/door/int_door,
+/turf/simulated/floor/tiled/dark,
+/area/template_noop)
+"oV" = (
+/obj/machinery/door/window/northleft{
+	dir = 4
+	},
+/turf/simulated/floor/wood,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"pk" = (
+/obj/structure/bed/double/padded,
+/turf/simulated/floor/carpet/bcarpet,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"py" = (
+/obj/structure/closet/crate/medical,
+/obj/item/weapon/storage/firstaid/regular{
+	pixel_x = -2;
+	pixel_y = 4
+	},
+/obj/item/weapon/storage/firstaid/regular{
+	pixel_x = -2;
+	pixel_y = 4
+	},
+/obj/item/bodybag/cryobag{
+	pixel_x = 5
+	},
+/obj/item/bodybag/cryobag{
+	pixel_x = 5
+	},
+/obj/item/weapon/storage/firstaid/o2{
+	layer = 2.8;
+	pixel_x = 4;
+	pixel_y = 6
+	},
+/obj/item/weapon/storage/box/masks,
+/obj/item/weapon/storage/box/gloves{
+	pixel_x = 3;
+	pixel_y = 4
+	},
+/obj/item/weapon/storage/firstaid/toxin,
+/obj/item/weapon/storage/firstaid/fire{
+	layer = 2.9;
+	pixel_x = 2;
+	pixel_y = 3
+	},
+/obj/item/weapon/storage/firstaid/adv{
+	pixel_x = -2
+	},
+/obj/item/weapon/reagent_containers/blood/empty,
+/obj/item/weapon/reagent_containers/blood/empty,
+/obj/item/weapon/reagent_containers/blood/empty,
+/obj/item/weapon/reagent_containers/blood/empty,
+/obj/item/weapon/reagent_containers/blood/empty,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"pA" = (
+/turf/simulated/wall/fancy_shuttle/window,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"pF" = (
+/turf/simulated/floor/wood,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"pT" = (
+/obj/effect/floor_decal/industrial/warning/corner,
+/turf/simulated/floor/reinforced/airless,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"pY" = (
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"qb" = (
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable/green,
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/shield_gen/external,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"qc" = (
+/obj/effect/wingrille_spawn/reinforced_phoron,
+/obj/machinery/door/blast/radproof{
+	rad_resistance = 150
+	},
+/obj/machinery/door/firedoor/glass,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"qf" = (
+/obj/machinery/atmospherics/unary/engine/biggest{
+	dir = 8
+	},
+/turf/template_noop,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"qg" = (
+/obj/machinery/computer/fusion_fuel_control{
+	id_tag = "Reactor Fuel Injectors"
+	},
+/obj/structure/cable/cyan{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/structure/cable/cyan{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"qj" = (
+/obj/structure/undies_wardrobe,
+/turf/simulated/floor/tiled,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"qk" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"qm" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"qp" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel_ridged,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"qL" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/turf/simulated/floor/reinforced/airless,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"qR" = (
+/obj/machinery/door/airlock/external{
+	id_tag = "meridevac_shuttle2_doors";
+	frequency = 1461;
+	name = "Medevac Shuttle Door";
+	icon_state = "door_locked";
+	locked = 1
+	},
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"qT" = (
+/obj/machinery/iv_drip,
+/turf/simulated/floor/tiled/freezer,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"rf" = (
+/obj/structure/closet/secure_closet/medical3,
+/turf/simulated/floor/tiled,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"ru" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"ry" = (
+/obj/machinery/door/airlock/maintenance/engi,
+/turf/simulated/floor/tiled/steel_ridged,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"rR" = (
+/obj/machinery/computer/ship/sensors,
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"sg" = (
+/obj/machinery/power/generator{
+	anchored = 1;
 	dir = 8
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"sh" = (
+/obj/machinery/shower{
+	dir = 8;
+	pixel_y = -7
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"so" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 5
+	},
+/obj/effect/wingrille_spawn/reinforced,
+/turf/simulated/floor,
+/area/template_noop)
+"sv" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 9
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 8;
+	frequency = 1380;
+	id_tag = null
 	},
 /obj/effect/map_helper/airlock/atmos/chamber_pump,
 /obj/structure/cable{
@@ -213,31 +812,879 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled,
-/area/space)
-"B" = (
-/obj/effect/shuttle_landmark{
-	base_area = /area/space;
-	base_turf = /turf/space;
-	landmark_tag = "d1_aux_c";
-	name = "Deck 1 Aux Dock C"
+/area/template_noop)
+"sC" = (
+/obj/structure/table/glass,
+/obj/structure/table/glass,
+/turf/simulated/floor/tiled,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"sE" = (
+/obj/effect/floor_decal/borderfloor/corner{
+	dir = 8
 	},
-/turf/space,
-/area/submap/jobship/medsci/meridian_dawn/class_a)
-"C" = (
+/obj/effect/floor_decal/corner/green/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+/area/template_noop)
+"sK" = (
+/obj/structure/sign/warning/radioactive,
+/turf/simulated/wall/tgmc/darkwall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"sM" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/wingrille_spawn/reinforced,
+/turf/simulated/wall/bay/black,
+/area/template_noop)
+"sV" = (
+/obj/structure/closet/walllocker/emerglocker{
+	dir = 8;
+	pixel_x = -32
+	},
+/obj/structure/bed/roller,
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"tn" = (
+/obj/structure/closet/wardrobe/engineering_yellow,
+/turf/simulated/floor/tiled,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"tr" = (
+/obj/machinery/button/remote/blast_door/radproof,
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 5
+	},
+/turf/simulated/wall/tgmc/darkwall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"ty" = (
+/obj/machinery/door/window/southright{
+	dir = 4
+	},
+/turf/simulated/floor/wood,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"tU" = (
+/obj/machinery/atmospherics/unary/engine/bigger{
+	dir = 8
+	},
+/turf/template_noop,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"tW" = (
+/obj/machinery/floodlight,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"uz" = (
+/obj/structure/window/basic{
+	dir = 1
+	},
+/obj/structure/window/basic{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"uP" = (
+/obj/structure/bed/padded,
+/turf/simulated/floor/carpet/bcarpet,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"uT" = (
+/obj/structure/shuttle/engine/propulsion{
+	dir = 1
+	},
+/turf/simulated/shuttle/plating/airless/carry,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"vf" = (
+/obj/structure/table/reinforced,
+/obj/item/weapon/storage/belt/utility/full,
+/obj/item/weapon/storage/toolbox/mechanical{
+	pixel_y = 9
+	},
+/obj/item/weapon/storage/toolbox/mechanical{
+	pixel_y = -1
+	},
+/turf/simulated/floor/tiled,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"vl" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"vs" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"vx" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"vy" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 10
+	},
+/turf/template_noop,
+/area/template_noop)
+"vK" = (
+/obj/machinery/button/remote/airlock{
+	desc = "A remote control-switch for the engine core airlock hatch bolts.";
+	id = "engine_access_hatch";
+	name = "Engine Hatch Bolt Control";
+	specialfunctions = 4;
+	dir = 2;
+	pixel_y = -1
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 9
+	},
+/turf/simulated/wall/tgmc/darkwall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"vR" = (
+/obj/structure/window/reinforced,
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"vY" = (
+/obj/structure/bed/chair/wood{
+	dir = 1
+	},
+/turf/simulated/floor/wood,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"vZ" = (
+/obj/machinery/door/airlock/angled_tgmc/medical,
+/turf/simulated/floor/tiled/freezer,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"wc" = (
+/obj/machinery/door/firedoor/glass,
+/obj/effect/wingrille_spawn/reinforced,
+/turf/simulated/floor,
+/area/template_noop)
+"wo" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black,
+/turf/simulated/wall/lead,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"wt" = (
+/obj/machinery/door/airlock/angled_tgmc/security_glass/external_airlock{
+	icon_state = "door_locked";
+	locked = 1
+	},
+/turf/simulated/floor/tiled/milspec/sterile,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"wF" = (
+/turf/template_noop,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"wO" = (
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"wP" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 5
+	},
+/turf/template_noop,
+/area/template_noop)
+"xi" = (
+/obj/structure/table/bench/standard,
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/green/border,
+/turf/simulated/floor/tiled,
+/area/template_noop)
+"xq" = (
+/obj/structure/table/steel,
+/obj/random/maintenance/engineering,
+/obj/item/device/multitool{
+	pixel_x = 5
+	},
+/obj/item/stack/cable_coil/cyan{
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/obj/item/stack/cable_coil/cyan{
+	pixel_x = -3;
+	pixel_y = -2
+	},
+/obj/item/stack/cable_coil/cyan{
+	pixel_x = -3;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"xF" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 5
+	},
+/turf/simulated/wall/tgmc/darkwall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"xQ" = (
+/obj/machinery/computer/gyrotron_control{
+	id_tag = "Reactor Gyrotron"
+	},
+/obj/structure/cable/cyan{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"xR" = (
+/obj/structure/table/rack,
+/obj/item/clothing/glasses/hud/health,
+/obj/item/clothing/glasses/hud/health,
+/obj/item/clothing/glasses/hud/health,
+/obj/item/clothing/glasses/hud/health,
+/obj/item/clothing/glasses/hud/health,
+/obj/item/clothing/accessory/stethoscope,
+/obj/item/clothing/accessory/stethoscope,
+/obj/item/clothing/accessory/stethoscope,
+/obj/item/clothing/accessory/stethoscope,
+/obj/item/clothing/accessory/stethoscope,
+/obj/item/weapon/storage/belt/medical,
+/obj/item/weapon/storage/belt/medical,
+/obj/item/weapon/storage/belt/medical,
+/obj/item/weapon/storage/belt/medical,
+/obj/item/weapon/storage/belt/medical,
+/turf/simulated/floor/tiled,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"xV" = (
+/obj/structure/cable/green,
+/obj/machinery/power/smes/buildable{
+	RCon_tag = "Engine - Core";
+	charge = 2e+006;
+	input_attempt = 1;
+	input_level = 100000;
+	output_level = 200000
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"xX" = (
+/obj/structure/table/bench/standard,
+/obj/effect/floor_decal/borderfloor{
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/green/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
+/area/template_noop)
+"ye" = (
+/obj/structure/closet/secure_closet/CMO,
+/turf/simulated/floor/tiled,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"yj" = (
+/obj/structure/shuttle/engine/heater{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
+/turf/simulated/floor/airless,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"yB" = (
+/obj/structure/window/basic{
+	dir = 8
+	},
+/obj/structure/window/basic{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"yJ" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 10
+	},
+/obj/machinery/airlock_sensor{
+	dir = 4;
+	frequency = 1380;
+	id_tag = null;
+	pixel_x = -27
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 8;
+	frequency = 1380;
+	id_tag = null
+	},
+/obj/effect/map_helper/airlock/atmos/chamber_pump,
+/obj/effect/map_helper/airlock/sensor/chamber_sensor,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled,
+/area/template_noop)
+"yP" = (
+/obj/machinery/computer/ship/helm,
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"zd" = (
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/power/smes/buildable{
+	RCon_tag = "Engine - Core";
+	charge = 2e+006;
+	input_attempt = 1;
+	input_level = 100000;
+	output_level = 200000
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"zg" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"zt" = (
+/obj/machinery/power/port_gen/pacman,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"zR" = (
+/obj/machinery/door/airlock/external{
+	id_tag = "meridevac_shuttle4_doors";
+	frequency = 1464;
+	name = "Medevac Shuttle Door";
+	icon_state = "door_locked";
+	locked = 1
+	},
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Ad" = (
+/obj/structure/closet/secure_closet/engineering_personal,
+/obj/item/device/gps/engineering,
+/turf/simulated/floor/tiled,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Ae" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/power/hydromagnetic_trap,
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Au" = (
+/obj/structure/closet/secure_closet/engineering_welding,
+/obj/item/device/gps/engineering,
+/turf/simulated/floor/tiled,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"AC" = (
+/obj/structure/closet/emcloset,
+/turf/simulated/floor/tiled,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"AQ" = (
+/obj/machinery/door/airlock/angled_tgmc/wide/medical,
+/turf/simulated/floor/tiled/milspec/sterile,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Bq" = (
+/turf/template_noop,
+/area/template_noop)
+"Bx" = (
+/obj/structure/cable/cyan,
+/obj/structure/cable/cyan{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/structure/cable/cyan{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/fusion_fuel_compressor,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Cc" = (
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/power/rtg/fake_reactor,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Ck" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black,
+/turf/simulated/wall/tgmc/darkwall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"CC" = (
+/obj/structure/closet/secure_closet/CMO_wardrobe,
+/turf/simulated/floor/tiled,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"CS" = (
+/obj/structure/closet/wardrobe/medic_gown,
+/turf/simulated/floor/tiled,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"CX" = (
+/obj/effect/wingrille_spawn/reinforced_phoron,
+/obj/machinery/door/blast/radproof{
+	rad_resistance = 150
+	},
+/obj/machinery/door/firedoor/glass,
+/turf/simulated/floor/plating,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Df" = (
+/obj/item/weapon/stool/baystool/padded,
+/turf/simulated/floor/wood,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Dn" = (
+/obj/structure/closet/crate/medical,
+/obj/item/weapon/storage/firstaid/regular{
+	pixel_x = -2;
+	pixel_y = 4
+	},
+/obj/item/weapon/storage/firstaid/regular{
+	pixel_x = -2;
+	pixel_y = 4
+	},
+/obj/item/bodybag/cryobag{
+	pixel_x = 5
+	},
+/obj/item/bodybag/cryobag{
+	pixel_x = 5
+	},
+/obj/item/weapon/storage/firstaid/o2{
+	layer = 2.8;
+	pixel_x = 4;
+	pixel_y = 6
+	},
+/obj/item/weapon/storage/box/masks,
+/obj/item/weapon/storage/box/gloves{
+	pixel_x = 3;
+	pixel_y = 4
+	},
+/obj/item/weapon/storage/firstaid/toxin,
+/obj/item/weapon/storage/firstaid/fire{
+	layer = 2.9;
+	pixel_x = 2;
+	pixel_y = 3
+	},
+/obj/item/weapon/storage/firstaid/adv{
+	pixel_x = -2
+	},
+/obj/item/weapon/reagent_containers/blood/empty,
+/obj/item/weapon/reagent_containers/blood/empty,
+/obj/item/weapon/reagent_containers/blood/empty,
+/obj/item/weapon/reagent_containers/blood/empty,
+/obj/item/weapon/reagent_containers/blood/empty,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Dw" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 9
+	},
+/obj/machinery/atmospherics/unary/outlet_injector{
+	dir = 1;
+	frequency = 1438;
+	id = "rust_cooling_in";
+	name = "Coolant Injector";
+	pixel_y = 1;
+	power_rating = 30000;
+	use_power = 1;
+	volume_rate = 700
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"DI" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 9
+	},
+/turf/template_noop,
+/area/template_noop)
+"DR" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"DW" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 5
+	},
+/obj/machinery/atmospherics/unary/vent_pump/engine{
+	dir = 1;
+	external_pressure_bound = 100;
+	external_pressure_bound_default = 0;
+	frequency = 1438;
+	icon_state = "map_vent_in";
+	id_tag = "rust_cooling_out";
+	initialize_directions = 1;
+	pump_direction = 0;
+	use_power = 1
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Ek" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/wingrille_spawn/reinforced,
+/turf/simulated/floor,
+/area/template_noop)
+"El" = (
+/obj/machinery/door/airlock/maintenance/engi,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Ez" = (
+/obj/structure/shuttle/engine/heater,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/simulated/floor/airless,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"EB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 9
 	},
 /obj/effect/wingrille_spawn/reinforced,
 /turf/simulated/floor,
-/area/space)
-"D" = (
-/obj/structure/sign/warning/docking_area,
-/turf/simulated/wall/r_wall,
-/area/space)
-"E" = (
-/turf/simulated/floor/tiled/monotile,
-/area/space)
-"F" = (
+/area/template_noop)
+"ED" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/power/hydromagnetic_trap,
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"EF" = (
+/obj/structure/window/basic,
+/obj/structure/window/basic{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Fl" = (
+/obj/machinery/bodyscanner,
+/turf/simulated/floor/tiled/milspec/sterile,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"FS" = (
+/obj/machinery/door/airlock/external{
+	id_tag = "meridevac_shuttle1_doors";
+	frequency = 1460;
+	name = "Medevac Shuttle Door";
+	icon_state = "door_locked";
+	locked = 1
+	},
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"FT" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 9
+	},
+/obj/item/clothing/suit/radiation,
+/obj/item/clothing/suit/radiation,
+/obj/item/clothing/suit/radiation,
+/obj/item/clothing/suit/radiation,
+/obj/item/clothing/suit/radiation,
+/obj/item/clothing/suit/radiation,
+/obj/structure/closet/radiation,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"FW" = (
+/obj/machinery/button/remote/blast_door/radproof,
+/turf/simulated/wall/tgmc/darkwall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"GY" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 6
+	},
+/turf/simulated/wall/tgmc/darkwall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"He" = (
+/obj/machinery/door/airlock/angled_tgmc/wide/medical{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Hm" = (
+/obj/structure/table/bench/standard,
+/obj/effect/floor_decal/borderfloor{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/green/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled,
+/area/template_noop)
+"Hn" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 9
+	},
+/obj/effect/wingrille_spawn/reinforced,
+/turf/template_noop,
+/turf/simulated/floor,
+/area/template_noop)
+"HC" = (
+/obj/machinery/space_heater,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"HG" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 30
+	},
+/turf/simulated/floor/tiled/milspec/sterile,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Io" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/closet/walllocker/emerglocker{
+	dir = 8;
+	pixel_x = -32
+	},
+/obj/structure/table/standard,
+/obj/random/medical/lite,
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Iq" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"IA" = (
+/obj/structure/bed/chair/wood,
+/turf/simulated/floor/wood,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"IC" = (
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/wall/tgmc/darkwall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"IE" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 8
+	},
+/turf/simulated/wall/tgmc/darkwall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Jl" = (
+/obj/structure/window/reinforced,
+/obj/structure/bed/roller,
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"JP" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "englockdown";
+	name = "Engineering Lockdown";
+	opacity = 0
+	},
+/obj/effect/floor_decal/borderfloorblack/full,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"JZ" = (
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/power/rtg/fake_reactor,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Ko" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 5
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 4;
+	frequency = 1380;
+	id_tag = null
+	},
+/obj/effect/map_helper/airlock/atmos/chamber_pump,
+/obj/machinery/embedded_controller/radio/airlock/docking_port{
+	dir = 8;
+	frequency = 1380;
+	id_tag = "d1_aux_b_airlock";
+	pixel_x = 27;
+	req_access = null;
+	req_one_access = list(13);
+	tag_airpump = null;
+	tag_chamber_sensor = null;
+	tag_exterior_door = null;
+	tag_interior_door = null
+	},
+/turf/simulated/floor/tiled,
+/area/template_noop)
+"Kq" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 5
+	},
+/obj/item/clothing/head/radiation,
+/obj/item/clothing/head/radiation,
+/obj/item/clothing/head/radiation,
+/obj/item/clothing/head/radiation,
+/obj/item/clothing/head/radiation,
+/obj/item/clothing/head/radiation,
+/obj/structure/table/rack,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"KW" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/wall/tgmc/darkwall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Lb" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
+/turf/simulated/wall/tgmc/darkwall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Lg" = (
+/obj/machinery/computer/ship/sensors{
+	dir = 1
+	},
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Lk" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Lx" = (
+/turf/simulated/floor/carpet/bcarpet,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"LQ" = (
+/obj/machinery/door/blast/radproof,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"LY" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 11
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Mf" = (
+/obj/structure/closet/crate{
+	name = "Deuterium Storage"
+	},
+/obj/item/stack/material/phoron{
+	amount = 25
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Mm" = (
+/obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/effect/wingrille_spawn/reinforced_phoron,
+/obj/machinery/door/blast/radproof{
+	id = "EngineReactor";
+	rad_resistance = 150
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Mw" = (
+/obj/structure/cable/cyan{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable/cyan{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/computer/fusion_core_control{
+	id_tag = "Outpost Fusion Core"
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"My" = (
+/obj/machinery/door/airlock/angled_tgmc/security_glass/external_airlock{
+	icon_state = "door_locked";
+	locked = 1;
+	name = "Internal Airlock"
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"MD" = (
+/obj/structure/shuttle/engine/propulsion,
+/turf/simulated/shuttle/plating/airless/carry,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"MJ" = (
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/power/fusion_core/mapped{
+	id_tag = "Outpost Fusion Core"
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"MM" = (
+/obj/effect/wingrille_spawn/reinforced,
+/turf/simulated/floor,
+/area/template_noop)
+"Np" = (
+/obj/effect/floor_decal/borderfloor/corner,
+/obj/effect/floor_decal/corner/green/bordercorner,
+/turf/simulated/floor/tiled,
+/area/template_noop)
+"Nt" = (
+/obj/structure/sign/electricshock,
+/turf/simulated/wall/lead,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"NC" = (
+/obj/machinery/shower{
+	dir = 8;
+	pixel_y = -7
+	},
+/obj/structure/window/basic{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"NG" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"NK" = (
 /obj/machinery/shield_diffuser,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/external{
@@ -255,17 +1702,160 @@
 /obj/effect/map_helper/airlock/door/ext_door,
 /obj/effect/map_helper/airlock/button/ext_button,
 /turf/simulated/floor/tiled/dark,
-/area/space)
-"G" = (
-/obj/effect/floor_decal/borderfloor/corner,
-/obj/effect/floor_decal/corner/green/bordercorner,
-/turf/simulated/floor/tiled,
-/area/space)
-"H" = (
-/obj/machinery/atmospherics/pipe/simple/hidden,
+/area/template_noop)
+"NQ" = (
+/obj/structure/sign/warning/radioactive,
+/turf/simulated/wall/lead,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"NV" = (
+/obj/machinery/computer/ship/helm{
+	dir = 1
+	},
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"NZ" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Oo" = (
+/obj/structure/cable/green,
+/obj/machinery/shield_capacitor{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Op" = (
+/turf/simulated/floor/tiled/monotile,
+/area/template_noop)
+"Oq" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"OF" = (
+/turf/simulated/wall/tgmc/whitewall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"OJ" = (
+/obj/structure/sign/warning/docking_area,
 /turf/simulated/wall/r_wall,
-/area/space)
-"I" = (
+/area/template_noop)
+"OU" = (
+/obj/structure/window/basic,
+/obj/machinery/shower{
+	dir = 8;
+	pixel_y = -7
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"PA" = (
+/obj/machinery/power/emitter/gyrotron/anchored{
+	dir = 1;
+	id = "Reactor Gyrotron";
+	id_tag = "Reactor Gyrotron"
+	},
+/obj/structure/cable/cyan{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"PE" = (
+/obj/machinery/door/blast/radproof{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"PU" = (
+/obj/structure/bed/chair/wood{
+	dir = 4
+	},
+/turf/simulated/floor/wood,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Qn" = (
+/obj/machinery/fusion_fuel_injector/mapped{
+	dir = 1;
+	id_tag = "Reactor Fuel Injectors"
+	},
+/obj/structure/cable/cyan{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Qt" = (
+/obj/structure/closet/wardrobe/medic_white,
+/turf/simulated/floor/tiled,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"QM" = (
+/obj/structure/table/reinforced,
+/obj/item/weapon/tool/crowbar,
+/obj/item/weapon/storage/toolbox/electrical{
+	pixel_y = 10
+	},
+/obj/item/weapon/storage/toolbox/electrical{
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"QV" = (
+/obj/structure/bed/chair/office/dark{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Rs" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/weapon/tool/wrench,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"RB" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"RG" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black,
+/turf/simulated/wall/lead,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"RQ" = (
+/obj/machinery/atmospherics/binary/circulator{
+	anchored = 1;
+	dir = 1
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"RV" = (
+/obj/machinery/door/airlock/angled_tgmc/engineering,
+/obj/machinery/door/airlock/angled_tgmc/maintenance,
+/obj/machinery/door/airlock/angled_tgmc/wide/generic_steel,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"RZ" = (
+/obj/structure/table/woodentable,
+/turf/simulated/floor/wood,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Sh" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -26;
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Sp" = (
 /obj/structure/closet/emcloset,
 /obj/machinery/light{
 	dir = 8
@@ -273,53 +1863,124 @@
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/green/border,
 /turf/simulated/floor/tiled,
-/area/space)
-"J" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 6
+/area/template_noop)
+"Ss" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/machinery/airlock_sensor{
-	dir = 8;
-	id_tag = null;
-	pixel_x = 27
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"St" = (
+/obj/structure/sign/warning/radioactive,
+/obj/machinery/atmospherics/pipe/simple/visible/black,
+/turf/simulated/wall/lead,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"SK" = (
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 4
+/turf/simulated/wall/tgmc/whitewall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"SS" = (
+/turf/simulated/wall/tgmc/window/white/reinf,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"SW" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 1
 	},
-/obj/effect/map_helper/airlock/atmos/chamber_pump,
-/obj/effect/map_helper/airlock/sensor/chamber_sensor,
-/turf/simulated/floor/tiled,
-/area/space)
-"K" = (
-/obj/effect/shuttle_landmark{
-	base_area = /area/space;
-	base_turf = /turf/space;
-	docking_controller = "d1_aux_b_airlock";
-	landmark_tag = "d1_aux_b";
-	name = "Deck 1 Aux Dock B"
+/turf/simulated/wall/tgmc/darkwall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"TA" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/space,
-/area/submap/jobship/medsci/meridian_dawn/class_a)
-"L" = (
-/obj/machinery/shield_diffuser,
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/door/airlock/external{
+/turf/simulated/wall/tgmc/whitewall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Uk" = (
+/obj/machinery/door/airlock/angled_tgmc/security_glass/external_airlock{
 	icon_state = "door_locked";
 	locked = 1;
-	name = "Dock External Airlock";
-	req_one_access = list(13)
+	name = "Ship Airlock";
+	dir = 4
 	},
-/obj/effect/map_helper/airlock/door/ext_door,
-/turf/simulated/floor/tiled/dark,
-/area/space)
-"N" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 8
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"US" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{
+	dir = 4
 	},
-/obj/effect/wingrille_spawn/reinforced,
-/turf/simulated/floor,
-/area/space)
-"O" = (
+/turf/template_noop,
+/area/template_noop)
+"Vd" = (
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/shield_capacitor{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Vh" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Vu" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/wall/tgmc/whitewall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Vv" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/wall/tgmc/darkwall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"VA" = (
+/obj/structure/sign/warning/radioactive,
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/wall/tgmc/darkwall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"VC" = (
+/obj/structure/bed/chair,
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"VQ" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -26;
+	dir = 1
+	},
+/turf/simulated/floor/wood,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"VT" = (
+/obj/machinery/door/airlock/angled_tgmc/wide/generic_steel{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Wg" = (
+/obj/machinery/door/airlock/angled_tgmc/security_glass/external_airlock{
+	icon_state = "door_locked";
+	locked = 1
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"WD" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/glass_external{
 	icon_state = "door_locked";
@@ -337,5272 +1998,5297 @@
 	},
 /obj/effect/map_helper/airlock/button/int_button,
 /turf/simulated/floor/tiled/dark,
-/area/space)
-"P" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden{
+/area/template_noop)
+"WV" = (
+/obj/machinery/door/airlock/angled_tgmc/medical{
 	dir = 4
 	},
-/obj/effect/wingrille_spawn/reinforced,
-/turf/simulated/floor,
-/area/space)
-"Q" = (
-/obj/structure/table/bench/standard,
-/obj/effect/floor_decal/borderfloor{
-	dir = 6
+/turf/simulated/floor/tiled/milspec/sterile,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Xb" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 5
 	},
-/obj/effect/floor_decal/corner/green/border{
-	dir = 6
+/obj/machinery/light/small{
+	dir = 4
 	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 4
+	},
+/obj/effect/map_helper/airlock/atmos/chamber_pump,
 /turf/simulated/floor/tiled,
-/area/space)
-"R" = (
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/door/airlock/glass_external{
-	icon_state = "door_locked";
+/area/template_noop)
+"Xk" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/wall/tgmc/darkwall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Xo" = (
+/obj/machinery/door/airlock/angled_tgmc/wide/medical{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/milspec/sterile,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Xr" = (
+/turf/simulated/floor/tiled,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Xy" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging,
+/turf/template_noop,
+/area/template_noop)
+"XA" = (
+/obj/item/modular_computer/console/preset/medical{
+	dir = 1
+	},
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"XX" = (
+/obj/structure/table/rack/shelf/steel,
+/obj/fiftyspawner/uranium,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Yb" = (
+/obj/machinery/door/blast/radproof,
+/obj/machinery/atmospherics/pipe/simple/visible/black,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"YJ" = (
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12;
+	pixel_y = 2
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"YL" = (
+/obj/structure/table/standard,
+/obj/random/medical/lite,
+/obj/structure/window/reinforced,
+/obj/structure/closet/walllocker/emerglocker{
+	dir = 4;
+	pixel_x = 32
+	},
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"ZB" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 6
+	},
+/turf/template_noop,
+/area/template_noop)
+"ZO" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 6
+	},
+/obj/machinery/airlock_sensor{
+	dir = 8;
+	id_tag = null;
+	pixel_x = 27
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 4
+	},
+/obj/effect/map_helper/airlock/atmos/chamber_pump,
+/obj/effect/map_helper/airlock/sensor/chamber_sensor,
+/turf/simulated/floor/tiled,
+/area/template_noop)
+"ZP" = (
+/obj/machinery/door/airlock/angled_tgmc/security/external_airlock{
+	dir = 4;
 	locked = 1;
-	name = "Dock Internal Airlock"
+	icon_state = "door_locked"
 	},
-/obj/effect/map_helper/airlock/door/int_door,
-/turf/simulated/floor/tiled/dark,
-/area/space)
-"S" = (
-/obj/effect/floor_decal/borderfloor/corner{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/green/bordercorner{
-	dir = 8
-	},
-/turf/simulated/floor/tiled,
-/area/space)
-"T" = (
-/obj/structure/table/bench/standard,
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/green/border,
-/turf/simulated/floor/tiled,
-/area/space)
-"U" = (
-/obj/structure/lattice,
-/obj/machinery/shield_diffuser,
-/turf/space,
-/area/submap/jobship/medsci/meridian_dawn/class_a)
-"V" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 6
-	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"ZU" = (
+/obj/structure/bed/roller,
+/obj/structure/closet/walllocker/emerglocker{
 	dir = 4;
-	frequency = 1380;
-	id_tag = null
+	pixel_x = 32
 	},
-/obj/effect/map_helper/airlock/atmos/chamber_pump,
-/turf/simulated/floor/tiled,
-/area/space)
-"W" = (
-/obj/structure/table/bench/standard,
-/obj/effect/floor_decal/borderfloor{
-	dir = 10
-	},
-/obj/effect/floor_decal/corner/green/border{
-	dir = 10
-	},
-/turf/simulated/floor/tiled,
-/area/space)
-"X" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/wingrille_spawn/reinforced,
-/turf/simulated/floor,
-/area/space)
-"Y" = (
-/turf/simulated/wall/r_wall,
-/area/space)
-"Z" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 9
-	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 8
-	},
-/obj/effect/map_helper/airlock/atmos/chamber_pump,
-/obj/machinery/embedded_controller/radio/airlock/docking_port{
+/turf/simulated/shuttle/floor/white,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"ZY" = (
+/turf/simulated/wall/tgmc/darkwall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"ZZ" = (
+/obj/effect/wingrille_spawn/reinforced_phoron,
+/obj/machinery/door/blast/radproof{
 	dir = 4;
-	frequency = 1380;
-	id_tag = "d1_aux_c_airlock";
-	pixel_x = -27;
-	req_one_access = list(13)
+	id = "EngineReactor";
+	rad_resistance = 150
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled,
-/area/space)
+/turf/simulated/wall/lead,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
 
 (1,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (2,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (3,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (4,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (5,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+SS
+SS
+SS
+OF
+SS
+SS
+SS
+SS
+SS
+SS
+SS
+SS
+SS
+SS
+OF
+SS
+SS
+SS
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (6,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+SS
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+SS
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (7,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+SS
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+SS
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (8,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+OF
+OF
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+OF
+OF
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (9,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+SS
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+SS
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (10,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+SS
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+SS
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (11,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+SS
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+SS
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (12,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+wO
+fQ
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (13,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (14,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+SS
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+SS
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (15,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (16,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+ZY
+ZY
+ZY
+ZY
+Uk
+ZY
+ZY
+aW
+aW
+ZY
+wO
+wO
+ZY
+aW
+aW
+ZY
+ZY
+Uk
+ZY
+ZY
+ZY
+ZY
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (17,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+eQ
+eQ
+eQ
+eQ
+qR
+eQ
+eQ
+eQ
+MD
+ZY
+wO
+wO
+ZY
+uT
+eQ
+eQ
+eQ
+FS
+eQ
+eQ
+eQ
+eQ
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (18,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+pA
+rR
+cG
+NG
+cG
+sV
+Jl
+Ez
+MD
+aW
+wO
+wO
+aW
+uT
+yj
+Io
+Dn
+cG
+NG
+cG
+XA
+pA
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (19,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+pA
+yP
+gZ
+cG
+cG
+cG
+vR
+Ez
+MD
+aW
+wO
+wO
+aW
+uT
+yj
+Iq
+cG
+cG
+cG
+VC
+NV
+pA
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (20,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+pA
+nT
+cG
+Lk
+cG
+py
+YL
+Ez
+MD
+aW
+wO
+wO
+aW
+uT
+yj
+cO
+ZU
+cG
+Lk
+cG
+Lg
+pA
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (21,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+eQ
+eQ
+eQ
+eQ
+qR
+eQ
+eQ
+eQ
+MD
+ZY
+wO
+wO
+ZY
+uT
+eQ
+eQ
+eQ
+FS
+eQ
+eQ
+eQ
+eQ
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (22,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+ZY
+ZY
+ZY
+ZY
+Uk
+ZY
+ZY
+aW
+aW
+ZY
+wO
+wO
+ZY
+aW
+aW
+ZY
+ZY
+Uk
+ZY
+ZY
+ZY
+ZY
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (23,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+aW
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+aW
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (24,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+aW
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+aW
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (25,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+aW
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+aW
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (26,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+ZY
+ZY
+ZY
+ZY
+Uk
+ZY
+ZY
+aW
+aW
+ZY
+wO
+wO
+ZY
+aW
+aW
+ZY
+ZY
+Uk
+ZY
+ZY
+ZY
+ZY
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (27,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+eQ
+eQ
+eQ
+eQ
+cx
+eQ
+eQ
+eQ
+MD
+ZY
+wO
+wO
+ZY
+uT
+eQ
+eQ
+eQ
+zR
+eQ
+eQ
+eQ
+eQ
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (28,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+pA
+rR
+cG
+NG
+cG
+sV
+Jl
+Ez
+MD
+aW
+wO
+wO
+aW
+uT
+yj
+Io
+Dn
+cG
+NG
+cG
+XA
+pA
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (29,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+pA
+yP
+gZ
+cG
+cG
+cG
+vR
+Ez
+MD
+aW
+wO
+wO
+aW
+uT
+yj
+Iq
+cG
+cG
+cG
+VC
+NV
+pA
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (30,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+pA
+nT
+cG
+Lk
+cG
+py
+YL
+Ez
+MD
+aW
+wO
+wO
+aW
+uT
+yj
+cO
+ZU
+cG
+Lk
+cG
+Lg
+pA
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (31,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+eQ
+eQ
+eQ
+eQ
+cx
+eQ
+eQ
+eQ
+MD
+ZY
+wO
+wO
+ZY
+uT
+eQ
+eQ
+eQ
+zR
+eQ
+eQ
+eQ
+eQ
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (32,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+ZY
+ZY
+ZY
+ZY
+Uk
+ZY
+ZY
+aW
+aW
+ZY
+wO
+wO
+ZY
+aW
+aW
+ZY
+ZY
+Uk
+ZY
+ZY
+ZY
+ZY
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (33,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (34,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+SS
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+SS
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (35,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (36,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+wO
+fQ
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (37,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (38,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+SS
+lW
+lW
+SS
+lW
+lW
+aP
+lW
+lW
+aP
+lW
+lW
+SS
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (39,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+SS
+lW
+lW
+lW
+lW
+lW
+aP
+lW
+lW
+SS
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (40,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+OF
+OF
+OF
+lW
+lW
+OF
+OF
+OF
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (41,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (42,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+OF
+OF
+WV
+OF
+OF
+OF
+lW
+lW
+SS
+lW
+lW
+SS
+lW
+lW
+aP
+lW
+lW
+aP
+lW
+lW
+SS
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (43,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+SS
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (44,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+OF
+OF
+OF
+lW
+lW
+OF
+OF
+OF
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (45,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+SS
+lW
+lW
+lW
+lW
+lW
+aP
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (46,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-a
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+SS
+lW
+lW
+SS
+lW
+lW
+aP
+lW
+lW
+aP
+lW
+lW
+SS
+Bq
+Bq
+Bq
+ZY
+Bq
+Bq
+Bq
 "}
 (47,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-a
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+SS
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+Bq
+Bq
+Bq
+ZY
+Bq
+Bq
+Bq
 "}
 (48,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-a
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+OF
+OF
+WV
+OF
+OF
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+OF
+OF
+OF
+lW
+lW
+OF
+OF
+OF
+OF
+Bq
+Bq
+Bq
+ZY
+Bq
+Bq
+Bq
 "}
 (49,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-a
-a
-a
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+Bq
+Bq
+ZY
+ZY
+ZY
+Bq
+Bq
 "}
 (50,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-a
-a
-a
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+SS
+lW
+lW
+SS
+lW
+lW
+aP
+lW
+lW
+aP
+lW
+lW
+SS
+Bq
+Bq
+ZY
+wO
+ZY
+Bq
+Bq
 "}
 (51,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-a
-a
-a
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+SS
+lW
+lW
+lW
+lW
+lW
+aP
+lW
+lW
+SS
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+Bq
+Bq
+ZY
+wO
+ZY
+Bq
+Bq
 "}
 (52,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-a
-a
-a
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+OF
+OF
+OF
+lW
+lW
+OF
+OF
+OF
+OF
+Bq
+Bq
+ZY
+wO
+ZY
+Bq
+Bq
 "}
 (53,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-a
-a
-a
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+cd
+vZ
+lW
+lW
+lW
+OF
+lW
+lW
+OF
+Bq
+Bq
+ZY
+wO
+ZY
+Bq
+Bq
 "}
 (54,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-a
-a
-a
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+OF
+OF
+WV
+OF
+OF
+OF
+lW
+lW
+SS
+lW
+lW
+OF
+OF
+OF
+lW
+lW
+lW
+aP
+lW
+lW
+SS
+Bq
+Bq
+ZY
+wO
+ZY
+Bq
+Bq
 "}
 (55,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-a
-a
-a
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+cd
+vZ
+lW
+lW
+lW
+OF
+lW
+lW
+OF
+Bq
+Bq
+ZY
+wO
+ZY
+Bq
+Bq
 "}
 (56,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-a
-a
-a
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+OF
+lW
+lW
+OF
+OF
+OF
+ir
+OF
+OF
+OF
+OF
+OF
+OF
+Bq
+ZY
+ZY
+ZP
+ZY
+Bq
+Bq
 "}
 (57,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+SS
+lW
+lW
+lW
+lW
+lW
+aP
+lW
+lW
+Xo
+lW
+lW
+Xo
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+lW
+ZY
+ZY
+ZY
+wO
+wO
+ZY
+Bq
+Bq
 "}
 (58,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+aP
+lW
+lW
+lW
+VT
+wO
+wO
+wO
+ZY
+ZY
+Bq
+Bq
 "}
 (59,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+OF
+HG
+fx
+OF
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+lW
+wO
+wO
+wO
+ZY
+ZY
+Bq
+Bq
+Bq
 "}
 (60,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+OF
+OF
+WV
+OF
+OF
+OF
+lW
+AQ
+OF
+lW
+AQ
+OF
+OF
+lW
+AQ
+OF
+OF
+lW
+lW
+lW
+ZY
+wO
+ZY
+ZY
+Bq
+Bq
+Bq
+Bq
 "}
 (61,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+fb
+fu
+fu
+YJ
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+lW
+ZY
+ZY
+ZY
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (62,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+qT
+fu
+fu
+fu
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+aP
+lW
+lW
+lW
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (63,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+fu
+fu
+fu
+fu
+OF
+lW
+lW
+Fl
+lW
+lW
+lW
+lW
+Fl
+lW
+lW
+lW
+OF
+lW
+lW
+lW
+SS
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (64,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+eX
+fu
+fu
+LY
+OF
+lW
+lW
+hB
+lW
+lW
+lW
+lW
+hB
+lW
+lW
+lW
+OF
+lW
+lW
+lW
+SS
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (65,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+OF
+OF
+WV
+OF
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+lW
+SS
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (66,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+Xo
+lW
+lW
+lW
+SS
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (67,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (68,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+OF
+OF
+ir
+OF
+OF
+OF
+OF
+OF
+OF
+lW
+AQ
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+ir
+OF
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (69,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+Xo
+lW
+lW
+lW
+lW
+lW
+lW
+Xo
+lW
+lW
+lW
+lW
+lW
+lW
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (70,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+SS
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+SS
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (71,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+SS
+lW
+lW
+lW
+lW
+lW
+lW
+OF
+OF
+SS
+lW
+AQ
+SS
+OF
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+SS
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (72,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (73,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (74,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+SS
+lW
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+SS
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (75,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+SS
+lW
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+SS
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (76,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (77,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+OF
+lW
+AQ
+OF
+SS
+SS
+OF
+OF
+SS
+lW
+AQ
+SS
+OF
+OF
+SS
+SS
+OF
+lW
+AQ
+OF
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (78,1,1) = {"
-H
-N
-k
-D
-U
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
+cq
+oe
+so
+OJ
+OF
+SS
+SS
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+OF
+SS
+SS
+OF
+Bq
+Bq
+Bq
+Bq
 "}
 (79,1,1) = {"
-p
-j
-o
-x
-a
-K
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
+gU
+sv
+yJ
+mC
+wt
+lW
+lW
+kn
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+kn
+lW
+lW
+wt
+Bq
+Bq
+Bq
+Bq
 "}
 (80,1,1) = {"
-O
-y
-V
-F
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
+WD
+Ko
+nj
+NK
+wt
+lW
+lW
+kn
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+kn
+lW
+lW
+wt
+Bq
+Bq
+Bq
+Bq
 "}
 (81,1,1) = {"
-H
-P
-C
-Y
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
+cq
+fK
+EB
+gc
+OF
+SS
+SS
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+OF
+SS
+SS
+OF
+Bq
+Bq
+Bq
+Bq
 "}
 (82,1,1) = {"
-X
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Ek
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+OF
+lW
+AQ
+OF
+OF
+SS
+SS
+OF
+SS
+lW
+AQ
+SS
+OF
+SS
+SS
+OF
+OF
+lW
+AQ
+OF
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (83,1,1) = {"
-m
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+wc
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+SS
+mk
+pF
+pF
+mk
+ef
+pF
+pF
+Df
+mk
+pF
+pF
+mk
+SS
+lW
+lW
+lW
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (84,1,1) = {"
-X
-X
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Ek
+sM
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+SS
+pF
+pF
+Df
+mk
+ef
+pF
+pF
+Df
+mk
+ef
+pF
+pF
+SS
+lW
+lW
+lW
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (85,1,1) = {"
-I
-X
-n
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Sp
+Ek
+MM
+Bq
+Bq
+Bq
+Bq
+SS
+lW
+lW
+fx
+OF
+ju
+pF
+pF
+mk
+ef
+pF
+pF
+Df
+mk
+pF
+pF
+VQ
+OF
+HG
+lW
+lW
+SS
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (86,1,1) = {"
-S
-W
-n
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+sE
+xX
+MM
+Bq
+Bq
+Bq
+Bq
+SS
+lW
+lW
+lW
+SS
+oV
+mk
+mk
+mk
+ef
+pF
+pF
+Df
+mk
+mk
+mk
+ty
+SS
+lW
+lW
+lW
+SS
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (87,1,1) = {"
-E
-T
-n
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Op
+xi
+MM
+Bq
+Bq
+Bq
+Bq
+SS
+lW
+lW
+lW
+SS
+pF
+pF
+pF
+pF
+pF
+pF
+pF
+pF
+pF
+pF
+pF
+pF
+SS
+lW
+lW
+lW
+SS
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (88,1,1) = {"
-G
-Q
-n
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Np
+Hm
+MM
+Bq
+Bq
+Bq
+Bq
+SS
+lW
+lW
+lW
+SS
+pF
+pF
+IA
+RZ
+vY
+pF
+pF
+IA
+RZ
+vY
+pF
+pF
+SS
+lW
+lW
+lW
+SS
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (89,1,1) = {"
-h
-X
-n
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+fc
+Ek
+MM
+Bq
+Bq
+Bq
+Bq
+SS
+lW
+lW
+fx
+OF
+ju
+pF
+IA
+RZ
+vY
+pF
+pF
+IA
+RZ
+vY
+pF
+VQ
+OF
+HG
+lW
+lW
+SS
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (90,1,1) = {"
-X
-X
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Ek
+Ek
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+SS
+PU
+pF
+pF
+pF
+pF
+pF
+pF
+pF
+pF
+pF
+pF
+PU
+SS
+lW
+lW
+lW
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (91,1,1) = {"
-m
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+wc
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+lW
+lW
+lW
+SS
+RZ
+vY
+pF
+pF
+pF
+pF
+pF
+pF
+pF
+pF
+IA
+RZ
+SS
+lW
+lW
+lW
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (92,1,1) = {"
-X
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Ek
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+OF
+lW
+AQ
+OF
+OF
+SS
+SS
+OF
+SS
+lW
+AQ
+SS
+OF
+SS
+SS
+OF
+OF
+lW
+AQ
+OF
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (93,1,1) = {"
-H
-N
-k
-Y
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
+cq
+oe
+so
+gc
+OF
+SS
+SS
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+OF
+SS
+SS
+OF
+Bq
+Bq
+Bq
+Bq
 "}
 (94,1,1) = {"
-z
-Z
-A
-v
-a
-B
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
+mV
+hk
+ah
+oE
+Wg
+wO
+wO
+My
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+kn
+lW
+lW
+wt
+Bq
+Bq
+Bq
+Bq
 "}
 (95,1,1) = {"
-R
-b
-J
-L
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
+oP
+Xb
+ZO
+mc
+Wg
+wO
+wO
+My
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+kn
+lW
+lW
+wt
+Bq
+Bq
+Bq
+Bq
 "}
 (96,1,1) = {"
-H
-P
-d
-D
-U
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
+cq
+fK
+Hn
+OJ
+OF
+SS
+SS
+OF
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+lW
+OF
+SS
+SS
+OF
+Bq
+Bq
+Bq
+Bq
 "}
 (97,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+lW
+AQ
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (98,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+pk
+Lx
+pk
+OF
+or
+da
+gN
+OF
+Xr
+Xr
+Xr
+Xr
+OF
+or
+da
+gN
+OF
+pk
+Lx
+pk
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (99,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+Lx
+Lx
+Lx
+OF
+uz
+fu
+EF
+OF
+Xr
+Xr
+Xr
+Xr
+OF
+uz
+fu
+EF
+OF
+Lx
+Lx
+Lx
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (100,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+Lx
+Lx
+Lx
+hS
+Xr
+Xr
+tn
+OF
+Xr
+Xr
+Xr
+Xr
+OF
+tn
+Xr
+Xr
+hS
+Lx
+Lx
+Lx
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (101,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+uP
+Lx
+uP
+OF
+Qt
+Xr
+Xr
+He
+Xr
+Xr
+Xr
+Xr
+He
+Xr
+Xr
+Qt
+OF
+uP
+Lx
+uP
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (102,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+uP
+Lx
+uP
+OF
+CS
+Xr
+Xr
+Xr
+Xr
+Xr
+Xr
+Xr
+Xr
+Xr
+Xr
+CS
+OF
+uP
+Lx
+uP
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (103,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+OF
+Lx
+Lx
+Lx
+hS
+Xr
+Xr
+qj
+OF
+Xr
+Xr
+Xr
+Xr
+OF
+qj
+Xr
+Xr
+hS
+Lx
+Lx
+Lx
+OF
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (104,1,1) = {"
-c
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+ZY
+ZY
+ZY
+ZY
+Bq
+OF
+Lx
+Lx
+Lx
+OF
+yB
+fu
+mi
+OF
+Xr
+Xr
+Xr
+Xr
+OF
+yB
+fu
+mi
+OF
+Lx
+Lx
+Lx
+OF
+Bq
+ZY
+ZY
+ZY
+ZY
+ZY
+Bq
 "}
 (105,1,1) = {"
-c
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
+OF
+pk
+Lx
+pk
+OF
+NC
+sh
+OU
+OF
+Xr
+Xr
+Xr
+Xr
+OF
+NC
+sh
+OU
+OF
+pk
+Lx
+pk
+OF
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
 "}
 (106,1,1) = {"
-c
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+Xr
+mU
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
 "}
 (107,1,1) = {"
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+ZY
+ZY
+ZY
+wO
+wO
+ZY
+eF
+Au
+Ad
+Ad
+Ad
+OF
+Xr
+Xr
+OF
+rf
+rf
+rf
+rf
+rf
+ZY
+wO
+wO
+ZY
+ZY
+ZY
+cp
+cp
+cp
+ZY
+Bq
 "}
 (108,1,1) = {"
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+ry
+cp
+ry
+wO
+wO
+ZY
+et
+Xr
+Xr
+Xr
+Xr
+Xr
+Xr
+Xr
+Xr
+Xr
+Xr
+Xr
+Xr
+Sh
+ZY
+wO
+wO
+ry
+cp
+ry
+cp
+cp
+cp
+ZY
+Bq
 "}
 (109,1,1) = {"
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+ZY
+ZY
+ZY
+wO
+wO
+ZY
+lm
+AC
+QM
+vf
+AC
+ZY
+Xr
+Xr
+ZY
+xR
+sC
+sC
+CC
+ye
+ZY
+wO
+wO
+ZY
+ZY
+ZY
+cp
+cp
+cp
+ZY
+Bq
 "}
 (110,1,1) = {"
-c
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
+ZY
+wO
+wO
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+wO
+RV
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+wO
+wO
+ZY
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
 "}
 (111,1,1) = {"
-c
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
+ZY
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+ZY
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
 "}
 (112,1,1) = {"
-c
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
+ZY
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+ZY
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
 "}
 (113,1,1) = {"
-c
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
+ZY
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+ZY
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
 "}
 (114,1,1) = {"
-c
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
+ZY
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+ZY
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
 "}
 (115,1,1) = {"
-c
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
+ZY
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+ZY
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
 "}
 (116,1,1) = {"
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+ZY
+ZY
+ZY
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+ZY
+ZY
+ZY
+cp
+cp
+cp
+ZY
+Bq
 "}
 (117,1,1) = {"
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+ry
+cp
+ry
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+wO
+ry
+cp
+ry
+cp
+cp
+cp
+ZY
+Bq
 "}
 (118,1,1) = {"
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+cp
+cp
+cp
+ZY
+Bq
 "}
 (119,1,1) = {"
-c
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
+ZY
+wO
+wO
+wO
+wO
+lG
+bX
+bX
+NQ
+bX
+NQ
+bX
+bX
+wO
+wO
+wO
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
 "}
 (120,1,1) = {"
-c
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
+ZY
+wO
+wO
+wO
+wO
+qk
+kc
+Dw
+gQ
+gQ
+gQ
+qL
+kF
+LQ
+FW
+wO
+qc
+xQ
+wO
+wO
+wO
+ZY
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
 "}
 (121,1,1) = {"
-c
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
+ZY
+Rs
+Vd
+cB
+vx
+RQ
+NQ
+gp
+pT
+gw
+vs
+ez
+ZZ
+Qn
+gu
+wO
+CX
+qg
+QV
+wO
+wO
+ZY
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
 "}
 (122,1,1) = {"
-c
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
+ZY
+fF
+qb
+Oo
+wO
+sg
+Nt
+gp
+ED
+MJ
+Ae
+ez
+ZZ
+PA
+oC
+qm
+VA
+Bx
+wO
+wO
+wO
+ZY
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
 "}
 (123,1,1) = {"
-c
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
+GY
+SW
+DR
+SW
+dh
+bv
+NQ
+gp
+aG
+vl
+NZ
+ez
+ZZ
+Qn
+lZ
+wO
+qc
+Mw
+QV
+cj
+wO
+ZY
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
 "}
 (124,1,1) = {"
-c
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
+lx
+wO
+Ss
+wO
+qk
+lG
+Mm
+DW
+gw
+zg
+gw
+kg
+PE
+Yb
+tr
+wO
+qc
+lD
+wO
+wO
+wO
+ZY
+Bq
+ZY
+cp
+cp
+cp
+ZY
+Bq
 "}
 (125,1,1) = {"
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+sK
+GY
+vK
+wO
+Ss
+wO
+wO
+qk
+RG
+RG
+St
+wo
+St
+RG
+eq
+wO
+qk
+Vh
+Ck
+Ck
+Ck
+ZY
+eE
+Ck
+xF
+sK
+cp
+cp
+cp
+ZY
+Bq
 "}
 (126,1,1) = {"
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+ry
+qp
+ry
+wO
+Ss
+wO
+wO
+wO
+wO
+wO
+wO
+Oq
+wO
+wO
+wO
+wO
+wO
+wO
+ZY
+FT
+ru
+El
+pY
+ry
+bn
+ry
+cp
+cp
+cp
+ZY
+Bq
 "}
 (127,1,1) = {"
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+sK
+IE
+ZY
+ZY
+KW
+JP
+JP
+ZY
+od
+IC
+aO
+Vv
+ZY
+ZY
+ZY
+ZY
+ZY
+ZY
+sK
+Kq
+RB
+sK
+wO
+ZY
+Lb
+sK
+cp
+cp
+cp
+ZY
+Bq
 "}
 (128,1,1) = {"
-c
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+ZY
+US
+OF
+XX
+Ss
+wO
+wO
+wO
+Cc
+Xk
+Mf
+Mf
+Mf
+Mf
+aU
+pY
+bw
+wO
+ZY
+ZY
+ZY
+kP
+wO
+OF
+US
+ZY
+cp
+cp
+cp
+ZY
+Bq
 "}
 (129,1,1) = {"
-c
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+cp
+cp
+cp
+ZY
+gd
+OF
+XX
+Ss
+xq
+ak
+wO
+JZ
+Xk
+zt
+zt
+zt
+zt
+aU
+wO
+bw
+wO
+wO
+wO
+wO
+wO
+wO
+OF
+gd
+ZY
+cp
+cp
+cp
+ZY
+Bq
 "}
 (130,1,1) = {"
-c
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-a
-a
-a
-a
-a
-c
+Bq
+ZY
+ZY
+ZY
+ZY
+ZY
+gd
+OF
+OF
+zd
+TA
+TA
+xV
+SK
+Vu
+tW
+tW
+tW
+tW
+tW
+wO
+OF
+OF
+nH
+OF
+OF
+nH
+OF
+OF
+gd
+ZY
+ZY
+ZY
+ZY
+ZY
+Bq
 "}
 (131,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
-c
+Bq
+wF
+wF
+wF
+qf
+wF
+vy
+wP
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+HC
+HC
+HC
+HC
+HC
+wO
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+ZB
+DI
+wF
+wF
+wF
+qf
+wF
+Bq
 "}
 (132,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
-c
+Bq
+wF
+wF
+wF
+wF
+wF
+ZB
+DI
+wF
+wF
+qf
+wF
+wF
+qf
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+wF
+wF
+qf
+wF
+wF
+qf
+vy
+wP
+wF
+wF
+wF
+wF
+wF
+Bq
 "}
 (133,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
-c
+Bq
+wF
+wF
+wF
+wF
+wF
+vy
+wP
+wF
+wF
+wF
+wF
+wF
+wF
+wF
+tU
+wF
+tU
+wF
+tU
+wF
+tU
+wF
+wF
+wF
+wF
+wF
+wF
+ZB
+DI
+wF
+wF
+wF
+wF
+wF
+Bq
 "}
 (134,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+ZB
+DI
+wF
+wF
+wF
+wF
+wF
+wF
+wF
+wF
+wF
+wF
+wF
+wF
+wF
+wF
+wF
+wF
+wF
+wF
+wF
+wF
+vy
+wP
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (135,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+vy
+Xy
+Xy
+Xy
+Xy
+Xy
+Xy
+Xy
+Xy
+Xy
+Xy
+Xy
+Xy
+Xy
+Xy
+Xy
+Xy
+Xy
+Xy
+Xy
+Xy
+Xy
+Xy
+DI
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}
 (136,1,1) = {"
-c
-c
-c
-c
-c
-c
-c
-c
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-c
-c
-c
-c
-c
-c
-c
-c
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
+Bq
 "}

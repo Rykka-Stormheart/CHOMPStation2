@@ -2,6 +2,10 @@
 	dir = 2
 	anim_length_before_finalize = 3
 	icon = 'icons/obj/doors/angled/tgmc/generic.dmi'
+	open_sound_powered = 'sound/machines/door/tgmc1o.ogg' // Chompstation Edit: Better TGMC door sounds
+	close_sound_powered = 'sound/machines/door/tgmc1c.ogg' // Chompstation Edit: Better TGMC door sounds
+	department_open_powered = 'sound/machines/door/tgmc1o.ogg' // Chompstation Edit: Better TGMC door sounds
+	department_close_powered = 'sound/machines/door/tgmc1c.ogg' // Chompstation Edit: Better TGMC door sounds
 
 /obj/machinery/door/airlock/angled_tgmc/cell
 	icon = 'icons/obj/doors/angled/tgmc/celldoor.dmi'
@@ -46,6 +50,28 @@
 	icon = 'icons/obj/doors/angled/tgmc/secdoor_glass.dmi'
 	glass = TRUE
 	opacity = FALSE
+
+// CHOMPStation Add: Docking Airlocks
+// These exist solely to match with the station's theming of using red airlocks for docking/external.
+/obj/machinery/door/airlock/angled_tgmc/security/external_airlock
+	name = "External Airlock"
+	icon = 'icons/obj/doors/angled/tgmc/secdoor.dmi'
+	open_sound_powered = 'sound/machines/door/tgmc2o.ogg'
+	close_sound_powered = 'sound/machines/door/tgmc2c.ogg'
+	department_open_powered = 'sound/machines/door/tgmc2o.ogg'
+	department_close_powered = 'sound/machines/door/tgmc2c.ogg'
+
+/obj/machinery/door/airlock/angled_tgmc/security_glass/external_airlock
+	name = "External Airlock"
+	icon = 'icons/obj/doors/angled/tgmc/secdoor_glass.dmi'
+	glass = TRUE
+	opacity = FALSE
+	open_sound_powered = 'sound/machines/door/tgmc2o.ogg'
+	close_sound_powered = 'sound/machines/door/tgmc2c.ogg'
+	department_open_powered = 'sound/machines/door/tgmc2o.ogg'
+	department_close_powered = 'sound/machines/door/tgmc2c.ogg'
+// CHOMPSTation Add End
+
 /obj/machinery/door/airlock/angled_tgmc/secure
 	icon = 'icons/obj/doors/angled/tgmc/securedoor.dmi'
 
@@ -62,6 +88,10 @@
 	appearance_flags = 0
 	glass = TRUE
 	opacity = FALSE
+	open_sound_powered = 'sound/machines/door/tgmcdouble1o.ogg' // Chompstation Edit: Better TGMC door sounds
+	close_sound_powered = 'sound/machines/door/tgmcdouble1c.ogg' // Chompstation Edit: Better TGMC door sounds
+	department_open_powered = 'sound/machines/door/tgmcdouble1o.ogg' // Chompstation Edit: Better TGMC door sounds
+	department_close_powered = 'sound/machines/door/tgmcdouble1c.ogg' // Chompstation Edit: Better TGMC door sounds
 
 /obj/machinery/door/airlock/angled_tgmc/wide/Initialize(mapload)
 	. = ..()
