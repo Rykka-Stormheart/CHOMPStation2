@@ -49,6 +49,7 @@ Looking to add new job ship POI's with as little code knowledge as possible? Her
 - The "difficulty" variable indicates how hard your ship is for a department to do.
 - The "expected completion time" variable is how fast a skilled team should complete the ship. This should directly feed into difficulty, along with # of mobs, so on.
 - The "stationary" variable indicates if your ship is intended to be movable (IE, a shuttle), and if so, will need a console and such defined to allow it to jump from its own z to station.
+- If your ship is not stationary, please define shuttle info (the necessary info needed for a point-to-point shuttle to jump) in distress_shuttles.dm | DO NOT CHANGE "defer_initialization" to FALSE AT ANY POINT OR YOU WILL BREAK A LOT OF SHIT.
 -ADD YOUR MAP(s) TO THE #include LIST BELOW. This lets github catch POI's breaking in the future.
 -Keep templates alphebetical.
 -Include the map dimensions in the map file name.

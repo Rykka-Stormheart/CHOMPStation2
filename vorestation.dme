@@ -4531,6 +4531,8 @@
 #include "maps\submaps\_readme.dm"
 #include "maps\submaps\jobship_templates\ship_areas.dm"
 #include "maps\submaps\jobship_templates\_templates.dm"
+#include "maps\submaps\jobship_templates\distress_shuttles.dm"
+#include "maps\submaps\jobship_templates\ship_areas.dm"
 #include "maps\~map_system\maps.dm"
 #include "modular_chomp\code\coalesce_ch.dm"
 #include "modular_chomp\code\global.dm"
