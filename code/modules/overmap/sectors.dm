@@ -303,5 +303,8 @@
 	if(!GLOB.dynamic_sector_master) //CHOMPedit: hook dynamic sector generation into overmap gen
 		new /obj/effect/overmap/visitable/dynamic // CHOMPedit, glob var assignment is handled in the object.
 
+	if(!GLOB.dynamic_ship_master) // CHOMPEdit: Hook dynamic ship gen into overmap gen
+		new /obj/effect/overmap/visitable/dynamic_ship // CHOMPedit, glob var assignment is handled in the object.
+
 	testing("Overmap build complete.")
 	return 1

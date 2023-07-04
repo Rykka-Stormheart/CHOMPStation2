@@ -18,16 +18,17 @@
 /datum/map_template/ship_poi
 	name = "Ship POIs for Job Ships"
 	desc = "Define your ship here."
-	// fixed_orientation = TRUE 					// uncomment this if you want your ships to not be rotated when they're spawned on their own Z's.
+	// fixed_orientation = TRUE 								// uncomment this if you want your ships to not be rotated when they're spawned on their own Z's.
 	var/scanner_desc = "Unable to resolve bluespace fluctuations."
 	var/poi_icon = "distress"
-	var/active_icon = "distress" 					// Icon to use when the POI is loaded. Set to null to disable behavior.
+	var/active_icon = "distress" 								// Icon to use when the POI is loaded. Set to null to disable behavior.
 	var/poi_color = null
-	var/block_size = 60 							// The size of the map's largest dimension. If the map is 66x49, this var should be 66. Essential for laoding/unloading system.
+	var/block_size = 60 										// The size of the map's largest dimension. If the map is 66x49, this var should be 66. Essential for laoding/unloading system.
 	var/department = MED
-	var/difficulty = TUTORIAL						// How hard your ship's template is.
-	var/expected_completion_time = 10 MINUTES 		// How long it should take for a skilled team to complete the ship.
-	var/stationary = TRUE							// Is your ship intended to be able to fly? NOTE: This does NOT mean you can fly it manually. This simply allows it to jump and dock rather than staying on its own Z-level.
+	var/difficulty = TUTORIAL									// How hard your ship's template is.
+	var/expected_completion_time = 10 MINUTES 					// How long it should take for a skilled team to complete the ship.
+	var/stationary = TRUE										// Is your ship intended to be able to fly? NOTE: This does NOT mean you can fly it manually. This simply allows it to jump and dock rather than staying on its own Z-level.
+	var/ship_datum = /datum/shuttle/autodock/ferry/jobship 		// This is the path of your shuttle you defined in distress_shuttles.dm. This is then fed into the spawner to init the shuttle when the map loads.
 
 // Stolen from map_template/shelter
 /datum/map_template/ship_poi/proc/update_lighting(turf/deploy_location)
@@ -48,7 +49,7 @@ Looking to add new job ship POI's with as little code knowledge as possible? Her
 - The "department" variable indicates which department is supposed to handle the ship.
 - The "difficulty" variable indicates how hard your ship is for a department to do.
 - The "expected completion time" variable is how fast a skilled team should complete the ship. This should directly feed into difficulty, along with # of mobs, so on.
-- The "stationary" variable indicates if your ship is intended to be movable (IE, a shuttle), and if so, will need a console and such defined to allow it to jump from its own z to station.
+- The "stationary" variable indicates if your ship is intended to be movable (IE, a shuttle), and if so, will need a console and such defined to allow it to jump from its own z to station. If this is not defined, it will spawn randomly on the overmap, and require flying to.
 - If your ship is not stationary, please define shuttle info (the necessary info needed for a point-to-point shuttle to jump) in distress_shuttles.dm | DO NOT CHANGE "defer_initialization" to FALSE AT ANY POINT OR YOU WILL BREAK A LOT OF SHIT.
 -ADD YOUR MAP(s) TO THE #include LIST BELOW. This lets github catch POI's breaking in the future.
 -Keep templates alphebetical.
@@ -78,6 +79,7 @@ Less important
 	department = MED
 	difficulty = STANDARD
 	expected_completion_time = 15 MINUTES // 15 minutes is "par" time.
+	ship_datum = /datum/shuttle/autodock/ferry/jobship/meridian_dawn/class_b
 
 
 // End templates.

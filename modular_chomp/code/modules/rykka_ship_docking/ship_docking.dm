@@ -7,7 +7,7 @@
 #define MED 1
 #define ENG 2
 #define SEC 3
-// #define SERV 4 // Maybe someday chefs will be able to order a ship full of people to feed. /s
+// #define SERVICE 4 // Maybe someday chefs will be able to order a ship full of people to feed. /s
 
 /*
  * Console ideally will hold all the code to run the entire 'event' inside itself.
@@ -21,7 +21,7 @@
 */
 
 /*
- * Console Code
+ * Distress Beacon/Request Console Code
 */
 /obj/machinery/computer/jobship_console
 	name = "ship request console"
