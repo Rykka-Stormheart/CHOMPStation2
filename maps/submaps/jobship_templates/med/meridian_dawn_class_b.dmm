@@ -164,6 +164,14 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/cable/blue,
+/obj/machinery/shieldwallgen{
+	active = 1;
+	power = 1;
+	power_draw = 5;
+	req_access = list(56);
+	storedpower = 500000
+	},
 /turf/simulated/floor/tiled/milspec,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "bP" = (
@@ -256,6 +264,28 @@
 "cG" = (
 /turf/simulated/shuttle/floor/white,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
+"cI" = (
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"cK" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
 "cO" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -326,7 +356,31 @@
 /turf/simulated/floor/tiled/milspec/sterile,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "ee" = (
-/obj/machinery/recharge_station,
+/obj/structure/cable/blue{
+	dir = 1
+	},
+/obj/machinery/power/smes/buildable{
+	RCon_tag = "Engine - Core";
+	capacity = 10e+006;
+	charge = 8e+006;
+	cur_coils = 12;
+	input_attempt = 1;
+	input_level = 100000;
+	max_coils = 12;
+	output_level = 200000
+	},
+/obj/machinery/power/smes/buildable{
+	RCon_tag = "ENG Department Hardlight";
+	charge = 5e+006;
+	cur_coils = 12;
+	input_attempt = 1;
+	max_coils = 12
+	},
+/obj/machinery/door/window/brigdoor/southright{
+	dir = 4;
+	layer = 10;
+	req_access = list(56)
+	},
 /turf/simulated/floor/tiled/milspec,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "ef" = (
@@ -408,6 +462,13 @@
 "eS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
+	},
+/turf/simulated/wall/tgmc/darkwall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"eV" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/heavyduty{
+	icon_state = "1-2"
 	},
 /turf/simulated/wall/tgmc/darkwall,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
@@ -598,6 +659,14 @@
 	},
 /turf/simulated/floor/tiled/milspec/sterile,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
+"gL" = (
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/wall/tgmc/darkwall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
 "gM" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
@@ -645,8 +714,8 @@
 /obj/machinery/atmospherics/portables_connector{
 	dir = 8
 	},
-/obj/effect/floor_decal/industrial/outline,
 /obj/machinery/portable_atmospherics/canister/phoron,
+/obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/tiled/milspec,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "hB" = (
@@ -821,6 +890,12 @@
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
+"ki" = (
+/obj/structure/sign/warning/high_voltage{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
 "kn" = (
 /obj/machinery/door/airlock/angled_tgmc/security_glass/external_airlock{
 	icon_state = "door_locked";
@@ -842,6 +917,14 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
+	},
+/turf/simulated/wall/tgmc/darkwall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"kO" = (
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/wall/tgmc/darkwall,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
@@ -925,10 +1008,16 @@
 	dir = 1
 	},
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
+/obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/tiled/milspec,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "lO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/wall/tgmc/darkwall,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "lV" = (
@@ -1051,7 +1140,8 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/warning{
-	dir = 10
+	dir = 10;
+	layer = 1
 	},
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 30
@@ -1310,7 +1400,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/wall/tgmc/darkwall,
+/turf/simulated/floor/tiled/milspec,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "qc" = (
 /obj/effect/wingrille_spawn/reinforced_phoron,
@@ -1397,9 +1487,7 @@
 /turf/simulated/floor/tiled/milspec,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "qv" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 1
-	},
+/obj/machinery/atmospherics/binary/pump,
 /turf/simulated/floor/tiled/milspec,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "qy" = (
@@ -1741,9 +1829,9 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning{
-	dir = 6
+	dir = 6;
+	layer = 1
 	},
-/obj/machinery/portable_atmospherics/canister/phoron,
 /turf/simulated/floor/tiled/milspec,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "uL" = (
@@ -1783,16 +1871,21 @@
 /turf/simulated/wall/lead,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "vf" = (
-/obj/structure/table/reinforced,
-/obj/item/weapon/storage/belt/utility/full,
-/obj/item/weapon/storage/toolbox/mechanical{
-	pixel_y = 9
-	},
-/obj/item/weapon/storage/toolbox/mechanical{
-	pixel_y = -1
-	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
+	},
+/obj/machinery/power/breakerbox/activated{
+	name = "Hardlight Breaker"
+	},
+/obj/structure/cable/blue{
+	dir = 8
+	},
+/obj/structure/cable/blue{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning/cee{
+	dir = 8;
+	layer = 1
 	},
 /turf/simulated/floor/tiled,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
@@ -1940,9 +2033,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/sign/warning/secure_area{
-	pixel_y = -32
-	},
 /obj/machinery/light{
 	dir = 2;
 	nightshift_enabled = 1
@@ -1961,8 +2051,8 @@
 /obj/machinery/atmospherics/portables_connector{
 	dir = 1
 	},
-/obj/effect/floor_decal/industrial/outline/red,
 /obj/machinery/portable_atmospherics/canister/empty,
+/obj/effect/floor_decal/industrial/outline/red,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "xo" = (
@@ -2138,6 +2228,15 @@
 /obj/machinery/computer/ship/helm,
 /turf/simulated/shuttle/floor/white,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
+"yT" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning/full{
+	layer = 1
+	},
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
 "yV" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden,
@@ -2264,6 +2363,15 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Ba" = (
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 4;
+	dir = 1;
+	icon_state = "1-4"
+	},
+/turf/simulated/wall/tgmc/darkwall,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "Bh" = (
 /obj/structure/table/reinforced,
@@ -2445,9 +2553,6 @@
 /turf/simulated/wall/lead,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "CH" = (
-/obj/structure/sign/warning/secure_area{
-	pixel_y = 32
-	},
 /obj/machinery/light{
 	dir = 1;
 	nightshift_enabled = 1
@@ -2573,7 +2678,10 @@
 	},
 /obj/machinery/atmospherics/binary/pump/high_power,
 /obj/structure/sign/department/shield{
-	pixel_x = -32
+	pixel_y = 32
+	},
+/obj/structure/sign/department/shield{
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/milspec,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
@@ -2602,6 +2710,11 @@
 "El" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/maintenance/engi,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Eo" = (
+/obj/machinery/portable_atmospherics/canister/phoron,
+/obj/effect/floor_decal/industrial/outline/cut_corners/blue,
 /turf/simulated/floor/tiled/milspec,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "Ez" = (
@@ -2672,7 +2785,9 @@
 /turf/simulated/floor/airless,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "EY" = (
-/obj/machinery/atmospherics/binary/pump,
+/obj/machinery/atmospherics/binary/pump{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/milspec,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "Ff" = (
@@ -2685,6 +2800,11 @@
 	},
 /obj/effect/floor_decal/borderfloorblack/full,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Fh" = (
+/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
+/obj/effect/floor_decal/industrial/outline/cut_corners,
 /turf/simulated/floor/tiled/milspec,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "Fi" = (
@@ -2709,6 +2829,14 @@
 	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"FR" = (
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/wall/tgmc/darkwall,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "FS" = (
 /obj/machinery/door/airlock/external{
@@ -2884,6 +3012,17 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/machinery/shieldwallgen{
+	active = 1;
+	power = 1;
+	power_draw = 5;
+	req_access = list(56);
+	storedpower = 500000
+	},
+/obj/structure/cable/blue{
+	dir = 1
+	},
+/obj/structure/cable/blue,
 /turf/simulated/floor/tiled/milspec,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "HC" = (
@@ -2912,6 +3051,16 @@
 	},
 /obj/structure/table/steel_reinforced,
 /obj/item/weapon/tool/wrench,
+/turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"Id" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/heavyduty{
+	d2 = 2;
+	dir = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/tiled/milspec,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "In" = (
@@ -3033,7 +3182,7 @@
 "Jw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/heavyduty{
-	icon_state = "4-8"
+	icon_state = "2-4"
 	},
 /turf/simulated/wall/tgmc/darkwall,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
@@ -3055,6 +3204,12 @@
 	dir = 10
 	},
 /turf/simulated/floor/wood,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"JM" = (
+/obj/structure/cable/heavyduty{
+	icon_state = "1-8"
+	},
+/turf/simulated/wall/tgmc/darkwall,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "JP" = (
 /obj/machinery/door/blast/regular{
@@ -3091,6 +3246,12 @@
 "Kg" = (
 /obj/machinery/door/firedoor/glass/hidden/steel{
 	dir = 2
+	},
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 4;
+	dir = 1;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/milspec,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
@@ -3578,8 +3739,19 @@
 /turf/simulated/wall/lead,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "OT" = (
-/obj/machinery/light{
-	dir = 8
+/obj/structure/closet/crate,
+/obj/item/weapon/circuitboard/smes,
+/obj/item/weapon/circuitboard/smes,
+/obj/item/weapon/smes_coil,
+/obj/item/weapon/smes_coil,
+/obj/item/weapon/smes_coil/super_capacity,
+/obj/item/weapon/smes_coil/super_capacity,
+/obj/item/weapon/smes_coil/super_io,
+/obj/item/weapon/smes_coil/super_io,
+/obj/machinery/door/window/brigdoor/northleft{
+	dir = 4;
+	layer = 10;
+	req_access = list(56)
 	},
 /turf/simulated/floor/tiled/milspec,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
@@ -3593,7 +3765,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "Pq" = (
-/obj/structure/sign/warning/high_voltage{
+/obj/structure/sign/warning/secure_area{
 	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/milspec,
@@ -3640,11 +3812,6 @@
 	pixel_x = 32;
 	pixel_y = -10
 	},
-/obj/structure/cable/heavyduty{
-	d2 = 2;
-	dir = 4;
-	icon_state = "0-4"
-	},
 /turf/simulated/floor/tiled/milspec,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "PE" = (
@@ -3662,6 +3829,15 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/milspec,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
+"PO" = (
+/obj/structure/closet/emcloset,
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "PU" = (
 /obj/structure/bed/chair/wood{
@@ -3726,11 +3902,12 @@
 /obj/item/weapon/storage/toolbox/electrical{
 	pixel_y = 10
 	},
-/obj/item/weapon/storage/toolbox/electrical{
-	pixel_y = 0
-	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
+	},
+/obj/item/weapon/storage/belt/utility/full,
+/obj/item/weapon/storage/toolbox/mechanical{
+	pixel_y = -1
 	},
 /turf/simulated/floor/tiled,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
@@ -3885,6 +4062,14 @@
 	},
 /turf/simulated/wall/tgmc/window/white/reinf,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
+"Sp" = (
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/wall/tgmc/darkwall,
+/area/submap/jobship/medsci/meridian_dawn/class_b)
 "Ss" = (
 /obj/structure/cable/yellow{
 	d1 = 2;
@@ -3957,7 +4142,7 @@
 /obj/machinery/atmospherics/pipe/manifold/visible/black{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/milspec,
+/turf/simulated/wall/tgmc/darkwall,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
 "SZ" = (
 /obj/structure/catwalk,
@@ -4360,6 +4545,9 @@
 "XK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
+	},
+/obj/structure/cable/heavyduty{
+	icon_state = "1-2"
 	},
 /turf/simulated/wall/tgmc/darkwall,
 /area/submap/jobship/medsci/meridian_dawn/class_b)
@@ -8761,7 +8949,7 @@ Bq
 ZY
 OT
 ee
-ZY
+FR
 eF
 Au
 Ad
@@ -8797,7 +8985,7 @@ cp
 ZY
 Bq
 ZY
-wO
+ki
 Kt
 lO
 et
@@ -8837,12 +9025,12 @@ Bq
 ZY
 wO
 by
-ZY
+Sp
 lm
 AC
 QM
 vf
-AC
+PO
 Zf
 CH
 wU
@@ -8875,12 +9063,12 @@ Bq
 ZY
 wO
 by
-ZY
-ZY
-ZY
-ZY
-ZY
-ZY
+Ba
+gL
+gL
+gL
+kO
+Sp
 Zf
 wO
 RV
@@ -8920,8 +9108,8 @@ wO
 wO
 Kg
 Hp
-wO
-rU
+cI
+cK
 bL
 Ho
 wO
@@ -8962,7 +9150,7 @@ PB
 mn
 oN
 Gi
-oN
+Id
 SR
 oN
 oN
@@ -8997,10 +9185,10 @@ db
 tP
 za
 Jw
-za
-za
+eV
+eV
 XK
-ZY
+JM
 ZY
 ZY
 an
@@ -9067,7 +9255,7 @@ Uz
 Xi
 Ib
 qv
-lG
+yT
 kc
 Dw
 Pr
@@ -9139,9 +9327,9 @@ fF
 ZY
 Bq
 lv
-ZY
+Eo
 qb
-ZY
+Fh
 qV
 sg
 Nt
