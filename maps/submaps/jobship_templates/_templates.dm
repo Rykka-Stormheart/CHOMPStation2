@@ -78,8 +78,10 @@ Less important
 	fixed_orientation = TRUE
 	department = MED
 	difficulty = STANDARD
+	stationary = FALSE
 	expected_completion_time = 15 MINUTES // 15 minutes is "par" time.
 	ship_datum = /datum/shuttle/autodock/ferry/jobship/meridian_dawn/class_b
+	mappath = 'maps/submaps/jobship_templates/med/meridian_dawn_class_b.dmm'
 
 
 // End templates.

@@ -5,7 +5,10 @@
 */
 // == Do not touch starts here. ==
 /datum/shuttle/autodock/ferry/jobship
-	defer_initialisation = TRUE // We do not want to automatically build these at start, because they're not loaded in until the dynamic spawner loads us in.
+	defer_initialisation = TRUE 		// We do not want to automatically build these at start, because they're not loaded in until the dynamic spawner loads us in.
+	location = FERRY_LOCATION_OFFSITE 	// We start automatically offsite.
+	var/launched = FALSE				// Simple way to track if we launched ourselves yet.
+	var/recalled = FALSE				// Var to track if we've been recalled.
 
 /obj/effect/shuttle_landmark/jobship
 	landmark_tag = "shipspawn_ident" // Change _ident to _yourshipname
@@ -44,10 +47,20 @@
 			return FALSE
 	return TRUE
 
+// Processing code goes here.
+/datum/shuttle/autodock/ferry/jobship/process()
+	if(process_state == IDLE_STATE)
+		if(location) // If we're off-station (space).
+			launch()
+			launched = TRUE
+		else
+			if(launched && !check_for_passengers() && recalled) // Did we launch already, have no passengers, and have been sent a recall command?
+				launch()
+
 /*
 // Yes, this is commented out because this is purely an example of how to build your shuttle properly to work with the auto-dock system.
 /datum/shuttle/autodock/ferry/jobship/example
-	name = "Damaged Transport"
+	name = "Damaged Transport" // This is also going to be duplicated in the shuttle_tag of the console.
 	warmup_time = 14 // This is in seconds, because the timer multiplies it by 10. So 14 becomes 1400 deciseconds (14 seconds).
 	location = FERRY_LOCATION_OFFSITE 			// Do not change this - your ships spawn offstation.
 	shuttle_area = /area/submap/jobship/depthere/yourareahere // Your ships "master" area. The one that covers the entire thing.
@@ -63,14 +76,14 @@
 /obj/machinery/computer/shuttle_control/jobship/example
 	// Do not change the name of it without good reason.
 	// Likewise, do not change the access, as it is intended for only admins to be able to touch it.
-	shuttle_tag = "yourtaghere" // Change this tag to match your ship name. For example, Meridian Dawn Class B would be "Meridian Dawn Class B Medium Medical Transport"
+	shuttle_tag = "yourtaghere" // Change this tag to match your ship name. For example, the name of our shuttle datum is Meridian Dawn Class B Medium Medical Transport, so our tag would be "Meridian Dawn Class B Medium Medical Transport"
 */
 
 // ==== Do not touch ends. ====
 // ==== You may touch below. ====
 //
 /datum/shuttle/autodock/ferry/jobship/meridian_dawn/class_b
-	name = "Meridian Dawn Class B Transport"
+	name = "Meridian Dawn Class B Medium Medical Transport"
 	docking_controller_tag = "merid_b"
 	landmark_offsite = "shipspawn_meridian_b"
 	landmark_station = "d1_aux_b" // Deck 1, left-bottom airlock facing south.

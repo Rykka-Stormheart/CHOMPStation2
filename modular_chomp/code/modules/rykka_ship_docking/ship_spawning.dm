@@ -101,6 +101,7 @@
 */
 
 GLOBAL_VAR_INIT(dynamic_ship_master, null) // Don't touch.
+var/static/ship_z_controller = null // Global variable so anyone can access us from anywhere.
 
 // Also adjust find_z_levels() if you adjust increase dynamic levels, that part is hard-coded so you don't gloss over world.increment_max_z().
 #define MAX_DYNAMIC_SHIP_LEVELS 4 // Maximum of 4 dynamic ships spawned (1 for ENG, 1 for MED, 1 for SEC, plus 1 for rollover if one finishes early and spawns another.)
@@ -159,6 +160,7 @@ GLOBAL_VAR_INIT(dynamic_ship_master, null) // Don't touch.
 			CRASH("Dynamic ship generation couldn't locate area [base_area].")
 		base_area = spehss
 	// create_children() // We don't want to immediately make all our ships on init. We only want to make stuff when we're called on demand.
+	ship_z_controller = src
 
 // Create ship objects for each overmap ship template, link to parent. Initialize() of children handles turf assignment. Only call this under random events that spawn **multiple random** overmap distress beacons. Otherwise, we'll use `create_child()` instead, for on-demand loading.
 /obj/effect/overmap/visitable/dynamic_ship/proc/create_children(var/department, var/difficulty)
@@ -171,17 +173,27 @@ GLOBAL_VAR_INIT(dynamic_ship_master, null) // Don't touch.
 		all_children.Add(S)
 		S.seed_overmap()
 
-// Similar to the above, but this time we only care about spawning the one ship we were called for. - Random events + console
-/obj/effect/overmap/visitable/dynamic_ship/proc/create_child(var/department, var/difficulty)
+/*
+ * Similar to the above, but this time we only care about spawning the one ship we were called for. - Random events + console
+ * Arguments below:
+ * Department - self explanatory, what department we're spawning.
+ * Difficulty - self explanatory.
+ * Spawn_immediate - Do we not wait for get_scan_data, and just immediately spawn? This is what will happen most of the time unless it is randomly spawned on the overmap.
+ * requested_console - What console sent in the request? We're going to link our child Z to this console, so that when the console says 'stop', it will send the command to destroy ship first, then unload the Z.
+*/
+/obj/effect/overmap/visitable/dynamic_ship/proc/create_child(var/department, var/difficulty, var/spawn_immediate = FALSE, var/requested_console)
 	var/list/ships_to_pick = list() // Define the list here, we only care about it for the lifetime of the proc.
 	for(var/datum/map_template/ship_poi/ship as anything in subtypesof(/datum/map_template/ship_poi))
-		if(!(department == ship.department) || !(difficulty == ship.difficulty)) // First, we discard the ones that don't match.
+		if(!(initial(ship.department) == department) || !(initial(ship.difficulty) == difficulty)) // First, we discard the ones that don't match.
+			to_world("Skipped template [initial(ship.name)], as its department [initial(ship.department)] and difficulty [initial(ship.difficulty)] did not match!")
 			continue // Check the rest
 		if(!initial(ship.mappath) || !initial(ship.name) || (initial(ship.block_size) > MAX_DYNAMIC_SHIP_DIMENSIONS)) // Exclude templates that lack a map file, name, or are too big.
+			to_world("Skipped template [initial(ship.name)], as it did not have a name, path, or was too large!")
 			continue // Keep going
 		ships_to_pick.Add(ship) // We now add the ship to the list.
 
 	var/obj/effect/overmap/visitable/dynamic_ship/ship/S = new()
+	var/obj/machinery/computer/jobship_console/C = requested_console
 	if(ships_to_pick.len) // Safety, in case the list is empty somehow because we lack valid templates.
 		S.my_template = SSmapping.map_templates[initial(pick(ships_to_pick).name)]
 		S.parent = src
@@ -191,6 +203,10 @@ GLOBAL_VAR_INIT(dynamic_ship_master, null) // Don't touch.
 			S.invisibility = 101 // We don't want this visible, because we don't want players to be able to fly to this Z and lock up the system by accident. Remove this if players somehow get stuck.
 
 		S.seed_overmap()
+		if(spawn_immediate) // Spawn us NOW.
+			S.get_scan_data()
+
+		C.linked_ship = S // Link us to the console, so the console can directly access the overmap object.
 
 	else // Begin screaming!
 		log_and_message_admins("ships_to_pick could not find any valid templates upon request! Difficulty was [difficulty], and department is [department]!")
@@ -280,7 +296,7 @@ GLOBAL_VAR_INIT(dynamic_ship_master, null) // Don't touch.
 
 // Normally Initialize() would do this but I need it to call after Initialize(), therefore new proc.
 /obj/effect/overmap/visitable/dynamic_ship/ship/proc/seed_overmap()
-	if(my_template.stationary) // If we can't move under our own engine power for some reason.
+	if(initial(my_template.stationary) == TRUE) // If we can't move under our own engine power for some reason.
 		start_x = start_x || rand(OVERMAP_EDGE, global.using_map.overmap_size - OVERMAP_EDGE)
 		start_y = start_y || rand(OVERMAP_EDGE, global.using_map.overmap_size - OVERMAP_EDGE)
 
@@ -294,19 +310,21 @@ GLOBAL_VAR_INIT(dynamic_ship_master, null) // Don't touch.
 			forceMove(locate(start_x, start_y, global.using_map.overmap_z))
 			break
 	else // Otherwise, we move, so we need to locate the station overmap spot, put our ship right next to it.
-		var/home_station = /obj/effect/overmap/visitable/sector/Southern_Cross // Change this path based on your map's overmap sector.
-		start_x = (home_station.start_x + rand(-1, 1))
-		start_y = (home_station.start_y + rand(-1, 1))
+		var/obj/effect/overmap/visitable/home_station = /obj/effect/overmap/visitable/sector/Southern_Cross // Change this path based on your map's overmap sector.
+		start_x = (initial(home_station.start_x) + rand(-1, 1))
+		start_y = (initial(home_station.start_y) + rand(-1, 1))
 
 		forceMove(locate(start_x, start_y, global.using_map.overmap_z))
+		to_world("Placed our object at overmap [start_x] (X), and [start_y] (Y)!")
 
 		for(var/obj/effect/overmap/visitable/dynamic_ship/ship/S in loc.contents) // If we've spawned on another ship, we'll try again once in each direction.
 			if(S == src)
 				continue
 			var/tries = 0
-			start_x = (home_station.start_x + rand(-1, 1))
-			start_y = (home_station.start_y + rand(-1, 1))
+			start_x = (initial(home_station.start_x) + rand(-1, 1))
+			start_y = (initial(home_station.start_y) + rand(-1, 1))
 			forceMove(locate(start_x, start_y, global.using_map.overmap_z))
+			to_world("Placed our object at overmap [start_x] (X), and [start_y] (Y)!")
 			tries++
 			if(tries >= 8) // Once for each tile, including diagonals because you can diagonal jump.
 				break
@@ -415,12 +433,15 @@ GLOBAL_VAR_INIT(dynamic_ship_master, null) // Don't touch.
 	if(my_template.active_icon)
 		icon_state = my_template.active_icon
 
-	if(my_template.stationary == FALSE) // Do we jump to the station?
-		LAZYDISTINCTADD(SSshuttles.shuttles_to_initialize, my_template.ship_datum) // First, we need to build our shuttle definition. We add it to the list here.
+	if(initial(my_template.stationary) == FALSE) // Do we jump to the station?
+		var/datum/shuttle/autodock/ferry/our_shuttle = initial(my_template.ship_datum)
+		LAZYDISTINCTADD(SSshuttles.shuttles_to_initialize, our_shuttle) // First, we need to build our shuttle definition. We add it to the list here.
 		SSshuttles.initialize_shuttles() // Now, we initialize it. This should ideally build the shuttles on this POI (All of them, not just one, later).
+		/*
 		spawn(10 SECONDS) // We want to give the subsystem about 10 seconds to init to account for lag time.
-			var/datum/shuttle/autodock/ferry/jobship/shuttle = SSshuttles.shuttles[shuttle_tag] // First, identify our shuttle by its shuttle tag.
-			shuttle.launch() // We now need to call the proc to jump to our docking point.
+			var/datum/shuttle/autodock/ship = SSshuttles.shuttles[our_shuttle] // First, identify our shuttle by its shuttle tag.
+			ship.launch() // We now need to call the proc to jump to our docking point.
+		*/
 
 /obj/effect/overmap/visitable/dynamic_ship/ship/proc/destroy_ship(mob/user)
 	if(!loaded) // Ideally this should never happen.

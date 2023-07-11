@@ -49,6 +49,54 @@
 /area/submap/jobship/medsci/meridian_dawn/class_b
 	name = "Meridian Dawn Class B Medium Convoy Medical Transport"
 
+/area/submap/jobship/medsci/meridian_dawn/class_b/bridge
+	name = "Bridge"
+
+/area/submap/jobship/medsci/meridian_dawn/class_b/engineering
+	name = "Engineering"
+
+/area/submap/jobship/medsci/meridian_dawn/class_b/engineering/reactor_core
+	name = "Reactor Core"
+
+/area/submap/jobship/medsci/meridian_dawn/class_b/medical
+	name = "Medical"
+
+/area/submap/jobship/medsci/meridian_dawn/class_b/medical/main
+	name = "Shipmed Main Scanner Room"
+
+/area/submap/jobship/medsci/meridian_dawn/class_b/medical/surgery_one
+	name = "Shipmed Surgery Room One"
+
+/area/submap/jobship/medsci/meridian_dawn/class_b/medical/surgery_two
+	name = "Shipmed Surgery Room Two"
+
+/area/submap/jobship/medsci/meridian_dawn/class_b/medical/surgery_three
+	name = "Shipmed Surgery Room Three"
+
+/area/submap/jobship/medsci/meridian_dawn/class_b/medical/surgery_four
+	name = "Shipmed Surgery Room Four"
+
+/area/submap/jobship/medsci/meridian_dawn/class_b/medical/coldstorage
+	name = "Shipmed Cold Storage"
+
+/area/submap/jobship/medsci/meridian_dawn/class_b/medical/recovery_wing
+	name = "Shipmed Recovery Wing"
+
+/area/submap/jobship/medsci/meridian_dawn/class_b/medical/masscasualtyone
+	name = "Mass Casualty Wing 1"
+
+/area/submap/jobship/medsci/meridian_dawn/class_b/medical/masscasualtytwo
+	name = "Mass Casualty Wing 2"
+
+/area/submap/jobship/medsci/meridian_dawn/class_b/civ
+	name = "Civilian Bar/Rec Area"
+
+/area/submap/jobship/medsci/meridian_dawn/class_b/civ/crew_quarters_one
+	name = "Crew Quarters 1"
+
+/area/submap/jobship/medsci/meridian_dawn/class_b/civ/crew_quarters_two
+	name = "Crew Quarters 2"
+
 /area/submap/jobship/medsci/meridian_dawn/class_c
 	name = "Meridian Dawn Class C Heavy Convoy Medical Flagcruiser"
 
