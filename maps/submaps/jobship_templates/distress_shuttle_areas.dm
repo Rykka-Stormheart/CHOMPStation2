@@ -49,6 +49,7 @@
 /area/submap/jobship/medsci/meridian_dawn/class_b
 	name = "Meridian Dawn Class B Medium Convoy Medical Transport"
 
+/*
 /area/submap/jobship/medsci/meridian_dawn/class_b/bridge
 	name = "Bridge"
 
@@ -102,3 +103,4 @@
 
 /area/submap/jobship/medsci/meridian_dawn/class_d
 	name = "Meridian Dawn Class D Superheavy Fleet Medical Carrier"
+*/

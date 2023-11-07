@@ -12,6 +12,8 @@
 
 /obj/effect/shuttle_landmark/jobship
 	landmark_tag = "shipspawn_ident" // Change _ident to _yourshipname
+	base_area = /area/space
+	base_turf = /turf/space
 
 /*
  * Distress Shuttle Automation Code Lives Here
@@ -56,6 +58,8 @@
 		else
 			if(launched && !check_for_passengers() && recalled) // Did we launch already, have no passengers, and have been sent a recall command?
 				launch()
+
+	..() // Call parent and do the rest, too. :3
 
 /*
 // Yes, this is commented out because this is purely an example of how to build your shuttle properly to work with the auto-dock system.

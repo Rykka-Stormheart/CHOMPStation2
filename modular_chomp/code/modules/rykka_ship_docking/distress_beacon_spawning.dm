@@ -89,9 +89,11 @@
  * Full credit for a bulk of this code goes to Nadyr (Darlantanis on Git) for writing this originally for dynamic sectors on the overmap.
  * Code will be broken up into sections, as follows:
  * 1: Z-level management + ship spawning/despawning.
- * 2: Tracking the objects/status of the ship.
+ * 2: Tracking the objects/status of the ship. - Moved to distress_beacon_tracking.dm
  * 3: Any additional fun:tm: stuff that might come to mind after.
 */
+
+// TODO: Insert a shiptracker object when the ship is spawned, and take a 'snapshot' of the ship on setup? Saves mappers from having to remember to place the shiptracker.
 
 /*
  *
@@ -101,7 +103,7 @@
 */
 
 GLOBAL_VAR_INIT(dynamic_ship_master, null) // Don't touch.
-var/static/ship_z_controller = null // Global variable so anyone can access us from anywhere.
+var/static/obj/effect/overmap/visitable/dynamic_ship/ship_z_controller = null // Global variable so anyone can access us from anywhere.
 
 // Also adjust find_z_levels() if you adjust increase dynamic levels, that part is hard-coded so you don't gloss over world.increment_max_z().
 #define MAX_DYNAMIC_SHIP_LEVELS 4 // Maximum of 4 dynamic ships spawned (1 for ENG, 1 for MED, 1 for SEC, plus 1 for rollover if one finishes early and spawns another.)
@@ -532,12 +534,6 @@ var/static/ship_z_controller = null // Global variable so anyone can access us f
 	name = new_name
 	landmark_tag = new_tag
 	. = ..()
-
-/*
- *
- * ==== TRACKING CODE ====
- *
-*/
 
 #undef MAX_DYNAMIC_SHIP_LEVELS
 #undef MAX_DYNAMIC_SHIP_DIMENSIONS

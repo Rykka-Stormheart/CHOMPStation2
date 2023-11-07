@@ -1,7 +1,5 @@
 /*
- * This file hosts the code for opt-in job ship docking.
- *	It will be separated into appropriate files once necessary.
- *	For now, it stays here to enable all the code to be in one place and diagnosed easily/allow enable/disable as needed.
+ * This file hosts the code for the console that can access + request/dismiss ships, as well as display player stats.
 */
 
 #define MED 1
@@ -19,9 +17,8 @@
  * Console ideally will hold all the code to run the entire 'event' inside itself.
  * Event will be: 1: ID Swipe. 2: Start countdown for ship once minimum # of IDs for size swiped (option to disable this). 3: Send signal to spawn ship. 4: Once ship signals its been despawned successfully and event succeeds, track stat info. 5: Reset console.
  * Console should allow for early termination/ending the event early if players need the docking space.
- * Ship size/difficulty/announcement for spawn + stat tracking will be handled by the console.
- * Ship code for spawn/despawn/tracking what was on it and what condition it's in can be inside an invisible shiptracker object placed on the ship templates, maybe?
- * Can also insert the shiptracker when the ship is spawned and take a 'snapshot' of the ship on setup? Saves mappers from having to remember to place the shiptracker.
+ * Ship department/difficulty/announcement for spawn will be handled by the console.
+ * distress_beacon_spawning.dm will handle spawning. distress_beacon_tracking.dm will handle tracking the mob tracking. distress_beacon_stats.dm will handle the stat tracking system.
  *
  *
 */
@@ -68,11 +65,13 @@
 	tgui_interact(user) // Interact with our UI!
 
 /obj/machinery/computer/jobship_console/proc/register_swipe(var/obj/item/weapon/card/id/I)
-	if(I in tracked_ids) // Allow our users to remove ourselves via swipe as well as UI
-		tracked_ids -= I
+	for(I in tracked_ids) // Allow our users to remove ourselves via swipe as well as UI
+		tracked_ids.Remove(I)
+		calculate_difficulty() // Calculate difficulty each time we register a swipe.
+		return // Stop here.
 		// swipes--
 	// swipes++ // Increment our swipes counter by one.
-	tracked_ids += I
+	tracked_ids.Add(I)
 
 	calculate_difficulty() // Calculate difficulty each time we register a swipe.
 
