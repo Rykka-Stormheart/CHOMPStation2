@@ -16,3 +16,12 @@
 	display_name = "world ring"
 	path = /obj/item/clothing/gloves/ring/ringworld2
 	cost = 1
+
+/datum/gear/gloves/ring/bs_form_stabilizer_ring
+	display_name = "form stabilization ring"
+	description = "A ring that allows the wearer to retain an anthro/taur form while worn, and reverts them to a feral one when removed (OOC: carbon -> simplemob when removed, back to carbon when put on again)."
+	path = /obj/item/clothing/gloves/ring/bs_form_stabilizer_ring
+	cost = 1
+
+/datum/gear/gloves/ring/bs_form_stabilizer_ring/New()
+	..()

@@ -4858,6 +4858,7 @@
 #include "modular_chomp\code\modules\clothing\spacesuits\void\void.dm"
 #include "modular_chomp\code\modules\clothing\suits\armor.dm"
 #include "modular_chomp\code\modules\clothing\suits\jobs.dm"
+#include "modular_chomp\code\modules\clothing\under\accessories\form_stabilizer.dm"
 #include "modular_chomp\code\modules\clothing\under\accessories\holster.dm"
 #include "modular_chomp\code\modules\clothing\under\jobs\civilian.dm"
 #include "modular_chomp\code\modules\clothing\under\jobs\medsec.dm"
