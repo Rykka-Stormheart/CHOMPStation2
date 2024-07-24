@@ -9,8 +9,6 @@
 
 	var/assigned = FALSE // Is a player registered to this item? Starts FALSE, becomes TRUE when interacted with or spawned + equipped.
 	var/owner_ckey = null // Who owns us?
-	var/current_form = null // Don't touch this, handled by code
-	var/selected_form = null // What shape are we using?
 	var/true_form = null // Linked simple/feral mob
 	var/shapeshift_form = null // Linked carbon mob
 	var/last_activated = null // When were we last used?
@@ -43,54 +41,63 @@
 	. = ..()
 	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(equipped)) // Go through equipped first, which then calls swap form
 	RegisterSignal(parent, COMSIG_ITEM_DROPPED, PROC_REF(swap_form))
-	RegisterSignal(parent, COMSIG_MOB_ITEM_ATTACK, PROC_REF(swap_form)) // Mobs can't put this item on themselves, by design. Plus it's cute to need help.
-	RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, PROC_REF(select_form)) // Choose our form.
+	RegisterSignal(parent, COMSIG_MOB_ITEM_ATTACK, PROC_REF(binding_check)) // Mobs can't put this item on themselves, by design. Plus it's cute to need help.
+	RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, PROC_REF(binding_check)) // Choose our form.
 
-/datum/component/form_stabilizer/proc/form_spawn(var/mob/M) // This should be called either by loadout on equip or on first use if we're not being spawned via loadout equip.
-	SIGNAL_HANDLER
+/datum/component/form_stabilizer/proc/form_spawn(user, var/mob/living/M, var/mob/form_to_spawn, var/carbon = FALSE) // This should be called either by loadout on equip or on first use if we're not being spawned via loadout equip.
 	// Define our new mob here, create it at nullspace.
-	var/mob/living/simple_mob/new_mob = new selected_form(0,0)
-	owner_ckey = M.ckey
+	if(carbon) // Are we spawning a carbon?
+		var/mob/living/carbon/human/new_human = new /mob/living/carbon/human()
+		M.client.prefs.copy_to(new_human) // This should work, I think?
+		shapeshift_form = new_human // Link our carbon to this ring
+		swap_form(M)
+	else // Else, we're spawning simplemob
+		var/mob/living/simple_mob/new_mob = new form_to_spawn()
+		new_mob = true_form // Link our simplemob to the ring
 
-	// New mob info checks
-	if(. && ishuman(M)) // If we're in our carbonmob form
-		var/mob/living/carbon/human/H = M
-
+		// New mob info checks
 		//Start of mob code shamelessly ripped from mouseray (and now replicator :3)
-		new_mob.faction = H.faction // We're going to inherit our faction to prevent issues like station turrets shooting us.
+		new_mob.faction = M.faction // We're going to inherit our faction to prevent issues like station turrets shooting us.
 
 		if(new_mob && isliving(new_mob)) // Sanity check in case the new mob suddenly dies for w/e reason
 			for(var/obj/belly/B as anything in new_mob.vore_organs)
 				new_mob.vore_organs -= B
 				qdel(B)
 			new_mob.vore_organs = list()
-			new_mob.name = H.name
-			new_mob.real_name = H.real_name
-			for(var/lang in H.languages)
+			new_mob.name = M.name
+			new_mob.real_name = M.real_name
+			for(var/lang in M.languages)
 				new_mob.languages |= lang
-			H.copy_vore_prefs_to_mob(new_mob)
-			new_mob.vore_selected = H.vore_selected
-			if(ishuman(new_mob))
-				var/mob/living/carbon/human/N = new_mob
-				N.gender = H.gender
-				N.identifying_gender = H.identifying_gender
-			else
-				new_mob.gender = H.identifying_gender
-	else // Otherwise, set our gender, we're just assuming pronouns match because code sucks
-		new_mob.gender = M.gender
-		if(ishuman(new_mob))
-			var/mob/living/carbon/human/N = new_mob
-			N.identifying_gender = M.gender
+			M.copy_vore_prefs_to_mob(new_mob)
+			new_mob.vore_selected = M.vore_selected
+			if(. && ishuman(M)) // If we're in our carbonmob form
+				var/mob/living/carbon/human/H = M
+				if(ishuman(new_mob)) // Safety, even though we know it's not likely human
+					var/mob/living/carbon/human/N = new_mob
+					N.gender = H.gender
+					N.identifying_gender = H.identifying_gender
+				else
+					new_mob.gender = H.identifying_gender
+			else // Otherwise, set our gender, we're just assuming pronouns match because code sucks
+				new_mob.gender = M.gender
+				if(ishuman(new_mob))
+					var/mob/living/carbon/human/N = new_mob
+					N.identifying_gender = M.gender
 
-/datum/component/form_stabilizer/proc/swap_form(var/mob/living/M)
-	SIGNAL_HANDLER
+
+/datum/component/form_stabilizer/proc/swap_form(user, var/mob/living/M)
 	// First things first: Sanity check.
 	if(owner_ckey != M.ckey || M.ckey == null || !M)
+		log_runtime(EXCEPTION("Our ckey doesn't match or is null!"))
+		return
+
+	if(!true_form || !shapeshift_form)
+		log_runtime(EXCEPTION("Swap form was called without proper forms! True form is [true_form] and carbon form is [shapeshift_form]."))
 		return
 
 	// TODO: Select form based on what our current form is.
 	var/mob/living/swap_form = null
-	if(ishuman(current_form)) // This should handle it. Are we currently carbon?
+	if(ishuman(M)) // This should handle it. Are we currently carbon?
 		swap_form = true_form
 	else // Else, we're not carbon, but someone bonked us with the collar, so we want to become carbon.
 		swap_form = shapeshift_form
@@ -156,46 +163,65 @@
 	// M.forceMove(swap_form) // time to bring out our lil fren
 	swap_form.tf_mob_holder = M
 
-/datum/component/form_stabilizer/proc/equipped(var/mob/M)
-	SIGNAL_HANDLER
-	// First things first, our signal is received, now we go ahead and register what our current form is for other code.
+	M.visible_message("<span class='warning>[M] distorts as their form changes!</span>","<span class='notice'>You feel your body change!</span>")
+	log_admin("Admin [key_name(M)]'s form swapped via form stabilizer gear.")
+	to_chat(M, "<span class='warning'>\The [src] pulses. Its circuits have begun to pool energy again and the capacitor will be charged in 60 seconds from now.</span>")
+
+/datum/component/form_stabilizer/proc/equipped(user, var/mob/M)
+	// First things first, our signal is received, we need to assign ourselves to the component.
+	if(!assigned) // If we're not assigned to anyone, lets go ahead and assign ourselves.
+		assigned = TRUE
+		owner_ckey = M.ckey
+
+	if(owner_ckey != M.ckey)
+		return // Don't do anything if we're not the owner.
+	// Now we go ahead and register what our current form is for other code
 	// Essentially, if our first equip comes from a human/carbon mob, we're going to register that.
 	// If this item was initialized/created outside of loadout (and therefore not immediately equipped), then the simplemob form will be set by the mob attack.
 	if(!last_activated) // Do we not have a last activated/is it set null? This is our first use.
-		current_form = M
 		if(ishuman(M))
 			shapeshift_form = M // Link our Carbon Mob
-		else // Safety, but this shouldn't happen that a simplemob can equip stuff (I think?)
+		else // Safety, but this shouldn't happen this way.
 			true_form = M
-
-		if(selected_form) // Safety.
-			form_spawn(M) // Spawn our form in nullspace and set it up.
-		else
-			to_chat(M, "<span class='warning'>You need to choose a form before you can equip this!</span>")
 
 		last_activated = world.time // Setting this now so the check doesn't repeat.
 		return // We don't want to do anything else here. Swapping form would be useless because we're equipped by loadout.
 
 
-	if(world.time - last_activated < cooldown_time) // if 2300 - 2250 (50) < 60, for example.
+	if((world.time - last_activated < cooldown_time) && M == true_form) // if 2300 - 2250 (50) < 60, for example. We should only cooldown if we're trying to go from simple -> carbon, not the other way around?
 		to_chat(M, "<span class='warning'>\The [src] pulses. It appears to still be recharging.</span>")
 		return
 
 	last_activated = world.time
 	swap_form(M)
-	M.visible_message("<span class='warning>[M] distorts as their form changes!</span>","<span class='notice'>You feel your body change!</span>")
-	log_admin("Admin [key_name(M)]'s form swapped via form stabilizer gear.")
-	to_chat(M, "<span class='warning'>\The [src] pulses. Its circuits have begun to pool energy again and the capacitor will be charged in 60 seconds from now.</span>")
 
-/datum/component/form_stabilizer/proc/select_form(var/mob/M)
-	SIGNAL_HANDLER
-	if(!selected_form)
-		tgui_input_list(M, "Mob Type?", "Mob Selection", usable_forms)
-		if(.)
-			. = selected_form
+/datum/component/form_stabilizer/proc/binding_check(user, var/mob/M)
+	if(!assigned)
+		var/answer = tgui_alert(M, "Do you want to bind this to yourself? This cannot be undone. If you are a simplemob, you will spawn your loaded saveslot, and your current form will be the form you revert to. If you are carbon, you will select a mob and revert to that when removing this item.", "Assign To FSG", list("Yes","No"))
+		if(answer == "No")
+			return
+
+		assigned = TRUE
+		owner_ckey = M.ckey
+
+	if(M.ckey == owner_ckey && ishuman(M)) // Safety
+		if(!true_form)
+			select_form(M) // Spawn simple
+	else if(M.ckey == owner_ckey)
+		true_form = M
+		to_chat(M, "<span class='notice'>Your current save slot will now be spawned. You will be linked, and then transferred into it.</span>")
+		if(!shapeshift_form)
+			form_spawn(M, TRUE) // Spawn carbon
+
+/datum/component/form_stabilizer/proc/select_form(user, var/mob/M) // Choose our form, and then immediately spawn it. ONLY called by carbons.
+	if(!true_form) // Does a simplemob not exist?
+		var/selected_form = tgui_input_list(M, "Mob Type?", "Mob Selection", usable_forms)
+		if(selected_form)
+			form_spawn(M, form_to_spawn = selected_form) // Spawn our form in nullspace and set it up.
 		else
 			to_chat(M, "<span class='notice'>Selection failed. Try again.</span>")
-	else
+	else // Shouldn't happen
+		log_runtime(EXCEPTION("Select form was called with an already-existing simplemob!"))
 		to_chat(M, "<span class='notice'>[src] has already had a form type chosen! Ahelp if you need this changed.</span>")
 
 /obj/item/clothing/gloves/ring/form_stabilizer
@@ -205,8 +231,6 @@
 	// icon_state = 'bs_ring'
 	w_class = ITEMSIZE_TINY
 	glove_level = 1
-	var/assigned = FALSE // Are we already linked to someone/something?
-	var/owner_ckey = null // Filled in.
 
 /obj/item/clothing/gloves/ring/form_stabilizer/Initialize()
 	. = ..()
@@ -214,34 +238,22 @@
 	LoadComponent(/datum/component/form_stabilizer)
 
 // What happens when we remove the ring
-/obj/item/clothing/gloves/ring/form_stabilizer/mob_can_unequip(mob/M, gloves, disable_warning = 0)
+/obj/item/clothing/gloves/ring/form_stabilizer/dropped(mob/user, gloves)
 	. = ..()
 
-	SEND_SIGNAL(M, COMSIG_ITEM_DROPPED)
+	SEND_SIGNAL(src, COMSIG_ITEM_DROPPED, user)
 
 /obj/item/clothing/gloves/ring/form_stabilizer/attackby(mob/M)
-	if(!assigned)
-		var/answer = tgui_alert(M, "Do you want to bind this ring to yourself? This cannot be undone, and you will be changed to a simplemob or vice versa the next time this is unequipped!", "Assign To FSG", list("Yes","No"))
-		if(answer == "No")
-			return
-		. = ..() // Now we do the equip/etc
+	. = ..() // Now we do the equip/etc
 
+	SEND_SIGNAL(src,COMSIG_MOB_ITEM_ATTACK, M)
 
 /obj/item/clothing/gloves/ring/form_stabilizer/equipped(mob/user, slot)
 	. = ..()
 
-	if(!assigned) // If we're not assigned to anyone, lets go ahead and assign ourselves.
-		assigned = TRUE
-		owner_ckey = user.ckey
-
-	if(owner_ckey == user.ckey)
-		SEND_SIGNAL(user,COMSIG_ITEM_EQUIPPED)
-
-	else
-		to_chat(user, "<span class='warning'>This is already bound to someone!</span>")
-		user.drop_from_inventory(src) // Drop the item.
+	SEND_SIGNAL(src,COMSIG_ITEM_EQUIPPED, user)
 
 /obj/item/clothing/gloves/ring/form_stabilizer/attack_self(mob/user)
 	. = ..()
 
-	SEND_SIGNAL(user, COMSIG_ITEM_ATTACK_SELF)
+	SEND_SIGNAL(src, COMSIG_ITEM_ATTACK_SELF, user)
