@@ -48,7 +48,7 @@
 	RegisterSignal(parent, COMSIG_ATOM_EMP_ACT, PROC_REF(emp_act)) // EMP!
 	RegisterSignal(parent, COMSIG_MOB_EXAMINATE, PROC_REF(examine)) // Examine!
 
-/datum/component/form_stabilizer/proc/form_spawn(user, var/mob/living/M, var/mob/form_to_spawn, var/carbon = FALSE) // This should be called either by loadout on equip or on first use if we're not being spawned via loadout equip.
+/datum/component/form_stabilizer/proc/form_spawn(var/mob/living/M, var/form_to_spawn, var/carbon = FALSE) // This should be called either by loadout on equip or on first use if we're not being spawned via loadout equip.
 	// Define our new mob here, create it at nullspace.
 	if(carbon) // Are we spawning a carbon?
 		var/mob/living/carbon/human/new_human = new /mob/living/carbon/human()
@@ -60,7 +60,8 @@
 		swap_form(M) // Immediately put us into the carbon form.
 	else // Else, we're spawning simplemob
 		var/mob/living/simple_mob/new_mob = new form_to_spawn()
-		new_mob = true_form // Link our simplemob to the ring
+		to_world("New mob is [new_mob] before true form setting, while true form currently is [true_form]!")
+		true_form = new_mob // Link our simplemob to the ring
 		to_world("Form-to-spawn is [form_to_spawn], new_mob is [new_mob], and M is [M]!")
 
 		// New mob info checks
@@ -98,19 +99,19 @@
 					N.identifying_gender = M.gender
 
 
-/datum/component/form_stabilizer/proc/swap_form(user, var/mob/living/M)
+/datum/component/form_stabilizer/proc/swap_form(var/obj/user, var/mob/living/M)
 	// First things first: Sanity check.
 	if(owner_ckey != M.ckey || M.ckey == null || !M)
 		log_runtime(EXCEPTION("Our ckey doesn't match or is null! This shouldn't happen!"))
-		return
+		return 0
 
 	if(!true_form || !shapeshift_form)
 		log_runtime(EXCEPTION("Swap form was called without proper forms! True form is [true_form] and carbon form is [shapeshift_form]."))
-		return
+		return 0
 
 	if(emp_disrupted || burnt_out) // Don't do anything if we're still disrupted.
 		to_chat(M, "<span class='danger'>The circuits require repair! Examine for more details!</span>")
-		return
+		return 0
 
 	// TODO: Select form based on what our current form is.
 	var/mob/living/swap_form = null
@@ -144,8 +145,14 @@
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M // Temporary
 
+		// Drop stuff in hands immediately
+		if(H.l_hand)
+			H.drop_l_hand()
+		if(H.r_hand)
+			H.drop_r_hand()
+
 		var/list/things_to_drop = H.contents.Copy()
-		var/list/things_to_not_drop = list(H.w_uniform,H.nif,H.l_store,H.r_store,H.wear_id,H.l_ear,H.r_ear) //And whatever else we decide for balancing.
+		var/list/things_to_not_drop = list(H.nif) //And whatever else we decide for balancing. For now, strip everything, but if there's problems, just re-add items to this list to exclude them from being dropped.
 		things_to_drop -= things_to_not_drop //Crunch the lists
 		things_to_drop -= H.organs //Mah armbs
 		things_to_drop -= H.internal_organs //Mah sqeedily spooch
@@ -163,9 +170,6 @@
 						/obj/item/clothing/accessory/armor
 						)))
 						uniform.remove_accessory(null,A) //First param is user, but adds fingerprints and messages
-
-		if(H.l_hand) H.drop_from_inventory(H.l_hand)
-		if(H.r_hand) H.drop_from_inventory(H.r_hand)
 
 	// Time to swap into new mob. Code stolen from replicator.
 	/*
@@ -192,14 +196,26 @@
 		var/datum/ai_holder/new_AI = swap_form.ai_holder
 		new_AI.hostile = old_AI.hostile
 		new_AI.retaliate = old_AI.retaliate
+
+	if(ishuman(M)) // WE NEED TO GET IT OUT OF OUR HANDS. AUGH.
+		var/mob/living/carbon/human/H = M // Temporary
+
+		// Drop stuff in hands immediately
+		if(H.l_hand)
+			H.drop_l_hand()
+		if(H.r_hand)
+			H.drop_r_hand()
+
 	M.moveToNullspace() // To the void u go
 	swap_form.forceMove(moveloc) // bring out our lil fren
 	// M.forceMove(swap_form) // time to bring out our lil fren
 	swap_form.tf_mob_holder = M
+	// addtimer(CALLBACK(src, PROC_REF(move_to_turf(user, M, moveloc)), 1 SECOND)) // Make sure the gear ends up on the ground too!
 
-	M.visible_message("<span class='danger>[M] distorts as their form changes!</span>","<span class='notice'>You feel your body change!</span>")
-	log_admin("Admin [key_name(M)]'s form swapped via form stabilizer gear.")
-	to_chat(M, "<span class='notice'>\The [src] pulses. Its circuits have begun to pool energy again and the capacitor will be charged in [(world.time - last_activated)/60] seconds from now.</span>")
+	swap_form.visible_message(span_danger("[swap_form] distorts as their form changes!"),span_notice("You feel your body change!"))
+	log_admin("Admin [key_name(swap_form)]'s form swapped via form stabilizer gear.")
+	to_chat(swap_form, span_notice("\The [user] pulses. Its circuits have begun to pool energy again and the capacitor will be charged in [(world.time - last_activated)/60] seconds from now."))
+	return 1 // Report successful shift
 
 /datum/component/form_stabilizer/proc/equipped(user, var/mob/M, var/slot)
 	if(slot == slot_r_hand || slot_l_hand) // We don't want to do anything if it was just picked up.
@@ -230,7 +246,7 @@
 
 
 	if((world.time - last_activated < cooldown_time) && M == true_form) // if 2300 - 2250 (50) < 60, for example. We should only cooldown if we're trying to go from simple -> carbon, not the other way around?
-		to_chat(M, "<span class='notice'>\The [src] pulses. It appears to still be recharging.</span>")
+		to_chat(M, "<span class='notice'>\The [user] pulses. It appears to still be recharging.</span>")
 		return
 
 	last_activated = world.time
@@ -250,13 +266,14 @@
 		return // Don't do anything.
 
 	if(ishuman(M)) // Safety
+		shapeshift_form = M // Link our Carbon Mob
 		if(!true_form)
 			select_form(M) // Spawn simple
 	else if(!true_form) // Are we not linked yet?
 		true_form = M
 		to_chat(M, "<span class='notice'>Your current save slot will now be spawned. You will be linked, and then transferred into it.</span>")
 		if(!shapeshift_form)
-			form_spawn(M, TRUE) // Spawn carbon
+			form_spawn(M, carbon = TRUE) // Spawn carbon
 
 	else // Else, we are linked with a true form and we just got bonked with the item, now we need to put ourselves into carbon
 		if(emp_disrupted || burnt_out) // Don't do anything if we're still disrupted.
@@ -265,7 +282,7 @@
 
 		swap_form(M)
 
-/datum/component/form_stabilizer/proc/select_form(user, var/mob/M) // Choose our form, and then immediately spawn it. ONLY called by carbons.
+/datum/component/form_stabilizer/proc/select_form(var/mob/M) // Choose our form, and then immediately spawn it. ONLY called by carbons.
 	if(!true_form) // Does a simplemob not exist?
 		var/selected_form = tgui_input_list(M, "Mob Type?", "Mob Selection", usable_forms)
 		if(selected_form)
@@ -303,18 +320,23 @@
 			return
 		swap_form(M)
 
+/*
+/datum/component/form_stabilizer/proc/move_to_turf(var/obj/user, var/mob/M, var/turf/T)
+	user.forceMove(T)
+*/
+
 /datum/component/form_stabilizer/proc/attackby(user, var/obj/item/I, var/mob/M)
 	if(istype(I, /obj/item/stack/cable_coil))
 		var/obj/item/stack/cable_coil/CC = I
 		if(CC.get_amount() >= 2) // Minimum of 2
 			CC.use(rand(0,2)) // Use up to 2 lengths of cable
 			burnt_out = FALSE
-			to_chat(M, "<span class='notice'>You replace the wiring inside [src]. Reset the item using a multitool [emp_disrupted] times.</span>")
+			to_chat(M, "<span class='notice'>You replace the wiring inside [user]. Reset the item using a multitool [emp_disrupted] times.</span>")
 			return
 		else
 			to_chat(M, "<span class='notice'>Not enough cable to repair this. Get at least 2 segments.</span>")
 			return
-	else if(istype(I, /obj/item/device/multitool))
+	else if(istype(I, /obj/item/multitool))
 		if(emp_disrupted)
 			var/rdelay = (rand(0,3) SECONDS) + (emp_disrupted SECONDS) // Increase the delay by a random amount
 			to_chat(M, "<span class='notice'>You start to reset one of the circuits. This will take [rdelay] seconds...</span>")
@@ -349,7 +371,7 @@
 
 /datum/component/form_stabilizer/proc/examine(user, var/mob/M)
 	if(world.time - last_activated < cooldown_time)
-		. += "The circuit is still recharging. Item will be ready in [(world.time - last_activated < cooldown_time) SECONDS]."
+		. += "The circuit is still recharging. [user] will be ready in [(world.time - last_activated < cooldown_time) SECONDS]."
 	else
 		. += "The circuits hum with stored power."
 
@@ -360,10 +382,10 @@
 		. += "The circuits have burnt out entirely. Get a cable coil with two wires and replace the wiring in the item."
 
 	if(!assigned)
-		. += "This is not yet linked with anyone. Click on a mob to link it to them."
+		. += "[user] is not yet linked with anyone. Click on a mob to link it to them."
 	else
 		var/mob/living/simple_mob/T = true_form
-		. += "This is linked to someone. Look for a mob of type [T.tt_desc]."
+		. += "[user] is linked to someone. Look for a mob of type [T.tt_desc]."
 
 	. += "This item is designed to stabilize a mob's form, allowing them to use a different form unless this is EMP'd. Click on a mob to link it to them."
 
