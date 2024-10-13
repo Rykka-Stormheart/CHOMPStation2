@@ -55,7 +55,7 @@
 		M.client.prefs.copy_to(new_human) // This should work, I think?
 		shapeshift_form = new_human // Link our carbon to this ring
 		if(emp_disrupted || burnt_out) // Don't do anything else if we're still disrupted.
-			to_chat(M, "<span class='danger'>The circuits require repair! Examine for more details!</span>")
+			to_chat(M, span_danger("The circuits require repair! Examine for more details!"))
 			return
 		swap_form(M) // Immediately put us into the carbon form.
 	else // Else, we're spawning simplemob
@@ -71,12 +71,7 @@
 		if(new_mob && isliving(new_mob)) // Sanity check in case the new mob suddenly dies for w/e reason
 			// Gonna break this up into blocks for readability.
 			// Starting with vorgans here. We cut out the defaults from the simplemob and copy over our intended ones.
-			for(var/obj/belly/B as anything in new_mob.vore_organs)
-				new_mob.vore_organs -= B
-				qdel(B)
-			new_mob.vore_organs = list() // Empty!
-			M.copy_vore_prefs_to_mob(new_mob) // Now copy over from our loaded saveslot's bellies.
-			new_mob.vore_selected = M.vore_selected // Select our default vorgan based on what was already chosen.
+			new_mob.copy_from_prefs_vr()
 
 			// Now we copy over our name + languages
 			new_mob.name = M.name
@@ -100,6 +95,9 @@
 
 
 /datum/component/form_stabilizer/proc/swap_form(var/obj/user, var/mob/living/M)
+	addtimer(CALLBACK(src, PROC_REF(swap_now), user, M), 0.1 SECONDS)
+
+/datum/component/form_stabilizer/proc/swap_now(var/obj/user, var/mob/living/M)
 	// First things first: Sanity check.
 	if(owner_ckey != M.ckey || M.ckey == null || !M)
 		log_runtime(EXCEPTION("Our ckey doesn't match or is null! This shouldn't happen!"))
@@ -110,9 +108,8 @@
 		return 0
 
 	if(emp_disrupted || burnt_out) // Don't do anything if we're still disrupted.
-		to_chat(M, "<span class='danger'>The circuits require repair! Examine for more details!</span>")
+		to_chat(M, span_danger("The circuits require repair! Examine for more details!"))
 		return 0
-
 	// TODO: Select form based on what our current form is.
 	var/mob/living/swap_form = null
 	if(ishuman(M)) // This should handle it. Are we currently carbon?
@@ -150,26 +147,16 @@
 			H.drop_l_hand()
 		if(H.r_hand)
 			H.drop_r_hand()
+		if(H.wear_id)
+			H.drop_from_inventory(H.wear_id)
+		if(H.r_store)
+			H.drop_from_inventory(H.r_store)
+		if(H.l_store)
+			H.drop_from_inventory(H.l_store)
 
-		var/list/things_to_drop = H.contents.Copy()
-		var/list/things_to_not_drop = list(H.nif) //And whatever else we decide for balancing. For now, strip everything, but if there's problems, just re-add items to this list to exclude them from being dropped.
-		things_to_drop -= things_to_not_drop //Crunch the lists
-		things_to_drop -= H.organs //Mah armbs
-		things_to_drop -= H.internal_organs //Mah sqeedily spooch
 
-		for(var/obj/item/I in things_to_drop) // hehehe items go clonk
+		for(var/obj/item/I in H.worn_clothing) // hehehe items go clonk
 			H.drop_from_inventory(I)
-
-		if(H.w_uniform && istype(H.w_uniform,/obj/item/clothing)) //No webbings tho. We do this after in case a suit was in the way
-			var/obj/item/clothing/uniform = H.w_uniform
-			if(LAZYLEN(uniform.accessories))
-				for(var/obj/item/clothing/accessory/A in uniform.accessories)
-					if(is_type_in_list(A, list(
-						/obj/item/clothing/accessory/holster,
-						/obj/item/clothing/accessory/storage,
-						/obj/item/clothing/accessory/armor
-						)))
-						uniform.remove_accessory(null,A) //First param is user, but adds fingerprints and messages
 
 	// Time to swap into new mob. Code stolen from replicator.
 	/*
@@ -197,15 +184,6 @@
 		new_AI.hostile = old_AI.hostile
 		new_AI.retaliate = old_AI.retaliate
 
-	if(ishuman(M)) // WE NEED TO GET IT OUT OF OUR HANDS. AUGH.
-		var/mob/living/carbon/human/H = M // Temporary
-
-		// Drop stuff in hands immediately
-		if(H.l_hand)
-			H.drop_l_hand()
-		if(H.r_hand)
-			H.drop_r_hand()
-
 	M.moveToNullspace() // To the void u go
 	swap_form.forceMove(moveloc) // bring out our lil fren
 	// M.forceMove(swap_form) // time to bring out our lil fren
@@ -226,11 +204,11 @@
 		owner_ckey = M.ckey
 
 	if(owner_ckey != M.ckey)
-		to_chat(M, "<span class='warning'>You are not the owner of this item, and therefore, nothing happens.</span>")
+		to_chat(M, span_warning("You are not the owner of this item, and therefore, nothing happens."))
 		return // Don't do anything if we're not the owner.
 
 	if(emp_disrupted || burnt_out) // Are we nonfunctional?
-		to_chat(M, "<span class='warning'>This is currently nonfunctional and needs repairs.</span>")
+		to_chat(M, span_warning("This is currently nonfunctional and needs repairs."))
 		return
 	// Now we go ahead and register what our current form is for other code
 	// Essentially, if our first equip comes from a human/carbon mob, we're going to register that.
@@ -246,7 +224,7 @@
 
 
 	if((world.time - last_activated < cooldown_time) && M == true_form) // if 2300 - 2250 (50) < 60, for example. We should only cooldown if we're trying to go from simple -> carbon, not the other way around?
-		to_chat(M, "<span class='notice'>\The [user] pulses. It appears to still be recharging.</span>")
+		to_chat(M, span_notice("\The [user] pulses. It appears to still be recharging."))
 		return
 
 	last_activated = world.time
@@ -262,7 +240,7 @@
 		owner_ckey = M.ckey
 
 	if(!(M.ckey == owner_ckey))
-		to_chat(M, "<span class='warning'>You are not the owner of this item, and therefore, nothing happens.</span>")
+		to_chat(M, span_warning("You are not the owner of this item, and therefore, nothing happens."))
 		return // Don't do anything.
 
 	if(ishuman(M)) // Safety
@@ -271,13 +249,13 @@
 			select_form(M) // Spawn simple
 	else if(!true_form) // Are we not linked yet?
 		true_form = M
-		to_chat(M, "<span class='notice'>Your current save slot will now be spawned. You will be linked, and then transferred into it.</span>")
+		to_chat(M, span_notice("Your current save slot will now be spawned. You will be linked, and then transferred into it."))
 		if(!shapeshift_form)
 			form_spawn(M, carbon = TRUE) // Spawn carbon
 
 	else // Else, we are linked with a true form and we just got bonked with the item, now we need to put ourselves into carbon
 		if(emp_disrupted || burnt_out) // Don't do anything if we're still disrupted.
-			to_chat(M, "<span class='danger'>The circuits require repair! Examine for more details!</span>")
+			to_chat(M, span_danger("The circuits require repair! Examine for more details!"))
 			return
 
 		swap_form(M)
@@ -288,10 +266,10 @@
 		if(selected_form)
 			form_spawn(M, form_to_spawn = selected_form) // Spawn our form in nullspace and set it up.
 		else
-			to_chat(M, "<span class='notice'>Selection failed. Try again.</span>")
+			to_chat(M, span_notice("Selection failed. Try again."))
 	else // Shouldn't happen
 		log_runtime(EXCEPTION("Select form was called with an already-existing simplemob!"))
-		to_chat(M, "<span class='danger'>[src] has already had a form type chosen! Ahelp if you need this changed!</span>")
+		to_chat(M, span_danger("[src] has already had a form type chosen! Ahelp if you need this changed!"))
 
 /datum/component/form_stabilizer/proc/emp_act(user, var/severity, var/mob/M)
 	if(severity > 3 || !severity) // Don't act on sev4 or 0 sev
@@ -331,18 +309,18 @@
 		if(CC.get_amount() >= 2) // Minimum of 2
 			CC.use(rand(0,2)) // Use up to 2 lengths of cable
 			burnt_out = FALSE
-			to_chat(M, "<span class='notice'>You replace the wiring inside [user]. Reset the item using a multitool [emp_disrupted] times.</span>")
+			to_chat(M, span_notice("You replace the wiring inside [user]. Reset the item using a multitool [emp_disrupted] times."))
 			return
 		else
-			to_chat(M, "<span class='notice'>Not enough cable to repair this. Get at least 2 segments.</span>")
+			to_chat(M, span_notice("Not enough cable to repair this. Get at least 2 segments."))
 			return
 	else if(istype(I, /obj/item/multitool))
 		if(emp_disrupted)
 			var/rdelay = (rand(0,3) SECONDS) + (emp_disrupted SECONDS) // Increase the delay by a random amount
-			to_chat(M, "<span class='notice'>You start to reset one of the circuits. This will take [rdelay] seconds...</span>")
+			to_chat(M, span_notice("You start to reset one of the circuits. This will take [rdelay] seconds..."))
 			if(do_after(user, delay = rdelay))
 				emp_disrupted-- // Remove one counter.
-				to_chat(M, "<span class='notice'>You successfully reset the circuit. [emp_disrupted] circuits remain to be reset.</span>")
+				to_chat(M, span_notice("You successfully reset the circuit. [emp_disrupted] circuits remain to be reset."))
 				return
 		// TODO: Allow resetting the stabilizer later.
 		/*
@@ -350,21 +328,21 @@
 			var/answer = tgui_alert(M, "Do you wish to reset this item entirely?", "Reset FSG", list("Yes","No"))
 			if(answer == "No")
 				return
-			to_chat(M, "<span class='danger'>You start to reset [src]'s circuits. This will take some time...</span>")
+			to_chat(M, span_danger("You start to reset [src]'s circuits. This will take some time..."))
 			var/regret_time = rand(30,60) SECONDS
 			if(!true_form) // We can't force someone into simplemob form if it doesn't exist, so this entire chain shouldn't happen.
-				to_chat(M, "<span class='danger'>No true form exists or is setup! Something went wrong!</span>")
+				to_chat(M, span_danger("No true form exists or is setup! Something went wrong!"))
 				log_runtime(EXCEPTION("Someone tried to reset us without a true form to failsafe/fall back to!"))
 				return
 			var/mob/living/L = true_form // Assuming our true form exists here.
-			to_chat(L.client, "<span class='danger'>Someone is resetting your [src]! You have [regret_time] seconds to stop them if you want to interrupt this process!</span>")
+			to_chat(L.client, span_danger("Someone is resetting your [src]! You have [regret_time] seconds to stop them if you want to interrupt this process!"))
 			if(do_after(M, delay = regret_time)) // Really make sure you want to reset this.
 				reset_stabilizer(L)
 		*/
 
 	else // Else, we go ahead and do the check
 		if(emp_disrupted || burnt_out) // Don't do anything if we're still disrupted.
-			to_chat(M, "<span class='danger'>The circuits require repair! Examine for more details!</span>")
+			to_chat(M, span_danger("The circuits require repair! Examine for more details!"))
 			return
 
 		binding_check(M)
